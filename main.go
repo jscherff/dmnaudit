@@ -6,6 +6,11 @@ import (
 	`github.com/jscherff/dmnaudit/model`
 )
 
+// http://esbeap-qa.24hourfit.com:8180/engine-rest/decision-definition
+// http://esb-qa-13:8080/camunda/app/cockpit/default/#/login
+
+
+
 const (
 	//dmnService =	`http://esbeap-qa.24hourfit.com:8180`
 	dmnService =	`http://esb-qa-13.24hourfit.com:8080`

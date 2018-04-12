@@ -34,18 +34,18 @@ type Dmns []*Dmn
 // raw DMN XML, and the DMN Definition as a hierarchy of objects corresponding
 // to DMN XML elements.
 type Dmn struct {
-	Id			string              `db:"id"             json:"id"`
-	Key			string              `db:"key"            json:"key"`
-	Category		string              `db:"category"       json:"category"`
-	Name			string              `db:"name"           json:"name"`
-	Version			int	            `db:"version"        json:"version"`
-	Resource		string              `db:"resource"       json:"resource"`
-	DeploymentId		string              `db:"deployment_id"  json:"deploymentId"`
-	TenantId		string              `db:"tenant_id"      json:"tenantId"`
-	DefinitionId		string              `db:"definition_id"  json:"decisionRequirementsDefinitionId"`
-	DefinitionKey		string              `db:"definition_key" json:"decisionRequirementsDefinitionKey"`
-	HistoryTtl		string              `db:"history_ttl"    json:"historyTimeToLive"`
-	Xml			string              `db:"dmn_xml"        json:"dmnXml"`
+	Id			string              `db:"id"              json:"id"`
+	Key			string              `db:"key"             json:"key"`
+	Category		string              `db:"category"        json:"category"`
+	Name			string              `db:"name"            json:"name"`
+	Version			int	            `db:"version"         json:"version"`
+	Resource		string              `db:"resource"        json:"resource"`
+	DeploymentId		string              `db:"deployment_id"   json:"deploymentId"`
+	TenantId		string              `db:"tenant_id"       json:"tenantId"`
+	DefinitionId		string              `db:"definition_id"   json:"decisionRequirementsDefinitionId"`
+	DefinitionKey		string              `db:"definition_key"  json:"decisionRequirementsDefinitionKey"`
+	HistoryTtl		string              `db:"history_ttl"     json:"historyTimeToLive"`
+	DmnXml			string              `db:"dmn_xml"         json:"dmnXml"`
 	Definitions		*Definitions	    `db:"-"               xml:"definitions"`
 }
 
