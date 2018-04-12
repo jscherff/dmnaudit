@@ -34,29 +34,29 @@ type Dmns []*Dmn
 // raw DMN XML, and the DMN Definition as a hierarchy of objects corresponding
 // to DMN XML elements.
 type Dmn struct {
-	Id			string	            `db:"id"             json:"id"`
-	Key			string	            `db:"key"            json:"key"`
-	Category		string	            `db:"category"       json:"category"`
-	Name			string	            `db:"name"           json:"name"`
+	Id			string              `db:"id"             json:"id"`
+	Key			string              `db:"key"            json:"key"`
+	Category		string              `db:"category"       json:"category"`
+	Name			string              `db:"name"           json:"name"`
 	Version			int	            `db:"version"        json:"version"`
-	Resource		string	            `db:"resource"       json:"resource"`
-	DeploymentId		string	            `db:"deployment_id"  json:"deploymentId"`
-	TenantId		string	            `db:"tenant_id"      json:"tenantId"`
-	DefinitionId		string	            `db:"definition_id"  json:"decisionRequirementsDefinitionId"`
-	DefinitionKey		string	            `db:"definition_key" json:"decisionRequirementsDefinitionKey"`
-	HistoryTtl		string	            `db:"history_ttl"    json:"historyTimeToLive"`
-	Xml			string	            `db:"dmn_xml"        json:"dmnXml"`
+	Resource		string              `db:"resource"       json:"resource"`
+	DeploymentId		string              `db:"deployment_id"  json:"deploymentId"`
+	TenantId		string              `db:"tenant_id"      json:"tenantId"`
+	DefinitionId		string              `db:"definition_id"  json:"decisionRequirementsDefinitionId"`
+	DefinitionKey		string              `db:"definition_key" json:"decisionRequirementsDefinitionKey"`
+	HistoryTtl		string              `db:"history_ttl"    json:"historyTimeToLive"`
+	Xml			string              `db:"dmn_xml"        json:"dmnXml"`
 	Definitions		*Definitions	    `db:"-"               xml:"definitions"`
 }
 
 // Definitions is a Decision Model and Notation Definition. 
 type Definitions struct {
 	XMLName			xml.Name            `db:"-"`
-	Xmlns			string	            `db:"xmlns"           xml:"xmlns,attr"`
-	Id			string	            `db:"id"              xml:"id,attr"`
-	Name			string	            `db:"name"            xml:"name,attr"`
+	Xmlns			string              `db:"xmlns"           xml:"xmlns,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
+	Name			string              `db:"name"            xml:"name,attr"`
 	ExpressionLang		string              `db:"expression_lang" xml:"expressionLanguage"`
-	Namespace		string	            `db:"namespace"       xml:"namespace,attr"`
+	Namespace		string              `db:"namespace"       xml:"namespace,attr"`
 	Decision		*Decision           `db:"-"               xml:"decision"`
 }
 
@@ -71,15 +71,15 @@ type Definitions struct {
 
 type Decision struct {
 	XMLName			xml.Name            `db:"-"`
-	Id			string	            `db:"id"              xml:"id,attr"`
-	Name			string	            `db:"name"            xml:"name,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
+	Name			string              `db:"name"            xml:"name,attr"`
 	DecisionTable		*DecisionTable      `db:"-"               xml:"decisionTable"`
 }
 
 type DecisionTable struct {
 	XMLName			xml.Name            `db:"-"`
-	Id			string	            `db:"id"              xml:"id,attr"`
-	HitPolicy		string	            `db:"hit_policy"      xml:"hitPolicy,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
+	HitPolicy		string              `db:"hit_policy"      xml:"hitPolicy,attr"`
 	Inputs			[]*Input            `db:"-"               xml:"input"`
 	Outputs			[]*Output           `db:"-"               xml:"output"`
 	Rules			[]*Rule	            `db:"-"               xml:"rule"`
@@ -101,8 +101,8 @@ type DecisionTable struct {
 
 type Input struct {
 	XMLName			xml.Name            `db:"-"`
-	Id			string	            `db:"id"              xml:"id,attr"`
-	Label			string	            `db:"label"           xml:"label,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
+	Label			string              `db:"label"           xml:"label,attr"`
 	InputExpressions	[]*InputExpression  `db:"-"               xml:"inputExpression"`
 }
 
@@ -126,10 +126,10 @@ type Input struct {
 
 type InputExpression struct {
 	XMLName			xml.Name            `db:"-"`
-	Id			string	            `db:"id"              xml:"id,attr"`
-	TypeRef			string	            `db:"type_ref"        xml:"typeRef,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
+	TypeRef			string              `db:"type_ref"        xml:"typeRef,attr"`
 	ExpressionLang		string              `db:"expression_lang" xml:"expressionLanguage,attr"`
-	Text			string	            `db:"text"            xml:"text"`
+	Text			string              `db:"text"            xml:"text"`
 }
 
 // A decision table can have one or more output, also called output clauses.
@@ -161,10 +161,10 @@ type InputExpression struct {
 
 type Output struct {
 	XMLName			xml.Name            `db:"-"`
-	Id			string	            `db:"id"              xml:"id,attr"`
-	Label			string	            `db:"label"           xml:"label,attr"`
-	Name			string	            `db:"name"            xml:"name,attr"`
-	TypeRef			string	            `db:"type_ref"        xml:"typeRef,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
+	Label			string              `db:"label"           xml:"label,attr"`
+	Name			string              `db:"name"            xml:"name,attr"`
+	TypeRef			string              `db:"type_ref"        xml:"typeRef,attr"`
 }
 
 // A decision table can have one or more rules. Each rule contains input
@@ -176,7 +176,7 @@ type Output struct {
 
 type Rule struct {
 	XMLName			xml.Name            `db:"-"`
-	Id			string	            `db:"id"              xml:"id,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
 	InputEntries		[]*InputEntry       `db:"-"               xml:"inputEntry"`
 	OutputEntries		[]*OutputEntry      `db:"-"               xml:"outputEntry"`
 }
@@ -196,9 +196,9 @@ type Rule struct {
 
 type InputEntry struct {
 	XMLName			xml.Name            `db:"-"`
-	Id			string	            `db:"id"              xml:"id,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
 	ExpressionLang		string              `db:"expression_lang" xml:"expressionLanguage,attr"`
-	Text			string	            `db:"text"            xml:"text"`
+	Text			string              `db:"text"            xml:"text"`
 }
 
 // A rule can have one or more output entries which are the conclusions
@@ -219,10 +219,10 @@ type InputEntry struct {
 
 type OutputEntry struct {
 	XMLName			xml.Name            `db:"-"`
-	Id			string	            `db:"id"              xml:"id,attr"`
+	Id			string              `db:"id"              xml:"id,attr"`
 	ExpressionLang		string              `db:"expression_lang" xml:"expressionLanguage,attr"`
 	Description		string              `db:"description"     xml:"description"`
-	Text			string	            `db:"text"            xml:"text"`
+	Text			string              `db:"text"            xml:"text"`
 }
 
 // Read unmarshals a JSON object from an io.Reader.
