@@ -1,0 +1,24 @@
+Get List
+	GET /decision-definition
+Get List Count
+	GET /decision-definition/count
+Get
+	GET /decision-definition/{id} 
+	GET /decision-definition/key/{key} 
+	GET /decision-definition/key/{key}/tenant-id/{tenant-id}
+Get XML
+	GET /decision-definition/{id}/xml 
+	GET /decision-definition/key/{key}/xml 
+	GET /decision-definition/key/{key}/tenant-id/{tenant-id}/xml
+Get Diagram
+	GET /decision-definition/{id}/diagram 
+	GET /decision-definition/key/{key}/diagram 
+	GET /decision-definition/key/{key}/tenant-id/{tenant-id}/diagram
+Evaluate
+	POST /decision-definition/{id}/evaluate 
+	POST /decision-definition/key/{key}/evaluate 
+	POST /decision-definition/key/{key}/tenant-id/{tenant-id}/evaluate
+Update history time to live
+	PUT /decision-definition/{id}/history-time-to-live 
+	PUT /decision-definition/key/{key}/history-time-to-live 
+	PUT /decision-definition/key/{key}/tenant-id/{tenant-id}/history-time-to-live

@@ -27,37 +27,96 @@ import (
 // See https://docs.camunda.org/manual/7.4/reference/dmn11/decision-table/
 // ==============================================================================
 
-// Dmns is a collection of Decision Model and Notation (DMN) objects.
-type Dmns []*Dmn
+// DefinitionList is a collection of Decision Model and Notation (DMN) objects.
+type DefinitionList []*DefinitionInfo
+
+// Read unmarshals JSON from an io.Reader into an slice of objects.
+func (this *DefinitionList) Read(r io.Reader) (error) {
+	return readJson(this, r)
+}
+
+// ReadUrl unmarshals JSON from a url into an slice of objects.
+func (this *DefinitionList) ReadUrl(u string) (error) {
+	return readJsonFromUrl(this, u)
+}
+
+// ReadFile unmarshals JSON from a file into a slice of objects.
+func (this *DefinitionList) ReadFile(f string) (error) {
+	return readJsonFromFile(this, f)
+}
 
 // DMN is a Decision Model and Notation Object. It contains DMN metadata, the 
 // raw DMN XML, and the DMN Definition as a hierarchy of objects corresponding
 // to DMN XML elements.
-type Dmn struct {
-	Id			string              `db:"id"              json:"id"`
-	Key			string              `db:"key"             json:"key"`
-	Category		string              `db:"category"        json:"category"`
-	Name			string              `db:"name"            json:"name"`
-	Version			int	            `db:"version"         json:"version"`
-	Resource		string              `db:"resource"        json:"resource"`
-	DeploymentId		string              `db:"deployment_id"   json:"deploymentId"`
-	TenantId		string              `db:"tenant_id"       json:"tenantId"`
-	DefinitionId		string              `db:"definition_id"   json:"decisionRequirementsDefinitionId"`
-	DefinitionKey		string              `db:"definition_key"  json:"decisionRequirementsDefinitionKey"`
-	HistoryTtl		string              `db:"history_ttl"     json:"historyTimeToLive"`
-	DmnXml			string              `db:"dmn_xml"         json:"dmnXml"`
-	Definitions		*Definitions	    `db:"-"               xml:"definitions"`
+type DefinitionInfo struct {
+	Id			string		`json:"id"`
+	Key			string		`json:"key"`
+	Category		string		`json:"category"`
+	Name			string		`json:"name"`
+	Version			int		`json:"version"`
+	Resource		string		`json:"resource"`
+	DeploymentId		string		`json:"deploymentId"`
+	TenantId		string		`json:"tenantId"`
+	DecisionReqDefId	string		`json:"decisionRequirementsDefinitionId"`
+	DecisionReqDefKey	string		`json:"decisionRequirementsDefinitionKey"`
+	HistoryTtl		string		`json:"historyTimeToLive"`
 }
 
-// Definitions is a Decision Model and Notation Definition. 
-type Definitions struct {
-	XMLName			xml.Name            `db:"-"`
-	Xmlns			string              `db:"xmlns"           xml:"xmlns,attr"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	Name			string              `db:"name"            xml:"name,attr"`
-	ExpressionLang		string              `db:"expression_lang" xml:"expressionLanguage"`
-	Namespace		string              `db:"namespace"       xml:"namespace,attr"`
-	Decision		*Decision           `db:"-"               xml:"decision"`
+// Read unmarshals JSON from an io.Reader into an object.
+func (this *DefinitionInfo) Read(r io.Reader) (error) {
+	return readJson(this, r)
+}
+
+// ReadUrl unmarshals JSON from a url into an object.
+func (this *DefinitionInfo) ReadUrl(u string) (error) {
+	return readJsonFromUrl(this, u)
+}
+
+// ReadFile unmarshals JSON from a file into an object.
+func (this *DefinitionInfo) ReadFile(f string) (error) {
+	return readJsonFromFile(this, f)
+}
+
+// DmnXml is the DMN XML document describing the Decision Definition.
+type DmnXml struct {
+	Id			string		`json:"id"`
+	dmnXml			string		`json:"dmnXml`
+}
+
+// Read unmarshals JSON from an io.Reader into an object.
+func (this *DmnXml) Read(r io.Reader) (error) {
+	return readJson(this, r)
+}
+
+// ReadUrl unmarshals JSON from a url into an object.
+func (this *DmnXml) ReadUrl(u string) (error) {
+	return readJsonFromUrl(this, u)
+}
+
+// ReadFile unmarshals JSON from a file into an object.
+func (this *DmnXml) ReadFile(f string) (error) {
+	return readJsonFromFile(this, f)
+}
+
+// Definition is a Decision Model and Notation DefinitionInfo. 
+type Definition struct {
+	XMLName			xml.Name
+	Xmlns			string		`xml:"xmlns,attr"`
+	Id			string		`xml:"id,attr"`
+	Name			string		`xml:"name,attr"`
+	ExpressionLang		string		`xml:"expressionLanguage"`
+	Namespace		string		`xml:"namespace,attr"`
+	Decision		*Decision	`xml:"decision"`
+}
+
+// Read unmarshals XML from an io.Reader into an object.
+func (this *Definition) Read(r io.Reader) (error) {
+	return readXml(this, r)
+}
+
+// ReadString unmarshals XML from a string into an object.
+func (this *Definition) ReadString(s string) (error) {
+	return readXmlFromString(this, s)
 }
 
 // A DecisionTable is decision logic which can be depicted as a table in
@@ -70,19 +129,19 @@ type Definitions struct {
 // set in the id attribute on the decision element.
 
 type Decision struct {
-	XMLName			xml.Name            `db:"-"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	Name			string              `db:"name"            xml:"name,attr"`
-	DecisionTable		*DecisionTable      `db:"-"               xml:"decisionTable"`
+	XMLName			xml.Name
+	Id			string		`xml:"id,attr"`
+	Name			string		`xml:"name,attr"`
+	DecisionTable		*DecisionTable	`xml:"decisionTable"`
 }
 
 type DecisionTable struct {
-	XMLName			xml.Name            `db:"-"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	HitPolicy		string              `db:"hit_policy"      xml:"hitPolicy,attr"`
-	Inputs			[]*Input            `db:"-"               xml:"input"`
-	Outputs			[]*Output           `db:"-"               xml:"output"`
-	Rules			[]*Rule	            `db:"-"               xml:"rule"`
+	XMLName			xml.Name
+	Id			string		`xml:"id,attr"`
+	HitPolicy		string		`xml:"hitPolicy,attr"`
+	Inputs			[]*Input	`xml:"input"`
+	Outputs			[]*Output	`xml:"output"`
+	Rules			[]*Rule		`xml:"rule"`
 }
 
 // A decision table can have one or more inputs, also called input
@@ -100,10 +159,10 @@ type DecisionTable struct {
 // required but recommended since it helps to understand the decision.
 
 type Input struct {
-	XMLName			xml.Name            `db:"-"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	Label			string              `db:"label"           xml:"label,attr"`
-	InputExpressions	[]*InputExpression  `db:"-"               xml:"inputExpression"`
+	XMLName			xml.Name
+	Id			string		`xml:"id,attr"`
+	Label			string		`xml:"label,attr"`
+	InputExpressions	[]*InputExpression `xml:"inputExpression"`
 }
 
 // An input expression specifies how the value of the input clause is
@@ -125,11 +184,11 @@ type Input struct {
 // instead. The default expression language for input expressions is JUEL.
 
 type InputExpression struct {
-	XMLName			xml.Name            `db:"-"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	TypeRef			string              `db:"type_ref"        xml:"typeRef,attr"`
-	ExpressionLang		string              `db:"expression_lang" xml:"expressionLanguage,attr"`
-	Text			string              `db:"text"            xml:"text"`
+	XMLName			xml.Name
+	Id			string		`xml:"id,attr"`
+	TypeRef			string		`xml:"typeRef,attr"`
+	ExpressionLang		string		`xml:"expressionLanguage,attr"`
+	Text			string		`xml:"text"`
 }
 
 // A decision table can have one or more output, also called output clauses.
@@ -160,11 +219,11 @@ type InputExpression struct {
 // type String into a Double using a custom data type.
 
 type Output struct {
-	XMLName			xml.Name            `db:"-"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	Label			string              `db:"label"           xml:"label,attr"`
-	Name			string              `db:"name"            xml:"name,attr"`
-	TypeRef			string              `db:"type_ref"        xml:"typeRef,attr"`
+	XMLName			xml.Name
+	Id			string		`xml:"id,attr"`
+	Label			string		`xml:"label,attr"`
+	Name			string		`xml:"name,attr"`
+	TypeRef			string		`xml:"typeRef,attr"`
 }
 
 // A decision table can have one or more rules. Each rule contains input
@@ -175,10 +234,10 @@ type Output struct {
 // a rule element inside a decisionTable XML element.
 
 type Rule struct {
-	XMLName			xml.Name            `db:"-"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	InputEntries		[]*InputEntry       `db:"-"               xml:"inputEntry"`
-	OutputEntries		[]*OutputEntry      `db:"-"               xml:"outputEntry"`
+	XMLName			xml.Name
+	Id			string		`xml:"id,attr"`
+	InputEntries		[]*InputEntry	`xml:"inputEntry"`
+	OutputEntries		[]*OutputEntry	`xml:"outputEntry"`
 }
 
 // A rule can have one or more input entries which are the conditions of
@@ -195,10 +254,10 @@ type Rule struct {
 // instead. 
 
 type InputEntry struct {
-	XMLName			xml.Name            `db:"-"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	ExpressionLang		string              `db:"expression_lang" xml:"expressionLanguage,attr"`
-	Text			string              `db:"text"            xml:"text"`
+	XMLName			xml.Name
+	Id			string		`xml:"id,attr"`
+	ExpressionLang		string		`xml:"expressionLanguage,attr"`
+	Text			string		`xml:"text"`
 }
 
 // A rule can have one or more output entries which are the conclusions
@@ -218,65 +277,30 @@ type InputEntry struct {
 // element.
 
 type OutputEntry struct {
-	XMLName			xml.Name            `db:"-"`
-	Id			string              `db:"id"              xml:"id,attr"`
-	ExpressionLang		string              `db:"expression_lang" xml:"expressionLanguage,attr"`
-	Description		string              `db:"description"     xml:"description"`
-	Text			string              `db:"text"            xml:"text"`
+	XMLName			xml.Name
+	Id			string		`xml:"id,attr"`
+	ExpressionLang		string		`xml:"expressionLanguage,attr"`
+	Description		string		`xml:"description"`
+	Text			string		`xml:"text"`
 }
 
-// Read unmarshals a JSON object from an io.Reader.
-func (this *Dmn) Read(r io.Reader) (error) {
-	return readJson(this, r)
-}
-
-// Read unmarshals a collection of JSON objects from an io.Reader.
-func (this *Dmns) Read(r io.Reader) (error) {
-	return json.NewDecoder(r).Decode(&this)
-}
-
-// ReadUrl unmarshals a JSON object from a URL.
-func (this *Dmn) ReadUrl(u string) (error) {
-	return readJsonUrl(this, u)
-}
-
-// ReadUrl unmarshals a JSON object from a URL.
-func (this *Dmns) ReadUrl(u string) (error) {
-	return readJsonUrl(this, u)
-}
-
-// ReadFile unmarshals a JSON object from a file.
-func (this *Dmn) ReadFile(f string) (error) {
-	return readJsonFile(this, f)
-}
-
-// ReadFile unmarshals a JSON object from a file.
-func (this *Dmns) ReadFile(f string) (error) {
-	return readJsonFile(this, f)
-}
-
-// Read unmarshals XML from an io.Reader.
-func (this *Definitions) Read(r io.Reader) (error) {
-	return readXml(this, r)
-}
-
-// ReadString unmarshals XML from a string.
-func (this *Definitions) ReadString(s string) (error) {
-	return readXml(this, bytes.NewBufferString(s))
-}
-
-// readJson is a helper function for object Read methods.
+// readJson is a helper function for package/object methods.
 func readJson(t interface{}, r io.Reader) (error) {
 	return json.NewDecoder(r).Decode(&t)
 }
 
-// readXml is a helper function for object Read methods.
+// readXml is a helper function for package/object methods.
 func readXml(t interface{}, r io.Reader) (error) {
 	return xml.NewDecoder(r).Decode(&t)
 }
 
-// readJsonUrl is a helper function for object ReadUrl methods.
-func readJsonUrl(t interface{}, u string) (error) {
+// readXmlFromString is a helper function for package/object methods.
+func readXmlFromString(t interface{}, s string) (error) {
+	return readXml(t, bytes.NewBufferString(s))
+}
+
+// readJsonFromUrl is a helper function for package/object methods.
+func readJsonFromUrl(t interface{}, u string) (error) {
 
 	if resp, err := http.Get(u); err != nil {
 		return err
@@ -286,8 +310,8 @@ func readJsonUrl(t interface{}, u string) (error) {
 	}
 }
 
-// readJsonFile is a helper function for object ReadFile methods.
-func readJsonFile(t interface{}, f string) (error) {
+// readJsonFromFile is a helper function for package/object methods.
+func readJsonFromFile(t interface{}, f string) (error) {
 
         if fh, err := os.Open(f); err != nil {
                 return err
