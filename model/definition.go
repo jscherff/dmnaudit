@@ -284,18 +284,16 @@ func load(dst interface{}, src interface{}, enc string) (error) {
 // read returns an io.Reader ready for unmarshalling.
 func read(w io.Writer, s string) (int64, error) {
 
-	_, err := os.Stat(s)
-
 	switch true {
-
-	case !os.IsNotExist(err):
-		return readFile(w, s)
 
 	case strings.HasPrefix(s, `http:`):
 		return readUrl(w, s)
 
 	case strings.HasPrefix(s, `https:`):
 		return readUrl(w, s)
+
+	case fileExists(s):
+		return readFile(w, s)
 
 	default:
 		return readString(w, s)
@@ -327,4 +325,14 @@ func readFile(w io.Writer, f string) (int64, error) {
 func readString(w io.Writer, s string) (int64, error) {
 	n, err := io.WriteString(w, s)
 	return int64(n), err
+}
+
+// fileExists returns true if a file exists, false if it does not.
+func fileExists(f string) (bool) {
+	if _, err := os.Stat(f); os.IsNotExist(err) {
+		return false
+	} else if _, err := os.Stat(f); err == nil {
+		return true
+	}
+	return false
 }
