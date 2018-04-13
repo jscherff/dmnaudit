@@ -15,39 +15,33 @@
 package model
 
 import (
+	`bufio`
 	`bytes`
 	`encoding/xml`
 	`encoding/json`
+	`fmt`
 	`io`
 	`net/http`
 	`os`
+	`strings`
 )
 
 // ==============================================================================
 // See https://docs.camunda.org/manual/7.4/reference/dmn11/decision-table/
 // ==============================================================================
 
-// DefinitionList is a collection of Decision Model and Notation (DMN) objects.
+// DefinitionList is a collection of Decision Definitions.
 type DefinitionList []*DefinitionInfo
 
-// Read unmarshals JSON from an io.Reader into an slice of objects.
-func (this *DefinitionList) Read(r io.Reader) (error) {
-	return readJson(this, r)
+// Read unmarshals JSON from an io.Reader, url, file, or string into a slice of
+// objects.
+func (this *DefinitionList) Load(src interface{}) (error) {
+	return load(this, src, `json`)
 }
 
-// ReadUrl unmarshals JSON from a url into an slice of objects.
-func (this *DefinitionList) ReadUrl(u string) (error) {
-	return readJsonFromUrl(this, u)
-}
-
-// ReadFile unmarshals JSON from a file into a slice of objects.
-func (this *DefinitionList) ReadFile(f string) (error) {
-	return readJsonFromFile(this, f)
-}
-
-// DMN is a Decision Model and Notation Object. It contains DMN metadata, the 
-// raw DMN XML, and the DMN Definition as a hierarchy of objects corresponding
-// to DMN XML elements.
+// DefinitionInfo contains DMN Decision Definition metadata. Information in this
+// ojbect can be used to retrieve other data, such as the DMN XML describing the
+// Decision Definition.
 type DefinitionInfo struct {
 	Id			string		`json:"id"`
 	Key			string		`json:"key"`
@@ -60,42 +54,12 @@ type DefinitionInfo struct {
 	DecisionReqDefId	string		`json:"decisionRequirementsDefinitionId"`
 	DecisionReqDefKey	string		`json:"decisionRequirementsDefinitionKey"`
 	HistoryTtl		string		`json:"historyTimeToLive"`
-}
-
-// Read unmarshals JSON from an io.Reader into an object.
-func (this *DefinitionInfo) Read(r io.Reader) (error) {
-	return readJson(this, r)
-}
-
-// ReadUrl unmarshals JSON from a url into an object.
-func (this *DefinitionInfo) ReadUrl(u string) (error) {
-	return readJsonFromUrl(this, u)
-}
-
-// ReadFile unmarshals JSON from a file into an object.
-func (this *DefinitionInfo) ReadFile(f string) (error) {
-	return readJsonFromFile(this, f)
-}
-
-// DmnXml is the DMN XML document describing the Decision Definition.
-type DmnXml struct {
-	Id			string		`json:"id"`
 	dmnXml			string		`json:"dmnXml`
 }
 
-// Read unmarshals JSON from an io.Reader into an object.
-func (this *DmnXml) Read(r io.Reader) (error) {
-	return readJson(this, r)
-}
-
-// ReadUrl unmarshals JSON from a url into an object.
-func (this *DmnXml) ReadUrl(u string) (error) {
-	return readJsonFromUrl(this, u)
-}
-
-// ReadFile unmarshals JSON from a file into an object.
-func (this *DmnXml) ReadFile(f string) (error) {
-	return readJsonFromFile(this, f)
+// Read unmarshals JSON from an io.Reader, url, file or string into an object.
+func (this *DefinitionInfo) Load(src interface{}) (error) {
+	return load(this, src, `json`)
 }
 
 // Definition is a Decision Model and Notation DefinitionInfo. 
@@ -109,14 +73,9 @@ type Definition struct {
 	Decision		*Decision	`xml:"decision"`
 }
 
-// Read unmarshals XML from an io.Reader into an object.
-func (this *Definition) Read(r io.Reader) (error) {
-	return readXml(this, r)
-}
-
-// ReadString unmarshals XML from a string into an object.
-func (this *Definition) ReadString(s string) (error) {
-	return readXmlFromString(this, s)
+// Read unmarshals XML from an io.Reader, url, file, or string into an object.
+func (this *Definition) Load(src interface{}) (error) {
+	return load(this, src, `xml`)
 }
 
 // A DecisionTable is decision logic which can be depicted as a table in
@@ -284,39 +243,88 @@ type OutputEntry struct {
 	Text			string		`xml:"text"`
 }
 
-// readJson is a helper function for package/object methods.
-func readJson(t interface{}, r io.Reader) (error) {
-	return json.NewDecoder(r).Decode(&t)
+// -----------------------------------------------------------------------------
+
+// load unmarshals JSON or XML from an io.Reader.
+func load(dst interface{}, src interface{}, enc string) (error) {
+
+	switch t := src.(type) {
+
+	case io.Reader:
+
+		switch enc {
+
+		case `json`:
+			return json.NewDecoder(t).Decode(&dst)
+
+		case `xml`:
+			return xml.NewDecoder(t).Decode(&dst)
+
+		default:
+			return fmt.Errorf(`unsupported encoding: %s`, enc)
+		}
+
+	case string:
+
+		var b bytes.Buffer
+
+		if _, err := read(bufio.NewWriter(&b), t); err != nil {
+			return err
+		} else {
+			return load(dst, bufio.NewReader(&b), enc)
+		}
+
+	default:
+		return fmt.Errorf(`unsupported source: %T`, t)
+	}
+
+	return nil
 }
 
-// readXml is a helper function for package/object methods.
-func readXml(t interface{}, r io.Reader) (error) {
-	return xml.NewDecoder(r).Decode(&t)
-}
+// read returns an io.Reader ready for unmarshalling.
+func read(w io.Writer, s string) (int64, error) {
 
-// readXmlFromString is a helper function for package/object methods.
-func readXmlFromString(t interface{}, s string) (error) {
-	return readXml(t, bytes.NewBufferString(s))
-}
+	_, err := os.Stat(s)
 
-// readJsonFromUrl is a helper function for package/object methods.
-func readJsonFromUrl(t interface{}, u string) (error) {
+	switch true {
 
-	if resp, err := http.Get(u); err != nil {
-		return err
-	} else {
-		defer resp.Body.Close()
-		return readJson(t, resp.Body)
+	case !os.IsNotExist(err):
+		return readFile(w, s)
+
+	case strings.HasPrefix(s, `http:`):
+		return readUrl(w, s)
+
+	case strings.HasPrefix(s, `https:`):
+		return readUrl(w, s)
+
+	default:
+		return readString(w, s)
 	}
 }
 
-// readJsonFromFile is a helper function for package/object methods.
-func readJsonFromFile(t interface{}, f string) (error) {
+// readUrl returns a buffer filled from a URL.
+func readUrl(w io.Writer, u string) (int64, error) {
 
+	if resp, err := http.Get(u); err != nil {
+		return 0, err
+	} else {
+		defer resp.Body.Close()
+		return io.Copy(w, resp.Body)
+	}
+}
+
+// readFile returns a byte buffer filled from a file.
+func readFile(w io.Writer, f string) (int64, error) {
         if fh, err := os.Open(f); err != nil {
-                return err
+                return 0, err
 	} else {
                 defer fh.Close()
-		return readJson(t, fh)
+		return io.Copy(w, fh)
         }
+}
+
+// readString returns a byte buffer filled from a string.
+func readString(w io.Writer, s string) (int64, error) {
+	n, err := io.WriteString(w, s)
+	return int64(n), err
 }

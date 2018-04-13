@@ -3,7 +3,7 @@ package main
 import (
 	`fmt`
 	`log`
-	`github.com/jscherff/dmnaudit/model`
+	`github.com/jscherff/dmnsdk/model`
 )
 
 // http://esbeap-qa.24hourfit.com:8180/engine-rest/decision-definition
@@ -24,14 +24,19 @@ func init() {
 
 func main() {
 
-	dmns := new(model.Dmns)
+	//dl := new(model.DefinitionList)
+	d := new(model.Definition)
 
-	url := dmnService + dmnListPath
+	//url := dmnService + dmnListPath
 
-	if err := dmns.ReadUrl(url); err != nil {
+	//if err := dl.Load(url); err != nil {
+	if err := d.Load(`doc/dmn.xml`); err != nil {
 		log.Fatal(err)
 	}
 
+	//fmt.Println(dl)
+	fmt.Println(d)
+/*
 	for _, dmn := range *dmns {
 
 		fmt.Printf("DMN Id: %s\n", dmn.Id)
@@ -110,4 +115,5 @@ func main() {
 			}
 		}
 	}
+*/
 }
