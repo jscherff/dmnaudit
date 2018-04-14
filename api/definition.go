@@ -1,11 +1,10 @@
-package main
+package api
 
 import (
 	`fmt`
-	`net/http`
-	`strings`
 	`github.com/jscherff/dmnsdk/model`
 )
+
 // =============================================================================
 // Get List Parameters
 //
@@ -67,10 +66,10 @@ const (
 	epDefinitionCount Endpoint	= `/count`
 	epDefinitionInfoById Endpoint	= `/%s`
 	epDefinitionInfoByKey Endpoint	= `/key/%s`
+	epDefinitionXmlById Endpoint	= `/%s/xml`
+	epDefinitionXmlByKey Endpoint	= `/key/%s/xml`
 	epDefinitionById Endpoint	= `/%s`
 	epDefinitionByKey Endpoint	= `/key/%s`
-	epDmnXmlById Endpoint		= `/%s/xml`
-	epDmnXmlByKey Endpoint		= `/key/%s/xml`
 )
 
 func (this Endpoint) String() (string) {
@@ -82,7 +81,13 @@ func (this Endpoint) With(param string) (string) {
 }
 
 type DmnApi interface {
-	DefinitionList() (*model.DefinitionList, error)
+	GetDefinitionList() (*model.DefinitionList, error)
+	GetDefinitionInfoById(string) (*model.DefinitionInfo, error)
+	GetDefinitionInfoByKey(string) (*model.DefinitionInfo, error)
+	GetDefinitionXmlById(string) (*model.DefinitionInfo, error)
+	GetDefinitionXmlByKey(string) (*model.DefinitionInfo, error)
+	GetDefinitionById(string) (*model.Definition, error)
+	GetDefinitionByKey(string) (*model.Definition, error)
 }
 
 type dmnApi struct {
@@ -94,80 +99,44 @@ func NewDmnApi(server string) (DmnApi) {
 }
 
 func (this *dmnApi) GetDefinitionList() (*model.DefinitionList, error) {
-
-	dl := &model.DefinitionList{}
 	url := this.Server + epDefinitionList.String()
-
-	if err := dl.LoadUrl(url); err != nil {
-		return nil, err
-	}
-
-	return dl, nil
+	return model.NewDefinitionList(url)
 }
+
+func (this *dmnApi) GetDefinitionInfoById(id string) (*model.DefinitionInfo, error) {
+	url := this.Server + epDefinitionInfoById.With(id)
+	return model.NewDefinitionInfo(url)
+}
+
+func (this *dmnApi) GetDefinitionInfoByKey(key string) (*model.DefinitionInfo, error) {
+	url := this.Server + epDefinitionInfoByKey.With(key)
+	return model.NewDefinitionInfo(url)
+}
+
+func (this *dmnApi) GetDefinitionXmlById(id string) (*model.DefinitionInfo, error) {
+	url := this.Server + epDefinitionXmlById.With(id)
+	return model.NewDefinitionInfo(url)
+}
+
+func (this *dmnApi) GetDefinitionXmlByKey(key string) (*model.DefinitionInfo, error) {
+	url := this.Server + epDefinitionXmlByKey.With(key)
+	return model.NewDefinitionInfo(url)
+}
+
 
 func (this *dmnApi) GetDefinitionById(id string) (*model.Definition, error) {
-
-	d := &model.Definition{}
-	url := this.Server + epDefinitionById.With(id)
-
-	if err := d.LoadUrl(url); err != nil {
+	if di, err := this.GetDefinitionXmlById(id); err != nil {
 		return nil, err
+	} else {
+		return model.NewDefinition(di.DmnXml)
 	}
-
-	return d, nil
 }
 
-func (this *dmnApi) GetDefinitionById(id string) (*model.Definition, error) {
-
-	d := &model.Definition{}
-	url := this.Server + epDefinitionById.With(id)
-
-	if err := d.LoadUrl(url); err != nil {
+func (this *dmnApi) GetDefinitionByKey(key string) (*model.Definition, error) {
+	if di, err := this.GetDefinitionXmlByKey(key); err != nil {
 		return nil, err
-	}
-
-	return d, nil
-}
-
-
-
-
-
-func main() {
-}
-
-// withParam substitutes a path parameter with the provided value.
-func withParam(endpoint, param, value string) (string) {
-}
-
-// loadJson unmarshals JSON from an io.Reader into an object.
-func loadJson(t interface{}, r io.Reader) (error) {
-	return json.NewDecoder(r).Decode(&t)
-}
-
-// loadXml unmarshals XML from an io.Reader into an object.
-func loadXml(t interface{}, r io.Reader) (error) {
-	return xml.NewDecoder(r).Decode(&t)
-}
-
-// loadJsonFromUrl unmarshals JSON from a URL into an object.
-func loadJsonFromUrl(t interface{}, u string) (error) {
-
-	if resp, err := http.Get(u); err != nil {
-		return err
 	} else {
-		defer resp.Body.Close()
-		return loadJson(t, resp.Body)
+		println(di.DmnXml)
+		return model.NewDefinition(di.DmnXml)
 	}
-}
-
-// loadJsonFromFile unmarshals JSON from a file into an object.
-func loadJsonFromFile(t interface{}, f string) (error) {
-
-        if fh, err := os.Open(f); err != nil {
-                return err
-	} else {
-                defer fh.Close()
-		return loadJson(t, fh)
-        }
 }

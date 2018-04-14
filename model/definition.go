@@ -30,6 +30,13 @@ import (
 // See https://docs.camunda.org/manual/7.4/reference/dmn11/decision-table/
 // ==============================================================================
 
+// NewDefinitionList creates, loads, and returns a DefinitionList.
+func NewDefinitionList(src interface{}) (*DefinitionList, error) {
+	this := new(DefinitionList)
+	err := this.Load(src)
+	return this, err
+}
+
 // DefinitionList is a collection of Decision Definitions.
 type DefinitionList []*DefinitionInfo
 
@@ -37,6 +44,13 @@ type DefinitionList []*DefinitionInfo
 // objects.
 func (this *DefinitionList) Load(src interface{}) (error) {
 	return load(this, src, `json`)
+}
+
+// NewDefinitionInfo creates, loads, and returns a DefinitionInfo object.
+func NewDefinitionInfo(src interface{}) (*DefinitionInfo, error) {
+	this := new(DefinitionInfo)
+	err := this.Load(src)
+	return this, err
 }
 
 // DefinitionInfo contains DMN Decision Definition metadata. Information in this
@@ -54,12 +68,19 @@ type DefinitionInfo struct {
 	DecisionReqDefId	string		`json:"decisionRequirementsDefinitionId"`
 	DecisionReqDefKey	string		`json:"decisionRequirementsDefinitionKey"`
 	HistoryTtl		string		`json:"historyTimeToLive"`
-	dmnXml			string		`json:"dmnXml`
+	DmnXml			string		`json:"dmnXml`
 }
 
 // Read unmarshals JSON from an io.Reader, url, file or string into an object.
 func (this *DefinitionInfo) Load(src interface{}) (error) {
 	return load(this, src, `json`)
+}
+
+// NewDefinition creates, loads, and returns a Definition object.
+func NewDefinition(src interface{}) (*Definition, error) {
+	this := new(Definition)
+	err := this.Load(src)
+	return this, err
 }
 
 // Definition is a Decision Model and Notation DefinitionInfo. 
@@ -68,8 +89,8 @@ type Definition struct {
 	Xmlns			string		`xml:"xmlns,attr"`
 	Id			string		`xml:"id,attr"`
 	Name			string		`xml:"name,attr"`
-	ExpressionLang		string		`xml:"expressionLanguage"`
 	Namespace		string		`xml:"namespace,attr"`
+	ExpressionLang		string		`xml:"expressionLanguage"`
 	Decision		*Decision	`xml:"decision"`
 }
 
@@ -266,11 +287,15 @@ func load(dst interface{}, src interface{}, enc string) (error) {
 
 	case string:
 
-		var b bytes.Buffer
+		var (
+			b bytes.Buffer
+			w = bufio.NewWriter(&b)
+		)
 
-		if _, err := read(bufio.NewWriter(&b), t); err != nil {
+		if _, err := read(w, t); err != nil {
 			return err
 		} else {
+			w.Flush()
 			return load(dst, bufio.NewReader(&b), enc)
 		}
 
@@ -313,12 +338,13 @@ func readUrl(w io.Writer, u string) (int64, error) {
 
 // readFile returns a byte buffer filled from a file.
 func readFile(w io.Writer, f string) (int64, error) {
-        if fh, err := os.Open(f); err != nil {
-                return 0, err
+
+	if fh, err := os.Open(f); err != nil {
+		return 0, err
 	} else {
-                defer fh.Close()
+		defer fh.Close()
 		return io.Copy(w, fh)
-        }
+	}
 }
 
 // readString returns a byte buffer filled from a string.
