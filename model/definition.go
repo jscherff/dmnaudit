@@ -56,19 +56,19 @@ func NewDefinitionInfoMap(src interface{}) (DefinitionInfoMap, error) {
 type DefinitionInfoMap map[string]map[int]*DefinitionInfo
 
 // Get returns a DefinitionInfo object given its key and version.
-func (this DefinitionInfoMap) Get(key string, version int) (*DefinitionInfo, error) {
+func (this DefinitionInfoMap) Get(key string, ver int) (*DefinitionInfo, error) {
 
-	if di, ok := this[key][version]; !ok {
-		return nil, fmt.Errorf(`Definition key '%s' version '%d' not found`, key, version)
+	if di, ok := this[key][ver]; !ok {
+		return nil, fmt.Errorf(`key '%s' version '%d' not found`, key, ver)
 	} else {
 		return di, nil
 	}
 }
 
 // GetId returns a DefinitionInfo object's ID given its key and version.
-func (this DefinitionInfoMap) GetId(key string, version int) (string, error) {
+func (this DefinitionInfoMap) GetId(key string, ver int) (string, error) {
 
-	if di, err := this.Get(key, version); err != nil {
+	if di, err := this.Get(key, ver); err != nil {
 		return ``, err
 	} else {
 		return di.Id, nil
