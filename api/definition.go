@@ -62,7 +62,8 @@ type Endpoint string
 
 const (
 	epDefinitionPrefix string	= `/engine-rest/decision-definition`
-	epDefinitionList Endpoint	= ``
+	epDefinitionInfoList Endpoint	= ``
+	epDefinitionInfoMap Endpoint	= ``
 	epDefinitionCount Endpoint	= `/count`
 	epDefinitionInfoById Endpoint	= `/%s`
 	epDefinitionInfoByKey Endpoint	= `/key/%s`
@@ -81,7 +82,8 @@ func (this Endpoint) With(param string) (string) {
 }
 
 type DmnApi interface {
-	GetDefinitionList() (*model.DefinitionList, error)
+	GetDefinitionInfoList() (*model.DefinitionInfoList, error)
+	GetDefinitionInfoMap() (model.DefinitionInfoMap, error)
 	GetDefinitionInfoById(string) (*model.DefinitionInfo, error)
 	GetDefinitionInfoByKey(string) (*model.DefinitionInfo, error)
 	GetDefinitionXmlById(string) (*model.DefinitionInfo, error)
@@ -98,9 +100,14 @@ func NewDmnApi(server string) (DmnApi) {
 	return &dmnApi{server + epDefinitionPrefix}
 }
 
-func (this *dmnApi) GetDefinitionList() (*model.DefinitionList, error) {
-	url := this.Server + epDefinitionList.String()
-	return model.NewDefinitionList(url)
+func (this *dmnApi) GetDefinitionInfoList() (*model.DefinitionInfoList, error) {
+	url := this.Server + epDefinitionInfoList.String()
+	return model.NewDefinitionInfoList(url)
+}
+
+func (this *dmnApi) GetDefinitionInfoMap() (model.DefinitionInfoMap, error) {
+	url := this.Server + epDefinitionInfoMap.String()
+	return model.NewDefinitionInfoMap(url)
 }
 
 func (this *dmnApi) GetDefinitionInfoById(id string) (*model.DefinitionInfo, error) {
@@ -136,7 +143,6 @@ func (this *dmnApi) GetDefinitionByKey(key string) (*model.Definition, error) {
 	if di, err := this.GetDefinitionXmlByKey(key); err != nil {
 		return nil, err
 	} else {
-		println(di.DmnXml)
 		return model.NewDefinition(di.DmnXml)
 	}
 }

@@ -30,21 +30,82 @@ import (
 // See https://docs.camunda.org/manual/7.4/reference/dmn11/decision-table/
 // ==============================================================================
 
-// NewDefinitionList creates, loads, and returns a DefinitionList.
-func NewDefinitionList(src interface{}) (*DefinitionList, error) {
-	this := new(DefinitionList)
+// NewDefinitionInfoList creates, loads, and returns a DefinitionInfoMap.
+func NewDefinitionInfoMap(src interface{}) (DefinitionInfoMap, error) {
+
+	dm := make(DefinitionInfoMap)
+	dl, err := NewDefinitionInfoList(src)
+
+	if err != nil {
+		return nil, err
+	}
+
+	for _, di := range *dl {
+
+		if dm[di.Key] == nil {
+			dm[di.Key] = make(map[int]*DefinitionInfo)
+		}
+
+		dm[di.Key][di.Version] = di
+	}
+
+	return dm, nil
+}
+
+// DefinitionInfoMap is a map of Defintion Key and Version to DefinitionInfo.
+type DefinitionInfoMap map[string]map[int]*DefinitionInfo
+
+// Get returns a DefinitionInfo object given its key and version.
+func (this DefinitionInfoMap) Get(key string, version int) (*DefinitionInfo, error) {
+
+	if di, ok := this[key][version]; !ok {
+		return nil, fmt.Errorf(`Definition key '%s' version '%d' not found`, key, version)
+	} else {
+		return di, nil
+	}
+}
+
+// GetId returns a DefinitionInfo object's ID given its key and version.
+func (this DefinitionInfoMap) GetId(key string, version int) (string, error) {
+
+	if di, err := this.Get(key, version); err != nil {
+		return ``, err
+	} else {
+		return di.Id, nil
+	}
+}
+
+// NewDefinitionInfoList creates, loads, and returns a DefinitionInfoList.
+func NewDefinitionInfoList(src interface{}) (*DefinitionInfoList, error) {
+	this := new(DefinitionInfoList)
 	err := this.Load(src)
 	return this, err
 }
 
-// DefinitionList is a collection of Decision Definitions.
-type DefinitionList []*DefinitionInfo
+// DefinitionInfoList is a collection of Decision Definitions.
+type DefinitionInfoList []*DefinitionInfo
 
 // Read unmarshals JSON from an io.Reader, url, file, or string into a slice of
 // objects.
-func (this *DefinitionList) Load(src interface{}) (error) {
+func (this *DefinitionInfoList) Load(src interface{}) (error) {
 	return load(this, src, `json`)
 }
+
+// Json marshals an object into a JSON byte array.
+func (this *DefinitionInfoList) Json() ([]byte, error) {
+	return json.MarshalIndent(this, ``, `    `)
+}
+
+// String implements the Stringer interface for the object.
+func (this *DefinitionInfoList) String() (string) {
+	if b, err := this.Json(); err != nil {
+		return err.Error()
+	} else {
+		return string(b)
+	}
+}
+
+// Map returns a dictionary of DefinitionInfo objects keyed on 
 
 // NewDefinitionInfo creates, loads, and returns a DefinitionInfo object.
 func NewDefinitionInfo(src interface{}) (*DefinitionInfo, error) {
@@ -76,6 +137,20 @@ func (this *DefinitionInfo) Load(src interface{}) (error) {
 	return load(this, src, `json`)
 }
 
+// Json marshals an object into a JSON byte array.
+func (this *DefinitionInfo) Json() ([]byte, error) {
+	return json.MarshalIndent(this, ``, `    `)
+}
+
+// String implements the Stringer interface for the object.
+func (this *DefinitionInfo) String() (string) {
+	if b, err := this.Json(); err != nil {
+		return err.Error()
+	} else {
+		return string(b)
+	}
+}
+
 // NewDefinition creates, loads, and returns a Definition object.
 func NewDefinition(src interface{}) (*Definition, error) {
 	this := new(Definition)
@@ -97,6 +172,20 @@ type Definition struct {
 // Read unmarshals XML from an io.Reader, url, file, or string into an object.
 func (this *Definition) Load(src interface{}) (error) {
 	return load(this, src, `xml`)
+}
+
+// Json marshals an object into a JSON byte array.
+func (this *Definition) Json() ([]byte, error) {
+	return json.MarshalIndent(this, ``, `    `)
+}
+
+// String implements the Stringer interface for the object.
+func (this *Definition) String() (string) {
+	if b, err := this.Json(); err != nil {
+		return err.Error()
+	} else {
+		return string(b)
+	}
 }
 
 // A DecisionTable is decision logic which can be depicted as a table in
@@ -273,7 +362,7 @@ func load(dst interface{}, src interface{}, enc string) (error) {
 
 	case io.Reader:
 
-		switch enc {
+		switch strings.ToLower(enc) {
 
 		case `json`:
 			return json.NewDecoder(t).Decode(&dst)
@@ -311,10 +400,10 @@ func read(w io.Writer, s string) (int64, error) {
 
 	switch true {
 
-	case strings.HasPrefix(s, `http:`):
+	case strings.HasPrefix(strings.ToLower(s), `http:`):
 		return readUrl(w, s)
 
-	case strings.HasPrefix(s, `https:`):
+	case strings.HasPrefix(strings.ToLower(s), `https:`):
 		return readUrl(w, s)
 
 	case fileExists(s):
