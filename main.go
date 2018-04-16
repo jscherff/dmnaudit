@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	defRetrieve = `%s: could not get %s %s for key '%s' version '%d': %v`
-	defCompare = `%s: %s and %s %s for Key '%s' version '%d': %s`
+	defRetrieve = `[%s] could not get %s %s for key '%s' version '%d': %v`
+	defCompare = `[%s] %s and %s %s for Key '%s' version '%d': %s`
 	esbeapPRD = `http://esbeap.24hourfit.com:8180`
 	esbeapQA = `http://esbeap-qa.24hourfit.com:8180`
 	esbeapDEV= `http://esbeap-dev.24hourfit.com:8180`
