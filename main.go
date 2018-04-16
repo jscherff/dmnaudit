@@ -53,20 +53,20 @@ func main() {
 
 			// Retrieve the DMN for key/ver for the first environment.
 			if d1, err = dmnApi1.GetDefinitionById(di1.Id); err != nil {
-				log.Printf(defRetrieve, `ERROR`, `PRD`, `DMN`, key, ver, err)
+				log.Printf(defRetrieve, `FAILURE`, `PRD`, `DMN`, key, ver, err)
 				continue
 			}
 
 
 			// Retrieve the DMN Info for key/ver for the second environment.
 			if di2, err = diMap2.Get(key, ver); err != nil {
-				log.Printf(defRetrieve, `ERROR`, `QA`, `DMN Info`, key, ver, err)
+				log.Printf(defRetrieve, `FAILURE`, `QA`, `DMN Info`, key, ver, err)
 				continue
 			}
 
 			// Retrieve the DMN for key/ver for the second environment.
 			if d2, err = dmnApi2.GetDefinitionById(di2.Id); err != nil {
-				log.Printf(defRetrieve, `ERROR`, `QA`, `DMN`, key, ver, err)
+				log.Printf(defRetrieve, `FAILURE`, `QA`, `DMN`, key, ver, err)
 				continue
 			}
 
