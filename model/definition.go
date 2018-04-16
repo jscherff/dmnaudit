@@ -15,15 +15,8 @@
 package model
 
 import (
-	`bufio`
-	`bytes`
-	`encoding/xml`
-	`encoding/json`
 	`fmt`
-	`io`
-	`net/http`
-	`os`
-	`strings`
+	`encoding/xml`
 )
 
 // ==============================================================================
@@ -93,7 +86,7 @@ func (this *DefinitionInfoList) Load(src interface{}) (error) {
 
 // Json marshals an object into a JSON byte array.
 func (this *DefinitionInfoList) Json() ([]byte, error) {
-	return json.MarshalIndent(this, ``, `    `)
+	return toJson(this)
 }
 
 // String implements the Stringer interface for the object.
@@ -139,7 +132,7 @@ func (this *DefinitionInfo) Load(src interface{}) (error) {
 
 // Json marshals an object into a JSON byte array.
 func (this *DefinitionInfo) Json() ([]byte, error) {
-	return json.MarshalIndent(this, ``, `    `)
+	return toJson(this)
 }
 
 // String implements the Stringer interface for the object.
@@ -160,7 +153,7 @@ func NewDefinition(src interface{}) (*Definition, error) {
 
 // Definition is a Decision Model and Notation DefinitionInfo. 
 type Definition struct {
-	XMLName			xml.Name
+	XMLName			xml.Name	`json:"-"`
 	Xmlns			string		`xml:"xmlns,attr"`
 	Id			string		`xml:"id,attr"`
 	Name			string		`xml:"name,attr"`
@@ -176,7 +169,12 @@ func (this *Definition) Load(src interface{}) (error) {
 
 // Json marshals an object into a JSON byte array.
 func (this *Definition) Json() ([]byte, error) {
-	return json.MarshalIndent(this, ``, `    `)
+	return toJson(this)
+}
+
+// TODO
+func (this *Definition) Map() (map[string]map[string]map[string]interface{}, error) {
+	return nil, nil
 }
 
 // String implements the Stringer interface for the object.
@@ -351,103 +349,4 @@ type OutputEntry struct {
 	ExpressionLang		string		`xml:"expressionLanguage,attr"`
 	Description		string		`xml:"description"`
 	Text			string		`xml:"text"`
-}
-
-// -----------------------------------------------------------------------------
-
-// load unmarshals JSON or XML from an io.Reader.
-func load(dst interface{}, src interface{}, enc string) (error) {
-
-	switch t := src.(type) {
-
-	case io.Reader:
-
-		switch strings.ToLower(enc) {
-
-		case `json`:
-			return json.NewDecoder(t).Decode(&dst)
-
-		case `xml`:
-			return xml.NewDecoder(t).Decode(&dst)
-
-		default:
-			return fmt.Errorf(`unsupported encoding: %s`, enc)
-		}
-
-	case string:
-
-		var (
-			b bytes.Buffer
-			w = bufio.NewWriter(&b)
-		)
-
-		if _, err := read(w, t); err != nil {
-			return err
-		} else {
-			w.Flush()
-			return load(dst, bufio.NewReader(&b), enc)
-		}
-
-	default:
-		return fmt.Errorf(`unsupported source: %T`, t)
-	}
-
-	return nil
-}
-
-// read returns an io.Reader ready for unmarshalling.
-func read(w io.Writer, s string) (int64, error) {
-
-	switch true {
-
-	case strings.HasPrefix(strings.ToLower(s), `http:`):
-		return readUrl(w, s)
-
-	case strings.HasPrefix(strings.ToLower(s), `https:`):
-		return readUrl(w, s)
-
-	case fileExists(s):
-		return readFile(w, s)
-
-	default:
-		return readString(w, s)
-	}
-}
-
-// readUrl returns a buffer filled from a URL.
-func readUrl(w io.Writer, u string) (int64, error) {
-
-	if resp, err := http.Get(u); err != nil {
-		return 0, err
-	} else {
-		defer resp.Body.Close()
-		return io.Copy(w, resp.Body)
-	}
-}
-
-// readFile returns a byte buffer filled from a file.
-func readFile(w io.Writer, f string) (int64, error) {
-
-	if fh, err := os.Open(f); err != nil {
-		return 0, err
-	} else {
-		defer fh.Close()
-		return io.Copy(w, fh)
-	}
-}
-
-// readString returns a byte buffer filled from a string.
-func readString(w io.Writer, s string) (int64, error) {
-	n, err := io.WriteString(w, s)
-	return int64(n), err
-}
-
-// fileExists returns true if a file exists, false if it does not.
-func fileExists(f string) (bool) {
-	if _, err := os.Stat(f); os.IsNotExist(err) {
-		return false
-	} else if _, err := os.Stat(f); err == nil {
-		return true
-	}
-	return false
 }
