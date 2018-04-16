@@ -11,6 +11,21 @@ import (
 	`reflect`
 )
 
+type delta struct {
+	Object string
+	Property string
+	ValueA interface{}
+	ValueB interface{}
+}
+
+type deltas []change
+
+func (this deltas) Add(obj, prop string, vala, valb interface{}) {
+	ch := &change{obj, prop, vala, valb}
+	this = append(this, ch)
+}
+
+
 // During deepDiff, must keep track of checks that are
 // in progress. The comparison algorithm assumes that all
 // checks in progress are true when it reencounters them.
@@ -184,7 +199,7 @@ func deepDiff(v1, v2 Value, visited map[visit]bool, depth int) bool {
 // values that have been compared before, it treats the values as
 // equal rather than examining the values to which they point.
 // This ensures that DeepEqual terminates.
-func Diff(i1, i2 interface{}) (error) {
+func DeepDiff(i1, i2 interface{}) (error) {
 
 	if reflect.DeepEqual(i1, i2) {
 		return nil
