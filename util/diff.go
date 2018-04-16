@@ -11,45 +11,55 @@ import (
 	`reflect`
 )
 
-type delta struct {
-	Object string
-	Property string
-	ValueA interface{}
-	ValueB interface{}
-}
-
-type deltas []change
-
-func (this deltas) Add(obj, prop string, vala, valb interface{}) {
-	ch := &change{obj, prop, vala, valb}
-	this = append(this, ch)
-}
-
-
-// During deepDiff, must keep track of checks that are
-// in progress. The comparison algorithm assumes that all
-// checks in progress are true when it reencounters them.
-// Visited comparisons are stored in a map indexed by visit.
+// visit keeps track of checks in progress. The comparison algorithm assumes
+// that all checks in progress are true when it reencounters them. Visited
+// comparisons are stored in a map indexed by visit.
 type visit struct {
-	a1  unsafe.Pointer
-	a2  unsafe.Pointer
-	typ reflect.Type
+	addr1		unsafe.Pointer
+	addr2		unsafe.Pointer
+	typ		reflect.Type
+}
+
+// Current keeps track of the object and property under examination.
+type Current struct {
+	Object		string
+	Property	string
+}
+
+// set changes the current object and property.
+func (this *Current) set(obj, prop string) {
+	this.Object, this.Property = obj, prop
+}
+
+// Delta is a difference in the value of a property in two objects.
+type Delta struct {
+	Object		string
+	Property	string
+	Value1		interface{}
+	Value2		interface{}
+}
+
+// Deltas is an ordered collection of deltas.
+type Deltas []*Delta
+
+// add appends a delta to a collection of deltas.
+func (this *Deltas) add(obj, prop string, val1, val2 interface{}) {
+	*this = append(*this, &Delta{obj, prop, val1, val2})
 }
 
 // Tests for deep equality using reflected types. The map argument tracks
 // comparisons that have already been seen, which allows short circuiting on
 // recursive types.
-func deepDiff(v1, v2 Value, visited map[visit]bool, depth int) bool {
+func deepDiff(v1, v2 reflect.Value, visited map[visit]bool, deltas *Deltas) {
 
-	// if depth > 10 { panic("deepDiff") }	// for debugging
+	// Reduce number of entries in visited. For any reference cycle that
+	// might be encountered, hard(t) needs to return true for at least one
+	// of the types in the cycle.
 
-	// We want to avoid putting more in the visited map than we need to.
-	// For any possible reference cycle that might be encountered,
-	// hard(t) needs to return true for at least one of the types in the cycle.
+	hard := func(k reflect.Kind) bool {
 
-	hard := func(k Kind) bool {
 		switch k {
-		case Map, Slice, Ptr, Interface:
+		case reflect.Map, reflect.Slice, reflect.Ptr, reflect.Interface:
 			return true
 		}
 		return false
@@ -59,32 +69,33 @@ func deepDiff(v1, v2 Value, visited map[visit]bool, depth int) bool {
 
 		addr1 := unsafe.Pointer(v1.UnsafeAddr())
 		addr2 := unsafe.Pointer(v2.UnsafeAddr())
+		typ := v1.Type()
 
-		// Canonicalize order to reduce number of entries in visited.
+		// Reduce number of entries in visited by sorting addresses.
 		if uintptr(addr1) > uintptr(addr2) {
 			addr1, addr2 = addr2, addr1
 		}
 
 		// Short circuit if references are already seen.
-		typ := v1.Type()
+
 		v := visit{addr1, addr2, typ}
+
 		if visited[v] {
-			return true
+			return
 		}
 
-		// Remember for later.
 		visited[v] = true
 	}
 
 	switch v1.Kind() {
-	case Array:
+	case reflect.Array:
 		for i := 0; i < v1.Len(); i++ {
 			if !deepDiff(v1.Index(i), v2.Index(i), visited, depth+1) {
 				return false
 			}
 		}
 		return true
-	case Slice:
+	case reflect.Slice:
 		if v1.IsNil() != v2.IsNil() {
 			return false
 		}
@@ -199,22 +210,26 @@ func deepDiff(v1, v2 Value, visited map[visit]bool, depth int) bool {
 // values that have been compared before, it treats the values as
 // equal rather than examining the values to which they point.
 // This ensures that DeepEqual terminates.
-func DeepDiff(i1, i2 interface{}) (error) {
+func DeepDiff(i1, i2 interface{}) (Deltas, error) {
+
+	deltas := new(Deltas)
 
 	if reflect.DeepEqual(i1, i2) {
-		return nil
+		return *deltas, nil
 	} else if i1 == nil || i2 == nil {
-		return fmt.Errorf(`cannot compare nil values`)
+		return *deltas, fmt.Errorf(`cannot compare nil values`)
 	}
 
-	v1 := ValueOf(i1)
-	v2 := ValueOf(i2)
+	v1, v2 := ValueOf(i1), ValueOf(i2)
 
 	if v1.Type() != v2.Type() {
-		return fmt.Errorf(`cannot compare different types`)
+		return *deltas, fmt.Errorf(`cannot compare different types`)
 	} else if !v1.IsValid() || !v2.IsValid() {
-		return fmt.Errorf(`cannot compare invalid values`)
+		return *deltas, fmt.Errorf(`cannot compare invalid values`)
 	}
 
-	return deepDiff(v1, v2, make(map[visit]bool), 0)
+	current := &Current{Object: `None`, Property: `None`}
+	deepDiff(v1, v2, make(map[visit]bool), current, deltas)
+
+	return *deltas, nil
 }
