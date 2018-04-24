@@ -1,7 +1,7 @@
 package main
 
 import (
-	//`fmt`
+	`fmt`
 	`log`
 	`reflect`
 	`github.com/jscherff/dmnsdk/api`
@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	defRetrieve = `[%s] could not get %s %s for key '%s' version '%d': %v`
+	dmnRetrieve = `[%s] could not get %s %s for key '%s' version '%d': %v`
 	defCompare = `[%s] %s and %s %s for Key '%s' version '%d': %s`
 	esbeapPRD = `http://esbeap.24hourfit.com:8180`
 	esbeapQA = `http://esbeap-qa.24hourfit.com:8180`
@@ -28,53 +28,53 @@ func main() {
 
 	var (
 		err error
-		diMap1, diMap2 model.DefinitionInfoMap
+		dmnList *model.DmnList
 	)
 
 	// Get the [key][ver]->DMNinfo map for first environment.
-	if diMap1, err = dmnApi1.GetDefinitionInfoMap(); err != nil {
+	if dmnList, err = dmnApi1.DmnList(); err != nil {
 		log.Fatal(err)
 	}
-
-	// Get the [key][ver]->DMNinfo map for second environment.
-	if diMap2, err = dmnApi2.GetDefinitionInfoMap(); err != nil {
-		log.Fatal(err)
-	}
-
 
 	// Iterate through keys and versions of first environment.
-	for key, verMap := range diMap1 {
-		for ver, di1  := range verMap {
+	for _, di := range *dmnList {
 
-			var (
-				d1, d2 *model.Definition
-				di2 *model.DefinitionInfo
-			)
+		var dmn1, dmn2 *model.Dmn
 
-			// Retrieve the DMN for key/ver for the first environment.
-			if d1, err = dmnApi1.GetDefinitionById(di1.Id); err != nil {
-				log.Printf(defRetrieve, `FAILURE`, `PRD`, `DMN`, key, ver, err)
-				continue
-			}
+		// Retrieve the DMN for key/ver for the first environment.
+		if dmn1, err = dmnApi1.DmnByKeyVer(di.Key, di.Version); err != nil {
+			log.Printf(dmnRetrieve, `FAILURE`, `PRD`, `DMN`, di.Key, di.Version, err)
+		}
 
+		// Retrieve the DMN for key/ver for the first environment.
+		if dmn2, err = dmnApi2.DmnByKeyVer(di.Key, di.Version); err != nil {
+			log.Printf(dmnRetrieve, `FAILURE`, `QA`, `DMN`, di.Key, di.Version, err)
+		}
 
-			// Retrieve the DMN Info for key/ver for the second environment.
-			if di2, err = diMap2.Get(key, ver); err != nil {
-				log.Printf(defRetrieve, `FAILURE`, `QA`, `DMN Info`, key, ver, err)
-				continue
-			}
+		// Deeply compare the two DMNs and show the results.
+		if reflect.DeepEqual(dmn1, dmn2) {
+			log.Printf(defCompare, `SUCCESS`, `PRD`, `QA`, `DMN`, di.Key, di.Version, `identical`)
+		} else {
+			log.Printf(defCompare, `WARNING`, `PRD`, `QA`, `DMN`, di.Key, di.Version, `different`)
+			showDiff(dmn1, dmn2)
+		}
+	}
+}
 
-			// Retrieve the DMN for key/ver for the second environment.
-			if d2, err = dmnApi2.GetDefinitionById(di2.Id); err != nil {
-				log.Printf(defRetrieve, `FAILURE`, `QA`, `DMN`, key, ver, err)
-				continue
-			}
+func showDiff(d1, d2 *model.Dmn) {
 
-			// Deeply compare the two DMNs and show the results.
-			if reflect.DeepEqual(d1, d2) {
-				log.Printf(defCompare, `SUCCESS`, `PRD`, `QA`, `DMN`, key, ver, `identical`)
+	if de, err := model.NewDmnElements(d1); err != nil {
+		log.Println(err)
+	} else if err := de.Compare(d2); err != nil {
+		log.Println(err)
+	} else {
+		for _, key := range de.SortedKeys() {
+			if de[key] == 1 {
+				fmt.Printf("\t<---\t%s\n", key)
+			} else if de[key] == -1 {
+				fmt.Printf("\t--->\t%s\n", key)
 			} else {
-				log.Printf(defCompare, `WARNING`, `PRD`, `QA`, `DMN`, key, ver, `different`)
+				fmt.Printf("\t####\t%s\n", key)
 			}
 		}
 	}

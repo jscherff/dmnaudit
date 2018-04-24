@@ -15,15 +15,13 @@
 package model
 
 import (
-	`bufio`
 	`bytes`
-	`encoding/xml`
 	`encoding/json`
+	`encoding/xml`
 	`fmt`
 	`io`
 	`net/http`
 	`os`
-	`reflect`
 	`strings`
 )
 
@@ -33,19 +31,19 @@ const (
 )
 
 // load unmarshals JSON or XML from an io.Reader.
-func load(dst interface{}, src interface{}, enc string) (error) {
+func load(dst interface{}, src interface{}, enc string) (err error) {
 
-	switch t := src.(type) {
+	switch obj := src.(type) {
 
 	case io.Reader:
 
 		switch strings.ToLower(enc) {
 
 		case `json`:
-			return json.NewDecoder(t).Decode(&dst)
+			return json.NewDecoder(obj).Decode(&dst)
 
 		case `xml`:
-			return xml.NewDecoder(t).Decode(&dst)
+			return xml.NewDecoder(obj).Decode(&dst)
 
 		default:
 			return fmt.Errorf(`unsupported encoding: %s`, enc)
@@ -53,20 +51,16 @@ func load(dst interface{}, src interface{}, enc string) (error) {
 
 	case string:
 
-		var (
-			b bytes.Buffer
-			w = bufio.NewWriter(&b)
-		)
+		buf := new(bytes.Buffer)
 
-		if _, err := read(w, t); err != nil {
+		if _, err = read(buf, obj); err != nil {
 			return err
 		} else {
-			w.Flush()
-			return load(dst, bufio.NewReader(&b), enc)
+			return load(dst, buf, enc)
 		}
 
 	default:
-		return fmt.Errorf(`unsupported source: %T`, t)
+		return fmt.Errorf(`unsupported source: %T`, obj)
 	}
 
 	return nil
@@ -129,45 +123,24 @@ func fileExists(f string) (bool) {
 	return false
 }
 
-// json marshals an object into a JSON byte array.
+// toJson marshals an object into a JSON byte array.
 func toJson(t interface{}) ([]byte, error) {
 	return json.MarshalIndent(t, jsonPrefix, jsonIndent)
 }
 
-// toMap creates a map from a struct, including only fields that match a tag.
-func toMap(t interface{}, m map[string]interface{}, tid string) (error) {
 
-	v := reflect.ValueOf(t).Elem()
+// toMap converts a DMN into a hierarchy of map[string]interface{} and
+// []interface{} objects.
+func toMap(t interface{}) (map[string]interface{}, error) {
 
-	if v.Type().Kind() != reflect.Struct {
-		return fmt.Errorf(`kind %q is not struct`, v.Type().Kind().String())
+	b := new(bytes.Buffer)
+	m := make(map[string]interface{})
+
+	if err := json.NewEncoder(b).Encode(&t); err != nil {
+		return nil, err
+	} else if err := json.NewDecoder(b).Decode(&m); err != nil {
+		return nil, err
 	}
 
-	for i := 0; i < v.NumField(); i++ {
-
-		f := v.Field(i)
-		t := v.Type().Field(i)
-
-		if !f.IsValid() || !f.CanAddr() || !f.CanInterface() {
-			continue
-		}
-
-		if tag, ok := t.Tag.Lookup(tid); !ok {
-			continue
-		} else {
-
-			tval := strings.Split(tag, `,`)[0]
-
-			switch tval {
-			case `-`:
-				continue
-			case ``:
-				m[t.Name] = f.Interface()
-			default:
-				m[tval] = f.Interface()
-			}
-		}
-	}
-
-	return nil
+	return m, nil
 }
