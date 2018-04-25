@@ -14,12 +14,19 @@
 
 package model
 
+import (
+	`bytes`
+	`encoding/csv`
+)
+
 // ------------------------------------------------------------------------
 // DmnRules.
 // ------------------------------------------------------------------------
 
 type DmnRules interface {
 	NoOp()
+	ToCsv() ([]byte, error)
+	String() (string)
 }
 
 type dmnRules struct {
@@ -28,6 +35,7 @@ type dmnRules struct {
 }
 
 func (this *dmnRules) NoOp() {
+
 }
 
 func NewDmnRules(dmn *Dmn) (DmnRules, error) {
@@ -113,3 +121,29 @@ func NewDmnRules(dmn *Dmn) (DmnRules, error) {
 
 	return table, nil
 }
+
+func (this *dmnRules) ToCsv() ([]byte, error) {
+
+	buf := new(bytes.Buffer)
+	cw := csv.NewWriter(buf)
+	if err := cw.WriteAll(this.Headers); err != nil {
+		return nil, err
+	}
+
+	if err := cw.WriteAll(this.Rules); err != nil {
+		return nil, err
+	}
+
+	return buf.Bytes(), nil
+}
+
+func (this *dmnRules) String() (string) {
+
+	if b, err := this.ToCsv(); err != nil {
+		return ``
+	} else {
+		return string(b)
+	}
+}
+
+
