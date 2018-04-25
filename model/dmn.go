@@ -217,3 +217,9 @@ func (this *Dmn) Load(src interface{}) error {
 func (this *Dmn) Json() ([]byte, error) {
 	return toJson(this)
 }
+
+// Rules returns the DecisionTable as a collection of Rules suitable for
+// output to a CSV file.
+func (this *Dmn) Rules() (DmnRules, error) {
+	return NewDmnRules(this)
+}

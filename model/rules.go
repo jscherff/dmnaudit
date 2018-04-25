@@ -17,6 +17,7 @@ package model
 import (
 	`bytes`
 	`encoding/csv`
+	`io`
 )
 
 // ------------------------------------------------------------------------
@@ -24,18 +25,14 @@ import (
 // ------------------------------------------------------------------------
 
 type DmnRules interface {
-	NoOp()
-	ToCsv() ([]byte, error)
+	Bytes() ([]byte, error)
 	String() (string)
+	Write(io.Writer) (int, error)
 }
 
 type dmnRules struct {
 	Headers	[][]string
 	Rules	[][]string
-}
-
-func (this *dmnRules) NoOp() {
-
 }
 
 func NewDmnRules(dmn *Dmn) (DmnRules, error) {
@@ -95,25 +92,26 @@ func NewDmnRules(dmn *Dmn) (DmnRules, error) {
 		hcol++
 	}
 
-	ecol := 0
 
-	for i, rule := range rules {
+	for row, rule := range rules {
+
+		ecol := 0
 
 		for _, inputEntry := range rule.InputEntries {
-			table.Rules[i][ecol] = inputEntry.Text
+			table.Rules[row][ecol] = inputEntry.Text
 			ecol++
 		}
 
 		for _, outputEntry := range rule.OutputEntries {
-			table.Rules[i][ecol] = outputEntry.Text
+			table.Rules[row][ecol] = outputEntry.Text
 			ecol++
 		}
 	}
 
-	table.Headers[0] = append([]string{`Entry Type`}, table.Headers[0]...)
-	table.Headers[1] = append([]string{`Entry Label`}, table.Headers[1]...)
-	table.Headers[2] = append([]string{`Entry Name`}, table.Headers[2]...)
-	table.Headers[3] = append([]string{`Data Type`}, table.Headers[3]...)
+	table.Headers[0] = append([]string{`Flow`}, table.Headers[0]...)
+	table.Headers[1] = append([]string{`Label`}, table.Headers[1]...)
+	table.Headers[2] = append([]string{`Name`}, table.Headers[2]...)
+	table.Headers[3] = append([]string{`Type`}, table.Headers[3]...)
 
 	for i, rule := range table.Rules {
 		table.Rules[i] = append([]string{`Rule`}, rule...)
@@ -122,7 +120,7 @@ func NewDmnRules(dmn *Dmn) (DmnRules, error) {
 	return table, nil
 }
 
-func (this *dmnRules) ToCsv() ([]byte, error) {
+func (this *dmnRules) Bytes() ([]byte, error) {
 
 	buf := new(bytes.Buffer)
 	cw := csv.NewWriter(buf)
@@ -139,11 +137,18 @@ func (this *dmnRules) ToCsv() ([]byte, error) {
 
 func (this *dmnRules) String() (string) {
 
-	if b, err := this.ToCsv(); err != nil {
+	if b, err := this.Bytes(); err != nil {
 		return ``
 	} else {
 		return string(b)
 	}
 }
 
+func (this *dmnRules) Write(w io.Writer) (int, error) {
 
+	if b, err := this.Bytes(); err != nil {
+		return 0, err
+	} else {
+		return w.Write(b)
+	}
+}
