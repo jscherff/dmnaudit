@@ -19,6 +19,10 @@ import (
 	`sort`
 )
 
+// ------------------------------------------------------------------------
+// DmnElement.
+// ------------------------------------------------------------------------
+
 // DmnElement captures DMN XML elements.
 type DmnElement struct {
 	Tag			string
@@ -27,22 +31,39 @@ type DmnElement struct {
 	Value			string
 }
 
+// ------------------------------------------------------------------------
+// DmnElement Methods.
+// ------------------------------------------------------------------------
+
+// String implements the Stringer interface for DmnElement.
 func (this DmnElement) String() (string) {
 	return fmt.Sprintf(`<%s id="%s"><%s>%s<%[3]s/><%[1]s/>`,
 		this.Tag, this.Id, this.Property, this.Value,
 	)
 }
 
+// ------------------------------------------------------------------------
+// byDmnElement.
+// ------------------------------------------------------------------------
+
+// byDmnElement is a derivative object used in sorting.
 type byDmnElement []DmnElement
 
+// ------------------------------------------------------------------------
+// byDmnElement Methods.
+// ------------------------------------------------------------------------
+
+// Len returns the number of elements in the slice.
 func (this byDmnElement) Len() int {
 	return len(this)
 }
 
+// Swap exchanges the values of two elements.
 func (this byDmnElement) Swap(i, j int) {
 	this[i], this[j] = this[j], this[i]
 }
 
+// Less defines the rules for soring the elements.
 func (this byDmnElement) Less(i, j int) bool {
 
 	if this[i].Tag != this[j].Tag {
@@ -56,8 +77,16 @@ func (this byDmnElement) Less(i, j int) bool {
 	}
 }
 
+// ------------------------------------------------------------------------
+// DmnElements.
+// ------------------------------------------------------------------------
+
 // DmnElements is a collection of DmnElement objects.
 type DmnElements map[DmnElement]int
+
+// ------------------------------------------------------------------------
+// DmnElements Methods.
+// ------------------------------------------------------------------------
 
 // NewDmnElements creates a collection of DmnElement objects from a DMN.
 func NewDmnElements(t interface{}) (DmnElements, error) {
@@ -71,6 +100,7 @@ func NewDmnElements(t interface{}) (DmnElements, error) {
 	return this, nil
 }
 
+// Keys returns as a slice the DmnElement objects used as keys in DmnElements.
 func (this DmnElements) Keys() (keys []DmnElement) {
 	for key := range this {
 		keys = append(keys, key)
@@ -78,12 +108,14 @@ func (this DmnElements) Keys() (keys []DmnElement) {
 	return keys
 }
 
+// SortedKeys returns a sorted slice of DmnElement objects.
 func (this DmnElements) SortedKeys() (keys []DmnElement) {
 	keys = this.Keys()
 	sort.Sort(byDmnElement(keys))
 	return keys
 }
 
+// Compare loads another DMN into this DmnElements object and assigns an
 func (this DmnElements) Compare(t interface{}) (error) {
 
 	if err := this.load(t, -1); err != nil {
@@ -100,8 +132,8 @@ func (this DmnElements) Load(t interface{}) (error) {
 }
 
 // load imports a DMN into a data structure that allows comparison
-// of DMN elements between objects.
-func (this DmnElements) load(t interface{}, inc int) (error) {
+// of the DMN elements of two different objects.
+func (this DmnElements) load(t interface{}, cval int) (error) {
 
 	var tag, id string
 
@@ -112,7 +144,7 @@ func (this DmnElements) load(t interface{}, inc int) (error) {
 		if em, err := toMap(t); err != nil {
 			return err
 		} else {
-			return this.load(em, inc)
+			return this.load(em, cval)
 		}
 
 	case map[string]interface{}:
@@ -135,13 +167,13 @@ func (this DmnElements) load(t interface{}, inc int) (error) {
 
 				if name == `xmlName` {
 					tag = obj[`Local`].(string)
-				} else if err := this.load(obj, inc); err != nil {
+				} else if err := this.load(obj, cval); err != nil {
 					return err
 				}
 
 			default:
 
-				if err := this.load(obj, inc); err != nil {
+				if err := this.load(obj, cval); err != nil {
 					return err
 				}
 			}
@@ -153,13 +185,13 @@ func (this DmnElements) load(t interface{}, inc int) (error) {
 
 		for name, value := range tm {
 			el := DmnElement{tag, id, name, value.(string)}
-			this[el] += inc
+			this[el] += cval
 		}
 
 	case []interface{}:
 
 		for _, value := range obj {
-			if err := this.load(value, inc); err != nil {
+			if err := this.load(value, cval); err != nil {
 				return err
 			}
 		}

@@ -14,19 +14,15 @@
 
 package model
 
-import (
-	"encoding/xml"
-	"fmt"
-)
+import "encoding/xml"
 
 // ==============================================================================
 // See https://docs.camunda.org/manual/7.4/reference/dmn11/decision-table/
 // ==============================================================================
 
-
-// -----------------------
-// Dmn Object and Methods.
-// -----------------------
+// ------------------------------------------------------------------------
+// Dmn.
+// ------------------------------------------------------------------------
 
 // Dmn contains Decision Model and Notation definitions defining the 
 // Decision and DecisionTable.
@@ -37,23 +33,6 @@ type Dmn struct {
 	Name              string              `xml:"name,attr" json:"name"`
 	Namespace         string              `xml:"namespace,attr" json:"namespace"`
 	Decision          *Decision           `xml:"decision,child" json:"decision"`
-}
-
-// NewDmn creates and loads a new Dmn object from a JSON source.
-func NewDmn(src interface{}) (*Dmn, error) {
-	this := new(Dmn)
-	err := this.Load(src)
-	return this, err
-}
-
-// Load unmarshals JSON from Reader, url, file or string into an object.
-func (this *Dmn) Load(src interface{}) error {
-	return load(this, src, `xml`)
-}
-
-// Json marshals an object into a JSON byte array.
-func (this *Dmn) Json() ([]byte, error) {
-	return toJson(this)
 }
 
 // A DecisionTable is decision logic which can be depicted as a table in
@@ -218,136 +197,23 @@ type OutputEntry struct {
 	Text              string              `xml:"text" json:"text"`
 }
 
-// -----------------------------------------------------------------------
-// DmnInfo Object and Methods.
-// -----------------------------------------------------------------------
+// ------------------------------------------------------------------------
+// Dmn Methods.
+// ------------------------------------------------------------------------
 
-// DmnInfo contains DMN metadata which can be used to retrieve other data,
-// such as the DMN XML describing the DMN.
-type DmnInfo struct {
-	Id                string              `json:"id"`
-	Key               string              `json:"key"`
-	Category          string              `json:"category"`
-	Name              string              `json:"name"`
-	Version           int                 `json:"version"`
-	Resource          string              `json:"resource"`
-	DeploymentId      string              `json:"deploymentId"`
-	TenantId          string              `json:"tenantId"`
-	DecisionReqDefId  string              `json:"decisionRequirementsDmnId"`
-	DecisionReqDefKey string              `json:"decisionRequirementsDmnKey"`
-	HistoryTtl        string              `json:"historyTimeToLive"`
-	DmnXml            string              `json:"dmnXml"`
-}
-
-// NewDmnInfo creates and loads a new DmnInfo object from a JSON source.
-func NewDmnInfo(src interface{}) (*DmnInfo, error) {
-	this := new(DmnInfo)
+// NewDmn creates and loads a new Dmn object from a JSON source.
+func NewDmn(src interface{}) (*Dmn, error) {
+	this := new(Dmn)
 	err := this.Load(src)
 	return this, err
 }
 
-// Load unmarshals JSON from a Reader, url, file, or string to an object.
-func (this *DmnInfo) Load(src interface{}) error {
-	return load(this, src, `json`)
-}
-
-
-// -----------------------------------------------------------------------
-// DmnList Object and Methods.
-// -----------------------------------------------------------------------
-
-// DmnList is a collection of DmnsInfo objects.
-type DmnList []*DmnInfo
-
-// NewDmnList creates and loads a new DmnList object from a JSON source.
-func NewDmnList(src interface{}) (*DmnList, error) {
-	this := new(DmnList)
-	err := this.Load(src)
-	return this, err
-}
-
-// Load unmarshals JSON from a Reader, url, file, or string to an object.
-func (this *DmnList) Load(src interface{}) error {
-	return load(this, src, `json`)
+// Load unmarshals JSON from Reader, url, file or string into an object.
+func (this *Dmn) Load(src interface{}) error {
+	return load(this, src, `xml`)
 }
 
 // Json marshals an object into a JSON byte array.
-func (this *DmnList) Json() ([]byte, error) {
+func (this *Dmn) Json() ([]byte, error) {
 	return toJson(this)
-}
-
-// Map creates a map of Dmns indexed by key and version number.
-func (this *DmnList) Map() (DmnMap, error) {
-
-	dm := make(DmnMap)
-
-	for _, di := range *this {
-
-		if dm[di.Key] == nil {
-			dm[di.Key] = make(map[int]*DmnInfo)
-		}
-
-		dm[di.Key][di.Version] = di
-	}
-
-	return dm, nil
-}
-
-// --------------------------
-// DmnXml Object and Methods.
-// --------------------------
-
-// NewDmnXml creates and loads a new DmnXml object from a JSON source.
-func NewDmnXml(src interface{}) (*DmnXml, error) {
-	this := new(DmnXml)
-	err := this.Load(src)
-	return this, err
-}
-
-// DmnXml is the DMN Decision Definition in XML format.
-type DmnXml struct {
-	Id                string              `json:"id"`
-	DmnXml            string              `json:"dmnXml"`
-}
-
-// Load unmarshals JSON from a Reader, url, file, or string to an object.
-func (this *DmnXml) Load(src interface{}) error {
-	return load(this, src, `json`)
-}
-
-// Json marshals an object into a JSON byte array.
-func (this *DmnXml) Json() ([]byte, error) {
-	return toJson(this)
-}
-
-// String implements the Stringer interface for DmnXml.
-func (this *DmnXml) String() (string) {
-	return this.DmnXml
-}
-
-// --------------------------
-// DmnMap Object and Methods.
-// --------------------------
-
-// DmnMap is a collection of DmnInfo objects indexed by DMN Key and Version.
-type DmnMap map[string]map[int]*DmnInfo
-
-// Get returns a DmnInfo object given its key and version.
-func (this DmnMap) Info(key string, ver int) (*DmnInfo, error) {
-
-	if di, ok := this[key][ver]; !ok {
-		return nil, fmt.Errorf(`key %s version %d not found`, key, ver)
-	} else {
-		return di, nil
-	}
-}
-
-// GetId returns the DMN ID given the DMN Key and Version.
-func (this DmnMap) Id(key string, ver int) (string, error) {
-
-	if di, err := this.Info(key, ver); err != nil {
-		return ``, err
-	} else {
-		return di.Id, nil
-	}
 }

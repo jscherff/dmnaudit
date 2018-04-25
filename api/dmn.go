@@ -151,7 +151,7 @@ func (this *dmnApi) DmnInfoByKeyVer(key string, ver int) (*model.DmnInfo, error)
 
 	if dm, err := this.DmnMap(); err != nil {
 		return nil, err
-	} else if di, err := dm.Info(key, ver); err != nil {
+	} else if di, err := dm.DmnInfo(key, ver); err != nil {
 		return nil, err
 	} else {
 		return di, nil
