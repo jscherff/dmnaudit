@@ -15,11 +15,12 @@
 package main
 
 import (
+	`encoding/csv`
 	`flag`
-	`fmt`
 	`log`
 	`io`
 	`os`
+	`strconv`
 	`github.com/jscherff/dmnsdk/api`
 	`github.com/jscherff/dmnsdk/model`
 )
@@ -32,9 +33,6 @@ const (
 
 var (
 	fSvcUrl = flag.String(`url`, ``, "Use service at `http[s]://<hostname>[:<port>]`")
-	fDmnId = flag.String(`id`, ``, "Retrieve DMN with ID `<id>`")
-	fDmnKey = flag.String(`key`, ``, "Retrieve DMN with key `<key>`")
-	fDmnVer = flag.Int(`ver`, 0, "Retrieve DMN version `<ver>` (requires -key)")
 	fCsvFile = flag.String(`file`, ``, "Store results in file `<file>`")
 )
 
@@ -54,41 +52,21 @@ func main() {
 		set[f.Name] = true
 	})
 
-	switch {
-	case !set[`url`]:
-		err = fmt.Errorf(`-service flag is required`)
-	case !set[`key`] && !set[`id`]:
-		err = fmt.Errorf(`-id or -key must be set`)
-	case !set[`key`] && set[`ver`]:
-		err = fmt.Errorf(`-ver requires -key`)
-	}
-
-	if err != nil {
-		log.Printf("%v\n\n", err)
+	if !set[`url`] {
+		log.Println(`-service flag is required`)
 		flag.Usage()
 		os.Exit(2)
 	}
 
 	var (
-		dmn *model.Dmn
-		rules model.DmnRules
+		dmns *model.DmnList
+		rows [][]string
 		out io.WriteCloser
 	)
 
 	api := api.NewDmnApi(*fSvcUrl)
 
-	switch {
-	case set[`ver`]:
-		dmn, err = api.DmnByKeyVer(*fDmnKey, *fDmnVer)
-	case set[`id`]:
-		dmn, err = api.DmnById(*fDmnId)
-	case set [`key`]:
-		dmn, err = api.DmnByKey(*fDmnKey)
-	}
-
-	if err != nil {
-		log.Fatal(err)
-	} else if rules, err = dmn.Rules(); err != nil {
+	if dmns, err = api.DmnList(); err != nil {
 		log.Fatal(err)
 	}
 
@@ -101,7 +79,15 @@ func main() {
 		out = os.Stdout
 	}
 
-	if _, err := rules.Write(out); err != nil {
+	dmns.Sort()
+	rows = append(rows, []string{`name`, `key`, `version`, `id`})
+
+	for _, dmn := range *dmns {
+		row := []string{dmn.Name, dmn.Key, strconv.Itoa(dmn.Version), dmn.Id}
+		rows = append(rows, row)
+	}
+
+	if err := csv.NewWriter(out).WriteAll(rows); err != nil {
 		log.Fatal(err)
 	}
 }

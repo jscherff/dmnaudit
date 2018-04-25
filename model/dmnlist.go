@@ -14,6 +14,8 @@
 
 package model
 
+import	`sort`
+
 // ------------------------------------------------------------------------
 // DmnList.
 // ------------------------------------------------------------------------
@@ -57,4 +59,44 @@ func (this *DmnList) Map() (DmnMap, error) {
 	}
 
 	return dm, nil
+}
+
+// Sort sorts the DmnList by rules defined in byDmnInfo.Less().
+func (this *DmnList) Sort() {
+	sort.Stable(byDmnInfo(*this))
+}
+
+// ------------------------------------------------------------------------
+// byDmnInfo.
+// ------------------------------------------------------------------------
+
+// byDmnInfo is a derivative object used in sorting.
+type byDmnInfo DmnList
+
+// ------------------------------------------------------------------------
+// byDmnInfo Methods.
+// ------------------------------------------------------------------------
+
+// Len returns the number of elements in the slice.
+func (this byDmnInfo) Len() int {
+	return len(this)
+}
+
+// Swap exchanges the values of two elements.
+func (this byDmnInfo) Swap(i, j int) {
+	this[i], this[j] = this[j], this[i]
+}
+
+// Less defines the rules for soring the elements.
+func (this byDmnInfo) Less(i, j int) bool {
+
+	if this[i].Name != this[j].Name {
+		return this[i].Name < this[j].Name
+	} else if this[i].Key != this[j].Key {
+		return this[i].Key < this[j].Key
+	} else if this[i].Version != this[j].Version {
+		return this[i].Version < this[j].Version
+	} else {
+		return this[i].Id < this[j].Id
+	}
 }

@@ -111,7 +111,7 @@ func (this DmnElements) Keys() (keys []DmnElement) {
 // SortedKeys returns a sorted slice of DmnElement objects.
 func (this DmnElements) SortedKeys() (keys []DmnElement) {
 	keys = this.Keys()
-	sort.Sort(byDmnElement(keys))
+	sort.Stable(byDmnElement(keys))
 	return keys
 }
 
