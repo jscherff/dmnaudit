@@ -29,8 +29,10 @@ const (
 	esbeapPRD = `http://esbeap.24hourfit.com:8180`
 	esbeapQA = `http://esbeap-qa.24hourfit.com:8180`
 	esbeapDEV= `http://esbeap-dev.24hourfit.com:8180`
-	dmnFailFmt = `could not get %s DMN for key '%s' v%d: %v`
-	dmnCompFmt = `Env1 and Env2 DMN Key %s version %d: %s`
+
+	dmnFailFmt = `[%s] could not get %s DMN key %s ver %d: %v`
+	dmnCompFmt = `[%s] Env1 and Env2 DMN key %s ver %d: %s`
+	elmFailFmt = `[%s] could not get %s DMN key %s ver %d elements: %v`
 )
 
 var (
@@ -88,7 +90,7 @@ func main() {
 
 	dmnList.Sort()
 
-	report := make(map[string][]string)
+	var succ, warn, fail []string
 
 	// Iterate through keys and versions of first environment.
 
@@ -99,76 +101,56 @@ func main() {
 		// Retrieve the DMN from the first environment.
 
 		if dmn1, err = api1.DmnByKeyVer(di.Key, di.Version); err != nil {
-			msg := fmt.Sprintf(dmnFailFmt, `Env1`, di.Key, di.Version, err)
-			report[`FAILURE`] = append(report[`FAILURE`], msg)
-		}
-
-		// Retrieve the DMN from the second environment.
-
-		if dmn2, err = api2.DmnByKeyVer(di.Key, di.Version); err != nil {
-			msg := fmt.Sprintf(dmnFailFmt, `Env2`, di.Key, di.Version, err)
-			report[`FAILURE`] = append(report[`FAILURE`], msg)
-		}
-
-		// Deeply compare the two DMNs and show the results.
-
-		if reflect.DeepEqual(dmn1, dmn2) {
-			msg := fmt.Sprintf(dmnCompFmt, di.Key, di.Version, `identical`)
-			report[`SUCCESS`] = append(report[`SUCCESS`], msg)
-			println(msg)
+			fail = append(fail, fmt.Sprintf(dmnFailFmt, `FAILURE`, `Env1`, di.Key, di.Version, err))
+			continue
+		} else if dmn2, err = api2.DmnByKeyVer(di.Key, di.Version); err != nil {
+			fail = append(fail, fmt.Sprintf(dmnFailFmt, `FAILURE`, `Env2`, di.Key, di.Version, err))
+			continue
+		} else if reflect.DeepEqual(dmn1, dmn2) {
+			succ = append(succ, fmt.Sprintf(dmnCompFmt, `SUCCESS`, di.Key, di.Version, `identical`))
 			continue
 		} else {
-			msg := fmt.Sprintf(dmnCompFmt, di.Key, di.Version, `different`)
-			report[`WARNING`] = append(report[`WARNING`], msg)
-			println(msg)
+			warn = append(warn, fmt.Sprintf(dmnCompFmt, `WARNING`, di.Key, di.Version, `different`))
+		}
+
+		if !*fDetails {
+			continue
 		}
 
 		// Process differences.
 
 		if de, err := model.NewDmnElements(dmn1); err != nil {
-			log.Println(err)
+			fail = append(fail, fmt.Sprintf(elmFailFmt, `FAILURE`, `Env1`, di.Key, di.Version, err))
 		} else if err := de.Compare(dmn2); err != nil {
-			log.Println(err)
+			fail = append(fail, fmt.Sprintf(elmFailFmt, `FAILURE`, `Env2`, di.Key, di.Version, err))
 		} else {
-
-			var msg string
-
-			for _, key := range de.SortedKeys() {
-				if de[key] == 1 {
-					msg = fmt.Sprintf("%s:\t%s", `Env1`, key)
-				} else if de[key] == -1 {
-					msg = fmt.Sprintf("%s:\t%s", `Env2`, key)
-				} else if *fVerbose {
-					msg = fmt.Sprintf("%s:\t%s", `Both`, key)
-				} else {
-					continue
+			for key, val := range de {
+				switch val {
+				case 1:
+					warn = append(warn, fmt.Sprintf("\tEnv1 <---      : %s", key))
+				case -1:
+					warn = append(warn, fmt.Sprintf("\t     ---> Env2 : %s", key))
+				case 0:
+					if !*fVerbose {break}
+					warn = append(warn, fmt.Sprintf("\tEnv1 <--> Env2 : %s", key))
 				}
 			}
-
-			report[`DETAILS`] = append(report[`DETAILS`], msg)
 		}
 	}
 
-	for category, lines := range report {
-		for _, line := range lines {
-			fmt.Printf("[%s] %s\n", category, line)
+	if *fSuccess {
+		for _, line := range succ {
+			fmt.Println(line)
+		}
+	}
+	if *fFailure {
+		for _, line := range fail {
+			fmt.Println(line)
+		}
+	}
+	if *fWarning {
+		for _, line := range warn {
+			fmt.Println(line)
 		}
 	}
 }
-
-
-
-/*
-	if set[`file`] {
-		if out, err = os.Create(*fCsvFile); err != nil {
-			log.Fatal(err)
-		}
-		defer out.Close()
-	} else {
-		out = os.Stdout
-	}
-
-	if _, err := rules.Write(out); err != nil {
-		log.Fatal(err)
-	}
-*/
