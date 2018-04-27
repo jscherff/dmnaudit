@@ -39,7 +39,7 @@ func (this *DmnList) Load(src interface{}) error {
 	return load(this, src, `json`)
 }
 
-// Json marshals an object into a JSON byte array.
+// Json returns the DmnList object as a JSON byte array.
 func (this *DmnList) Json() ([]byte, error) {
 	return toJson(this)
 }

@@ -1,0 +1,3 @@
+esbeapPRD http://esbeap.24hourfit.com:8180
+esbeapQA  http://esbeap-qa.24hourfit.com:8180
+esbeapDEV http://esbeap-dev.24hourfit.com:8180

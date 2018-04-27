@@ -213,7 +213,7 @@ func (this *Dmn) Load(src interface{}) error {
 	return load(this, src, `xml`)
 }
 
-// Json marshals an object into a JSON byte array.
+// Json returns the Dmn object as a JSON byte array.
 func (this *Dmn) Json() ([]byte, error) {
 	return toJson(this)
 }

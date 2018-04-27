@@ -40,9 +40,14 @@ func (this *DmnXml) Load(src interface{}) error {
 	return load(this, src, `json`)
 }
 
-// Json marshals an object into a JSON byte array.
+// Json returns the DmnXml object as a JSON byte array.
 func (this *DmnXml) Json() ([]byte, error) {
 	return toJson(this)
+}
+
+// Xml returns DmnXml as an XML byte array.
+func (this *DmnXml) Xml() ([]byte, error) {
+	return []byte(this.DmnXml), nil
 }
 
 // String implements the Stringer interface for DmnXml.

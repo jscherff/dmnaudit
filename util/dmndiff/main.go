@@ -18,61 +18,71 @@ import (
 	`flag`
 	`fmt`
 	`log`
-	//`io`
+	`io`
 	`os`
 	`reflect`
 	`github.com/jscherff/dmnsdk/api`
-	`github.com/jscherff/dmnsdk/model`
 )
 
-const (
-	esbeapPRD = `http://esbeap.24hourfit.com:8180`
-	esbeapQA = `http://esbeap-qa.24hourfit.com:8180`
-	esbeapDEV= `http://esbeap-dev.24hourfit.com:8180`
+var success, warning, failure Report
 
-	dmnFailFmt = `[%s] could not get %s DMN key %s ver %d: %v`
-	dmnCompFmt = `[%s] Env1 and Env2 DMN key %s ver %d: %s`
-	elmFailFmt = `[%s] could not get %s DMN key %s ver %d elements: %v`
-)
+type Message string
 
-var (
-	fSvcUrl1 = flag.String(`url1`, ``, "Use service at `http[s]://<hostname>[:<port>]`")
-	fSvcUrl2 = flag.String(`url2`, ``, "Use service at `http[s]://<hostname>[:<port>]`")
-	fOutFile = flag.String(`file`, ``, "Store results in file `<file>`")
-	fSuccess = flag.Bool(`success`, false, "Show success message when DMNs match")
-	fWarning = flag.Bool(`warning`, false, "Show warning message when DMNs do not match")
-	fFailure = flag.Bool(`failure`, false, "Show failure message when DMN not found")
-	fDetails = flag.Bool(`details`, false, "Show detailed differences between DMN elements")
-	fVerbose = flag.Bool(`verbose`, false, "Show matching DMN elements along with differences")
-)
+func (this Message) Fmt(args ...interface{}) string {
+	return fmt.Sprintf(string(this), args...)
+}
+
+type Report []string
+
+func (this *Report) Add(args ...string) {
+	*this = append(*this, args...)
+}
+
+func (this *Report) Print(w io.Writer) {
+	for _, line := range *this {
+		fmt.Fprintln(w, line)
+	}
+}
 
 func init() {
-	log.SetFlags(0)
+	log.SetFlags(log.Flags() | log.Lshortfile)
 	flag.Parse()
 }
 
 func main() {
 
-	var err error
+	var (
+		out io.WriteCloser
+		err error
+	)
+
 	set := make(map[string]bool)
 
 	flag.Visit(func(f *flag.Flag) {
 		set[f.Name] = true
 	})
 
-	switch {
-	case !set[`url1`] || !set[`url2`]:
-		err = fmt.Errorf(`both -url1 and -url2 required`)
-	case !set[`success`] && !set[`warning`] && !set[`failure`]:
-		err = fmt.Errorf(`at least one of -success, -warning, or -failure requried`)
-	case !set[`warning`] && set[`details`]:
+	if !set[`url1`] || !set[`url2`] {
+		log.Println(`both -url1 and -url2 required`)
+		flag.Usage()
+		os.Exit(2)
+	}
+
+	if !*fSuccess && !*fWarning && !*fFailure {
+		*fWarning = true
+		*fFailure = true
+	}
+
+	if !*fWarning && *fDetails {
 		*fWarning = true
 	}
 
-	if err != nil {
-		log.Println(err)
-		flag.Usage()
-		os.Exit(2)
+	if !set[`file`] {
+		out = os.Stdout
+	} else if out, err = os.Create(*fOutFile); err != nil {
+		log.Fatal(err)
+	} else {
+		defer out.Close()
 	}
 
 	// Get the API for both environments.
@@ -80,77 +90,41 @@ func main() {
 	api1 := api.NewDmnApi(*fSvcUrl1)
 	api2 := api.NewDmnApi(*fSvcUrl2)
 
-	var dmnList *model.DmnList
-
 	// Get the DmnList for the first environment and sort it.
 
-	if dmnList, err = api1.DmnList(); err != nil {
+	dmnList, err := api1.DmnList()
+
+	if err != nil {
 		log.Fatal(err)
 	}
 
 	dmnList.Sort()
 
-	var succ, warn, fail []string
-
 	// Iterate through keys and versions of first environment.
 
 	for _, di := range *dmnList {
 
-		var dmn1, dmn2 *model.Dmn
-
-		// Retrieve the DMN from the first environment.
-
-		if dmn1, err = api1.DmnByKeyVer(di.Key, di.Version); err != nil {
-			fail = append(fail, fmt.Sprintf(dmnFailFmt, `FAILURE`, `Env1`, di.Key, di.Version, err))
-			continue
-		} else if dmn2, err = api2.DmnByKeyVer(di.Key, di.Version); err != nil {
-			fail = append(fail, fmt.Sprintf(dmnFailFmt, `FAILURE`, `Env2`, di.Key, di.Version, err))
-			continue
+		if dmn1, err := api1.DmnByKeyVer(di.Key, di.Version); err != nil {
+			failure.Add(dmnFailure.Fmt(`Env1`, di.Key, di.Version, err))
+		} else if dmn2, err := api2.DmnByKeyVer(di.Key, di.Version); err != nil {
+			failure.Add(dmnFailure.Fmt(`Env2`, di.Key, di.Version, err))
 		} else if reflect.DeepEqual(dmn1, dmn2) {
-			succ = append(succ, fmt.Sprintf(dmnCompFmt, `SUCCESS`, di.Key, di.Version, `identical`))
-			continue
+			success.Add(cmpSuccess.Fmt(di.Key, di.Version))
 		} else {
-			warn = append(warn, fmt.Sprintf(dmnCompFmt, `WARNING`, di.Key, di.Version, `different`))
-		}
-
-		if !*fDetails {
-			continue
-		}
-
-		// Process differences.
-
-		if de, err := model.NewDmnElements(dmn1); err != nil {
-			fail = append(fail, fmt.Sprintf(elmFailFmt, `FAILURE`, `Env1`, di.Key, di.Version, err))
-		} else if err := de.Compare(dmn2); err != nil {
-			fail = append(fail, fmt.Sprintf(elmFailFmt, `FAILURE`, `Env2`, di.Key, di.Version, err))
-		} else {
-			for key, val := range de {
-				switch val {
-				case 1:
-					warn = append(warn, fmt.Sprintf("\tEnv1 <---      : %s", key))
-				case -1:
-					warn = append(warn, fmt.Sprintf("\t     ---> Env2 : %s", key))
-				case 0:
-					if !*fVerbose {break}
-					warn = append(warn, fmt.Sprintf("\tEnv1 <--> Env2 : %s", key))
-				}
+			warning.Add(cmpWarning.Fmt(di.Key, di.Version))
+			if *fDetails {
+				diff(di, dmn1, dmn2)
 			}
 		}
 	}
 
 	if *fSuccess {
-		for _, line := range succ {
-			fmt.Println(line)
-		}
+		success.Print(out)
 	}
 	if *fFailure {
-		for _, line := range fail {
-			fmt.Println(line)
-		}
+		failure.Print(out)
 	}
 	if *fWarning {
-		for _, line := range warn {
-			fmt.Println(line)
-		}
+		warning.Print(out)
 	}
 }
