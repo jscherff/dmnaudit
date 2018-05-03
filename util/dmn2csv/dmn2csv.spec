@@ -6,7 +6,7 @@
 %define		author	John Scherff <jscherff@24hourfit.com>
 %define		gopath	%{_builddir}/go
 %define		package github.com/jscherff/dmnsdk
-%define		utildir utils/%{name}
+%define		utildir util
 # =============================================================================
 
 Name:		%{name}
