@@ -1,4 +1,5 @@
 *.exe
+*.csv
 *.zip
 *_BK?
 junk/
