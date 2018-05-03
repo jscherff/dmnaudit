@@ -28,11 +28,13 @@ type DmnRules interface {
 	Bytes() ([]byte, error)
 	String() (string)
 	Write(io.Writer) (int, error)
+	Headers() ([][]string)
+	Rules() ([][]string)
 }
 
 type dmnRules struct {
-	Headers	[][]string
-	Rules	[][]string
+	headers	[][]string
+	rules	[][]string
 }
 
 func NewDmnRules(dmn *Dmn) (DmnRules, error) {
@@ -53,16 +55,16 @@ func NewDmnRules(dmn *Dmn) (DmnRules, error) {
 	// Create the data structures: [row][col]string.
 
 	table := &dmnRules{
-		Headers: make([][]string, 4),
-		Rules: make([][]string, rows),
+		headers: make([][]string, 4),
+		rules: make([][]string, rows),
 	}
 
-	for i := range table.Headers {
-		table.Headers[i] = make([]string, cols)
+	for i := range table.headers {
+		table.headers[i] = make([]string, cols)
 	}
 
-	for i := range table.Rules {
-		table.Rules[i] = make([]string, cols)
+	for i := range table.rules {
+		table.rules[i] = make([]string, cols)
 	}
 
 	// Populate the data structure.
@@ -73,10 +75,10 @@ func NewDmnRules(dmn *Dmn) (DmnRules, error) {
 
 		for _, inputExp := range input.InputExpressions {
 
-			table.Headers[0][hcol] = `Input`
-			table.Headers[1][hcol] = input.Label
-			table.Headers[2][hcol] = inputExp.Text
-			table.Headers[3][hcol] = inputExp.TypeRef
+			table.headers[0][hcol] = `Input`
+			table.headers[1][hcol] = input.Label
+			table.headers[2][hcol] = inputExp.Text
+			table.headers[3][hcol] = inputExp.TypeRef
 
 			hcol++
 		}
@@ -84,10 +86,10 @@ func NewDmnRules(dmn *Dmn) (DmnRules, error) {
 
 	for _, output := range outputs {
 
-		table.Headers[0][hcol] = `Output`
-		table.Headers[1][hcol] = output.Label
-		table.Headers[2][hcol] = output.Name
-		table.Headers[3][hcol] = output.TypeRef
+		table.headers[0][hcol] = `Output`
+		table.headers[1][hcol] = output.Label
+		table.headers[2][hcol] = output.Name
+		table.headers[3][hcol] = output.TypeRef
 
 		hcol++
 	}
@@ -98,23 +100,23 @@ func NewDmnRules(dmn *Dmn) (DmnRules, error) {
 		ecol := 0
 
 		for _, inputEntry := range rule.InputEntries {
-			table.Rules[row][ecol] = inputEntry.Text
+			table.rules[row][ecol] = inputEntry.Text
 			ecol++
 		}
 
 		for _, outputEntry := range rule.OutputEntries {
-			table.Rules[row][ecol] = outputEntry.Text
+			table.rules[row][ecol] = outputEntry.Text
 			ecol++
 		}
 	}
 
-	table.Headers[0] = append([]string{`Flow`}, table.Headers[0]...)
-	table.Headers[1] = append([]string{`Label`}, table.Headers[1]...)
-	table.Headers[2] = append([]string{`Name`}, table.Headers[2]...)
-	table.Headers[3] = append([]string{`Type`}, table.Headers[3]...)
+	table.headers[0] = append([]string{`Flow`}, table.headers[0]...)
+	table.headers[1] = append([]string{`Label`}, table.headers[1]...)
+	table.headers[2] = append([]string{`Name`}, table.headers[2]...)
+	table.headers[3] = append([]string{`Type`}, table.headers[3]...)
 
-	for i, rule := range table.Rules {
-		table.Rules[i] = append([]string{`Rule`}, rule...)
+	for i, rule := range table.rules {
+		table.rules[i] = append([]string{`Rule`}, rule...)
 	}
 
 	return table, nil
@@ -124,11 +126,11 @@ func (this *dmnRules) Bytes() ([]byte, error) {
 
 	buf := new(bytes.Buffer)
 	cw := csv.NewWriter(buf)
-	if err := cw.WriteAll(this.Headers); err != nil {
+	if err := cw.WriteAll(this.headers); err != nil {
 		return nil, err
 	}
 
-	if err := cw.WriteAll(this.Rules); err != nil {
+	if err := cw.WriteAll(this.rules); err != nil {
 		return nil, err
 	}
 
@@ -151,4 +153,12 @@ func (this *dmnRules) Write(w io.Writer) (int, error) {
 	} else {
 		return w.Write(b)
 	}
+}
+
+func (this *dmnRules) Headers() ([][]string) {
+	return this.headers
+}
+
+func (this *dmnRules) Rules() ([][]string) {
+	return this.rules
 }
