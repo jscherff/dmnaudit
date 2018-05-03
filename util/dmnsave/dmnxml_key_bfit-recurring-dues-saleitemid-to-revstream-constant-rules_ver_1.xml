@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="bfit-recurring-dues-saleitemid-to-revstream-constant-rules" name="bfit-recurring-dues-saleitemid-to-revstream-constant-rules">
+    <decisionTable id="decisionTable">
+      <input id="InputClause_16h9giz" label="Agreement ID">
+        <inputExpression id="LiteralExpression_0pobaj0" typeRef="integer">        <text>agreementId</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Revstream: EXT_TRX_LINE_NUMBER" name="lineNumber" typeRef="integer" />
+      <output id="OutputClause_04apq0w" label="RevStream&#10;:Line Description" name="lineDescription" typeRef="string" />
+      <output id="OutputClause_1xn3ej4" label="RevStream: Category1" name="lineCategory1" typeRef="string" />
+      <output id="OutputClause_1auy0tu" label="RevStream: Transaction TRX_TYPE" name="trxType" typeRef="string" />
+      <output id="OutputClause_16m2pfs" label="RevStream: Line Line Type" name="lineType" typeRef="string" />
+      <output id="OutputClause_0ws54o0" label="RevStream: Transaction and Line OrgId" name="orgId" typeRef="integer" />
+      <rule id="row-51205977-5">
+        <description>For Fit Pass Edge, Fit Pass Edge Online</description>
+        <inputEntry id="UnaryTests_1kijpxr">        <text>12,13</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1b9gd5a">        <text>5</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_01o9qy6">        <text><![CDATA["MONTHLY DUES"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_031kzr7">        <text><![CDATA["MONTHLY DUES"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1cw33hz">        <text><![CDATA["NA"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1txs9dv">        <text><![CDATA["SHARE"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ztptbd">        <text>2</text>
+</outputEntry>
+      </rule>
+      <rule id="row-51205977-4">
+        <description>For Fit Pass Solo, Fit Pass Solo Online, Fit Pass +, Fit Pass + Online</description>
+        <inputEntry id="UnaryTests_1n69abk">        <text>6, 1, 5, 2</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0kucwgm">        <text>6</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0j356ew">        <text><![CDATA["MONTHLY DUES CHARGE"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_19ucp27">        <text><![CDATA["MONTHLY DUES CHARGE"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0bqlqix">        <text><![CDATA["NA"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1uj70oj">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1w1l1mi">        <text>2</text>
+</outputEntry>
+      </rule>
+      <rule id="row-691284910-1">
+        <description>For Reneneration Station - Hydro Massage</description>
+        <inputEntry id="UnaryTests_0yfax26">        <text>23</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_01b2pmg">        <text>7</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0hi0m3k">        <text><![CDATA["REGENERATION DUES HYDROM"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0gh5n0s">        <text><![CDATA["REGENERATION DUES HYDROM"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_18km174">        <text><![CDATA["NA"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1a38jje">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1a4j2zc">        <text>2</text>
+</outputEntry>
+      </rule>
+      <rule id="row-691284910-2">
+        <description>For Harmonic Chamber</description>
+        <inputEntry id="UnaryTests_10qt7mo">        <text>24</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0bn97yv">        <text>8</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0hrcdw5">        <text><![CDATA["REGENERATION DUES SPACOU"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0cazbn5">        <text><![CDATA["REGENERATION DUES SPACOU"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_057hsji">        <text><![CDATA["NA"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1v4hh05">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0h6m8tq">        <text>2</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

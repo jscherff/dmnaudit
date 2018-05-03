@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="dgr-coverage-translation-rules" name="DgrCoverageTranslationDmn">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Coverage Value" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>coverage</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Primary" name="primary" typeRef="string" />
+      <output id="OutputClause_02rx87d" label="Secondary" name="secondary" typeRef="string" />
+      <output id="OutputClause_1h0euhx" label="Tertiary" name="tertiary" typeRef="string" />
+      <rule id="row-95941296-2">
+        <description>Coverage #1</description>
+        <inputEntry id="UnaryTests_08fb0go">        <text>12</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16micgc">        <text><![CDATA["FD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_181kjh2">        <text><![CDATA["SM"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0tkez1t">        <text><![CDATA["SA"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-997957281-1">
+        <description>Coverage #2</description>
+        <inputEntry id="UnaryTests_0wzd62h">        <text>13</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_13bigyh">        <text><![CDATA["SM"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1n5x1k1">        <text><![CDATA["ASM"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1cwjnh8">        <text><![CDATA["SA"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-997957281-2">
+        <description>Coverage #3</description>
+        <inputEntry id="UnaryTests_0o5qaxm">        <text>14</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_07utgca">        <text><![CDATA["FD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0p8pdje">        <text><![CDATA["SA"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1iwtkhs">        <text><![CDATA["SM"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-997957281-3">
+        <description>Coverage #4</description>
+        <inputEntry id="UnaryTests_1mh0bah">        <text>15</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_07e8ou1">        <text><![CDATA["ASM"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0c31fgf">        <text><![CDATA["SA"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0sms77g">        <text><![CDATA["SM"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,265 @@
+{
+    "xmlName": {
+        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+        "Local": "definitions"
+    },
+    "xmlns": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+    "id": "definitions",
+    "name": "definitions",
+    "namespace": "http://camunda.org/schema/1.0/dmn",
+    "decision": {
+        "xmlName": {
+            "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+            "Local": "decision"
+        },
+        "id": "dgr-coverage-translation-rules",
+        "name": "DgrCoverageTranslationDmn",
+        "decisionTable": {
+            "xmlName": {
+                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                "Local": "decisionTable"
+            },
+            "id": "decisionTable",
+            "hitPolicy": "",
+            "input": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "input"
+                    },
+                    "id": "input1",
+                    "label": "Coverage Value",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "inputExpression1",
+                            "typeRef": "integer",
+                            "text": "coverage"
+                        }
+                    ]
+                }
+            ],
+            "output": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "output1",
+                    "label": "Primary",
+                    "name": "primary",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_02rx87d",
+                    "label": "Secondary",
+                    "name": "secondary",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_1h0euhx",
+                    "label": "Tertiary",
+                    "name": "tertiary",
+                    "typeRef": "string"
+                }
+            ],
+            "rule": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-95941296-2",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_08fb0go",
+                            "text": "12"
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_16micgc",
+                            "description": "",
+                            "text": "\"FD\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_181kjh2",
+                            "description": "",
+                            "text": "\"SM\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0tkez1t",
+                            "description": "",
+                            "text": "\"SA\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-997957281-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0wzd62h",
+                            "text": "13"
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_13bigyh",
+                            "description": "",
+                            "text": "\"SM\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1n5x1k1",
+                            "description": "",
+                            "text": "\"ASM\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1cwjnh8",
+                            "description": "",
+                            "text": "\"SA\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-997957281-2",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0o5qaxm",
+                            "text": "14"
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_07utgca",
+                            "description": "",
+                            "text": "\"FD\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0p8pdje",
+                            "description": "",
+                            "text": "\"SA\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1iwtkhs",
+                            "description": "",
+                            "text": "\"SM\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-997957281-3",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1mh0bah",
+                            "text": "15"
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_07e8ou1",
+                            "description": "",
+                            "text": "\"ASM\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0c31fgf",
+                            "description": "",
+                            "text": "\"SA\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0sms77g",
+                            "description": "",
+                            "text": "\"SM\""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

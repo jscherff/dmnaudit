@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="ps-okta-company-rules" name="ps-okta-company-rules">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
+      <input id="input1" label="companyData">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>companyData</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="companyList" name="company_id" typeRef="string" />
+      <output id="OutputClause_0tk8hvb" label="emailext" name="email_ext" typeRef="string" />
+      <rule id="row-360257637-2">
+        <inputEntry id="UnaryTests_1j0tpok">        <text><![CDATA["companyData"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_09xv6wf">        <text><![CDATA["'245'"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_18h2ofj">        <text><![CDATA["'@24hourfit.com'"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-360257637-3">
+        <inputEntry id="UnaryTests_0lwsh8d">        <text><![CDATA["companyData"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0y4evan">        <text><![CDATA["'BFT'"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0b1y6qe">        <text><![CDATA["'@bfitgyms.com'"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

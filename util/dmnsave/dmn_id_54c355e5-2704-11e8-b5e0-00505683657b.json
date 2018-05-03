@@ -1,0 +1,219 @@
+{
+    "xmlName": {
+        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+        "Local": "definitions"
+    },
+    "xmlns": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+    "id": "definitions",
+    "name": "definitions",
+    "namespace": "http://camunda.org/schema/1.0/dmn",
+    "decision": {
+        "xmlName": {
+            "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+            "Local": "decision"
+        },
+        "id": "pos-agreement-balance-determine-sku-rules",
+        "name": "pos-agreement-balance-determine-sku-rules",
+        "decisionTable": {
+            "xmlName": {
+                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                "Local": "decisionTable"
+            },
+            "id": "decisionTable",
+            "hitPolicy": "FIRST",
+            "input": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "input"
+                    },
+                    "id": "input1",
+                    "label": "Contract Type",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "inputExpression1",
+                            "typeRef": "string",
+                            "text": "contractType"
+                        }
+                    ]
+                }
+            ],
+            "output": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "output1",
+                    "label": "SKU",
+                    "name": "sku",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_0lj61fm",
+                    "label": "Description",
+                    "name": "description",
+                    "typeRef": "string"
+                }
+            ],
+            "rule": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-853046795-4",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0rdwg4c",
+                            "text": "\"SP\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0fgh38u",
+                            "description": "",
+                            "text": "\"93309\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0y7xmkc",
+                            "description": "",
+                            "text": "\"Special Privilege Initial Fees\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-853046795-5",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1xbspam",
+                            "text": "\"FAO\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_03espaz",
+                            "description": "",
+                            "text": "\"9133\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0fo5g7i",
+                            "description": "",
+                            "text": "\"Membership Initial Fees\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-853046795-6",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0sk7ybs",
+                            "text": "\"ARP\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0x78j0k",
+                            "description": "",
+                            "text": "\"9157\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1wh72jj",
+                            "description": "",
+                            "text": "\"Personal Training Initial Fees\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-853046795-7",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1wts0tv",
+                            "text": ""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0h2qw9z",
+                            "description": "",
+                            "text": "\"9133\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1hoocaz",
+                            "description": "",
+                            "text": "\"Membership Initial Fees\""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

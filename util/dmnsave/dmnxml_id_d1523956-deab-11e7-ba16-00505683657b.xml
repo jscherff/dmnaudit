@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="flowater-determine-agreement-status-code-rules" name="flowater-determine-agreement-status-code-rules">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
+      <input id="input1" label="" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>level</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="FloWater Agreement Status Code with Access to FloWater Content" name="statusCode" typeRef="string" />
+      <rule id="row-95941296-2">
+        <description>User must be an active members of 24 Hour Fitness to have this agreement using the existing architecture</description>
+        <inputEntry id="UnaryTests_08fb0go">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16micgc">        <text><![CDATA["ACTIVE"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-504301155-1">
+        <description>User is cancelled, but right before dues refusal. Until then, the user has access before cancellation is complete</description>
+        <inputEntry id="UnaryTests_03tggaf">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0lrwt2k">        <text><![CDATA["P_DUES_REFUSAL"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-504301155-2">
+        <description>User who recently purchased a new FloWater agreement should have access to FloWater as soon as possible</description>
+        <inputEntry id="UnaryTests_03u9t3n">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1b88fz5">        <text><![CDATA["PENDING"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

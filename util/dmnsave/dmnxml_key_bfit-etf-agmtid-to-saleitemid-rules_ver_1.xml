@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="bfit-etf-agmtid-to-saleitemid-rules" name="bfit-etf-agmtid-to-saleitemid-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Agreement Id">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>agreementId</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Sale Item Id" name="saleItemId" typeRef="integer" />
+      <output id="OutputClause_111fr4i" label="Sale Item" name="saleItem" typeRef="string" />
+      <rule id="row-590920848-3">
+        <inputEntry id="UnaryTests_0tz38yt">        <text>1</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0975jtb">        <text>9</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_06k83s4">        <text><![CDATA["Fit Pass Solo Early Termination"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-590920848-2">
+        <inputEntry id="UnaryTests_0xhuh7t">        <text>2</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0fhbef8">        <text>10</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ey5jnr">        <text><![CDATA["Fit Pass + Early Termination"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-590920848-1">
+        <inputEntry id="UnaryTests_0l6ye19">        <text>5</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1naf0pj">        <text>10</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1rbdkdo">        <text><![CDATA["Fit Pass + Early Termination"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-590920848-4">
+        <inputEntry id="UnaryTests_1qze189">        <text>6</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0sx9jx3">        <text>9</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1bt4mu8">        <text><![CDATA["Fit Pass Solo Early Termination"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-590920848-5">
+        <inputEntry id="UnaryTests_1t8crdx">        <text>12</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0qi8ehl">        <text>160</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1b3c8pr">        <text><![CDATA["Fit Pass Edge Early Termination"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-590920848-6">
+        <inputEntry id="UnaryTests_0k9smne">        <text>13</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1jt2w4a">        <text>160</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ghrtk8">        <text><![CDATA["Fit Pass Edge Early Termination"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

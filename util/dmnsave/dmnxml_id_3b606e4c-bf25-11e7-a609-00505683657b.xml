@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="mi9-determine-discount-rules" name="mi9-determine-discount-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Discount Flag">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>discountFlag</text>
+</inputExpression>
+      </input>
+      <output id="output5" label="Discount Percentage" name="discountPercentage" typeRef="double" />
+      <output id="output6" label="Discount Type" name="discountType" typeRef="string" />
+      <rule id="row-699851379-2">
+        <inputEntry id="UnaryTests_068ux1p">        <text><![CDATA["GUESTDISCOUNT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0dqywgy">        <text>15.0</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1mmacu6">        <text><![CDATA["Guest Discount"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-483791242-2">
+        <inputEntry id="UnaryTests_1568x3b">        <text><![CDATA["EMPLOYEEDISCOUNT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1yu3ojn">        <text>20.0</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0bxuco2">        <text><![CDATA["Employee Discount"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

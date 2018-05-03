@@ -1,0 +1,1573 @@
+{
+    "xmlName": {
+        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+        "Local": "definitions"
+    },
+    "xmlns": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+    "id": "definitions",
+    "name": "definitions",
+    "namespace": "http://camunda.org/schema/1.0/dmn",
+    "decision": {
+        "xmlName": {
+            "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+            "Local": "decision"
+        },
+        "id": "web-contactus-rules",
+        "name": "web-contactus-rules",
+        "decisionTable": {
+            "xmlName": {
+                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                "Local": "decisionTable"
+            },
+            "id": "decisionTable",
+            "hitPolicy": "",
+            "input": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "input"
+                    },
+                    "id": "input1",
+                    "label": "topicId",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "inputExpression1",
+                            "typeRef": "string",
+                            "text": "topicId"
+                        }
+                    ]
+                }
+            ],
+            "output": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "output1",
+                    "label": "topicName",
+                    "name": "topicName",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_1p19cln",
+                    "label": "email",
+                    "name": "email",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_1kopuu1",
+                    "label": "contactReason1",
+                    "name": "contactReason1",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_0xhw2ea",
+                    "label": "contactReason2",
+                    "name": "contactReason2",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_03uwxyx",
+                    "label": "contactReason3",
+                    "name": "contactReason3",
+                    "typeRef": "string"
+                }
+            ],
+            "rule": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0opb3tw",
+                            "text": "\"1495\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_03vxiwt",
+                            "description": "",
+                            "text": "\"Billing\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0lukste",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_05so0da",
+                            "description": "",
+                            "text": "\"Billing\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0o7okrh",
+                            "description": "",
+                            "text": "\"Details\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_19fuzhh",
+                            "description": "",
+                            "text": "\"Billing/PTP Issue/Inquiry\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-2",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1k1gjnb",
+                            "text": "\"1499\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_042iat9",
+                            "description": "",
+                            "text": "\"Cancellation\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1t8lsr9",
+                            "description": "",
+                            "text": "\"CANCEL\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1lqb9d4",
+                            "description": "",
+                            "text": "\"Cancellation\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1i8vw9y",
+                            "description": "",
+                            "text": "\"No Reason-Just Wants To Cancel\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0eih2ug",
+                            "description": "",
+                            "text": "\"No Save\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-3",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1wsdy1e",
+                            "text": "\"1500\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0r74w2t",
+                            "description": "",
+                            "text": "\"Freeze/Reactivate from freeze\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_16wfe98",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1h2dxe0",
+                            "description": "",
+                            "text": "\"Billing\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_078532n",
+                            "description": "",
+                            "text": "\"Freeze\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0j35ib5",
+                            "description": "",
+                            "text": "\"Freeze Request/Issue\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-4",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0w0qs68",
+                            "text": "\"1497\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0djbt2i",
+                            "description": "",
+                            "text": "\"Policy Questions\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0snukvc",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1xohwcd",
+                            "description": "",
+                            "text": "\"Membership\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_122pymw",
+                            "description": "",
+                            "text": "\"Agreement\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1wxw1dy",
+                            "description": "",
+                            "text": "\"Policy Issue\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-5",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_06ae7a2",
+                            "text": "\"1496\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1939nvu",
+                            "description": "",
+                            "text": "\"Club Access\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1elk4ca",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_08te496",
+                            "description": "",
+                            "text": "\"Membership\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_13nfezq",
+                            "description": "",
+                            "text": "\"Club Access\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0nzq98k",
+                            "description": "",
+                            "text": "\"Allow Club Access\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-6",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0cbhl39",
+                            "text": "\"1498\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_10ij91h",
+                            "description": "",
+                            "text": "\"Other Membership Questions\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_094z4lp",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1cud75b",
+                            "description": "",
+                            "text": "\"Membership\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_067997n",
+                            "description": "",
+                            "text": "\"Agreement\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0vskigp",
+                            "description": "",
+                            "text": "\"Agreement Change\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-7",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_09rmt94",
+                            "text": "\"1600\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0llowt2",
+                            "description": "",
+                            "text": "\"Cleanliness\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1oe58ub",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1ps5hvt",
+                            "description": "",
+                            "text": "\"Club\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0xl00yo",
+                            "description": "",
+                            "text": "\"Cleanliness\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_03oa0yd",
+                            "description": "",
+                            "text": "\"Club Operations\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-8",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1rnasx4",
+                            "text": "\"1601\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1uenab5",
+                            "description": "",
+                            "text": "\"Equipment\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0gexjlv",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1w1jfaq",
+                            "description": "",
+                            "text": "\"Club\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0pu0l3k",
+                            "description": "",
+                            "text": "\"Equipment\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0bf52t1",
+                            "description": "",
+                            "text": "\"Club Operations\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-9",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0yrfd9x",
+                            "text": "\"1602\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0lbnafs",
+                            "description": "",
+                            "text": "\"Staff\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_04t6ppb",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0lsraqg",
+                            "description": "",
+                            "text": "\"Club\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0y4ig6n",
+                            "description": "",
+                            "text": "\"Staff\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_06wiyfk",
+                            "description": "",
+                            "text": "\"Club Operations\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-10",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1jf0zm8",
+                            "text": "\"1603\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_10keos5",
+                            "description": "",
+                            "text": "\"GX24®\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0l42w52",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1t5yz0g",
+                            "description": "",
+                            "text": "\"Club\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_04qkurz",
+                            "description": "",
+                            "text": "\"Group X\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1m5ojr1",
+                            "description": "",
+                            "text": "\"Club Fitness\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-11",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1dtrgep",
+                            "text": "\"1604\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1imc5tj",
+                            "description": "",
+                            "text": "\"Personal Training/Fitness\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_06sjoes",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_16cl4ne",
+                            "description": "",
+                            "text": "\"Club\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_05pl5bw",
+                            "description": "",
+                            "text": "\"Personal Training\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1wo8d7b",
+                            "description": "",
+                            "text": "\"Club Operations\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-12",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1fd0xz2",
+                            "text": "\"1605\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1vb61v5",
+                            "description": "",
+                            "text": "\"Pricing\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0yukeo1",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1hwr3oi",
+                            "description": "",
+                            "text": "\"Sales\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0aougvl",
+                            "description": "",
+                            "text": "\"Pricing/Rates\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1y44cts",
+                            "description": "",
+                            "text": "\"Club Sales\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-13",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_005r6q7",
+                            "text": "\"1606\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_00mnpx0",
+                            "description": "",
+                            "text": "\"Other Club Feedback\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_04nla3n",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_CLUB\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1h4vvyw",
+                            "description": "",
+                            "text": "\"Club\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0nldt80",
+                            "description": "",
+                            "text": "\"Policies\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_11lcnph",
+                            "description": "",
+                            "text": "\"Club Operations\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-14",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0ckoo3l",
+                            "text": "\"1607\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0kz1ktz",
+                            "description": "",
+                            "text": "\"Corporate Memberships\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1jg0133",
+                            "description": "",
+                            "text": "\"CORP_FIT\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_099or8r",
+                            "description": "",
+                            "text": "\"Sales\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_12h9zan",
+                            "description": "",
+                            "text": "\"Pricing/Rates\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_020srfb",
+                            "description": "",
+                            "text": "\"Club Sales\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-15",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_12afaa8",
+                            "text": "\"156\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1lag6b7",
+                            "description": "",
+                            "text": "\"Forgot User Name/Password\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1gds415",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_01eodmy",
+                            "description": "",
+                            "text": "\"Website\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_09mzskz",
+                            "description": "",
+                            "text": "\"My24 Online\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1p72fql",
+                            "description": "",
+                            "text": "\"Website Inquiry\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-16",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0fvtg2c",
+                            "text": "\"160\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0htamr0",
+                            "description": "",
+                            "text": "\"My24 App\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0sxsxs7",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0gkgus1",
+                            "description": "",
+                            "text": "\"Website\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_00b1gpy",
+                            "description": "",
+                            "text": "\"Mobile Application\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1hcf29n",
+                            "description": "",
+                            "text": "\"Website Inquiry\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-17",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1kx3mph",
+                            "text": "\"161\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0gtjw82",
+                            "description": "",
+                            "text": "\"My24 Account\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_14h5j65",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_05skfci",
+                            "description": "",
+                            "text": "\"Website\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1w431qn",
+                            "description": "",
+                            "text": "\"My24 Online\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1vjyuyy",
+                            "description": "",
+                            "text": "\"Website Inquiry\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-18",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_07a1kso",
+                            "text": "\"162\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_19iqh3t",
+                            "description": "",
+                            "text": "\"Fit:Perks®\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_118p61q",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0wuimye",
+                            "description": "",
+                            "text": "\"Website\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1kjdgil",
+                            "description": "",
+                            "text": "\"FitPerks\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1b4q5w6",
+                            "description": "",
+                            "text": "\"Website Inquiry\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-19",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1f5rrrb",
+                            "text": "\"163\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_12oost9",
+                            "description": "",
+                            "text": "\"24GO App\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_01c9fds",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1w2emb1",
+                            "description": "",
+                            "text": "\"24GO\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1r98qlz",
+                            "description": "",
+                            "text": "\"Other\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_05zqtl1",
+                            "description": "",
+                            "text": "\"24GO Issue resolved\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-20",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0836sty",
+                            "text": "\"154\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0faien0",
+                            "description": "",
+                            "text": "\"Unsubscribe\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1t4lw71",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1pooy8f",
+                            "description": "",
+                            "text": "\"Website\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_00bpxxb",
+                            "description": "",
+                            "text": "\"My24 Online\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_176nqvh",
+                            "description": "",
+                            "text": "\"Website Inquiry\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-21",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_02lsynu",
+                            "text": "\"164\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1grf2ls",
+                            "description": "",
+                            "text": "\"Feedback\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_17ijwig",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_WT\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0kgh40k",
+                            "description": "",
+                            "text": "\"Website\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1x9zid1",
+                            "description": "",
+                            "text": "\"Feedback\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_000jo1c",
+                            "description": "",
+                            "text": "\"Website Inquiry\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-22",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_15dnl1a",
+                            "text": "\"158\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_049ud5n",
+                            "description": "",
+                            "text": "\"Broken link\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_17ciw0k",
+                            "description": "",
+                            "text": "\"CUSTOMER_SERVICE_WT\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1cfe03u",
+                            "description": "",
+                            "text": "\"Website\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0kc68u3",
+                            "description": "",
+                            "text": "\"Not Responding\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0rucnst",
+                            "description": "",
+                            "text": "\"Website Inquiry\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-554002474-23",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0t9vxmp",
+                            "text": "\"165\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0t7330t",
+                            "description": "",
+                            "text": "\"Partnership\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0ukzznv",
+                            "description": "",
+                            "text": "\"PARTNERSHIPS\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1g2fuhg",
+                            "description": "",
+                            "text": "\"\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0ksy3dd",
+                            "description": "",
+                            "text": "\"\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0mc4p1v",
+                            "description": "",
+                            "text": "\"\""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

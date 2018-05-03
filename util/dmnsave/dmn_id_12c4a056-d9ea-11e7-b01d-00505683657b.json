@@ -1,0 +1,224 @@
+{
+    "xmlName": {
+        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+        "Local": "definitions"
+    },
+    "xmlns": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+    "id": "definitions_1qpg4bp",
+    "name": "definitions",
+    "namespace": "http://camunda.org/schema/1.0/dmn",
+    "decision": {
+        "xmlName": {
+            "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+            "Local": "decision"
+        },
+        "id": "mi9-retail-transaction-determine-item-type-rules",
+        "name": "mi9-retail-transaction-determine-item-type-rules",
+        "decisionTable": {
+            "xmlName": {
+                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                "Local": "decisionTable"
+            },
+            "id": "decisionTable",
+            "hitPolicy": "FIRST",
+            "input": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "input"
+                    },
+                    "id": "input1",
+                    "label": "Journal Type Code",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "inputExpression1",
+                            "typeRef": "string",
+                            "text": "journalTypeCode"
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "input"
+                    },
+                    "id": "InputClause_0kiypf1",
+                    "label": "Non Merchant Code",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "LiteralExpression_0a9q8tp",
+                            "typeRef": "string",
+                            "text": "nonMerchCode"
+                        }
+                    ]
+                }
+            ],
+            "output": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "output1",
+                    "label": "Item Type to Persist to M2",
+                    "name": "itemType",
+                    "typeRef": "string"
+                }
+            ],
+            "rule": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-887074014-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_14jk9v4",
+                            "text": "\"OTHSALES\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1afew71",
+                            "text": "\"9157\", \"9140\", \"93309\", \"9133\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0ezbzc6",
+                            "description": "",
+                            "text": "\"INITIAL_FEES\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "table-63325475-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1eklslo",
+                            "text": "\"OTHSALES\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_103jnj0",
+                            "text": "\"9225\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0emswwy",
+                            "description": "",
+                            "text": "\"DUES\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-887074014-2",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_18prpes",
+                            "text": "\"OTHSALES\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1yp2adm",
+                            "text": "\"9610\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0rvsqd7",
+                            "description": "",
+                            "text": "\"ADMIN_FEE\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-686068031-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0274pty",
+                            "text": "\"SALES\", \"SALESTAX\", \"OTHSALESTAX\", \"GCSOLD\", \"RETURNS\", \"RETURNTAX\", \"OTHSALES\", \"ROUNDINGDIFF\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_04uwm7n",
+                            "text": ""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_17m7q8d",
+                            "description": "",
+                            "text": "\"RETAIL\""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

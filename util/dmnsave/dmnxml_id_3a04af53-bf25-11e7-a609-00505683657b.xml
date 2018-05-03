@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_0tsqwal" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="crm-service-account-security-roles-rules" name="crm-service-account-security-roles-rules">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
+      <input id="input1" label="Service Account User Name" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>username</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Security Role" name="securityRole" typeRef="string" />
+      <rule id="row-899753350-2">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_0abpu2v">        <text><![CDATA["crmauth_prd_svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0hufaaf">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-899753350-3">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_0iehi7f">        <text><![CDATA["cancel@24hourfitness.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0vzbbka">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-899753350-4">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_0t9rc6a">        <text><![CDATA["crmdatasync@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1f7l5uq">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-899753350-5">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_0agilt9">        <text><![CDATA["crm_migration@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1xelb26">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-1">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_0ves1bq">        <text><![CDATA["crmint_prd_svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0hzxgb8">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-2">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_176zzh3">        <text><![CDATA["crmwebmail@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_17atqaf">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-3">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_1w1dtvo">        <text><![CDATA["CRM_Service@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_09jaw42">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-5">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_1cui4fi">        <text><![CDATA["crmscribe_prod_svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ew2poy">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-12">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_0zpb8xh">        <text><![CDATA["customerservice_club@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0vea4cr">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-18">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_06es3rq">        <text><![CDATA["customerservice@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0t7fewc">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-14">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_0vd31wz">        <text><![CDATA["O365CRM_Service_Admin@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0jl8oq2">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-15">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_02cnis7">        <text><![CDATA["dirsync_prd_svc@24HF.onmicrosoft.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ydftaf">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-16">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_1ndwlp5">        <text><![CDATA["oktasync_prd_svc@24HF.onmicrosoft.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_184329a">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-17">
+        <description>PRD</description>
+        <inputEntry id="UnaryTests_0slyvep">        <text><![CDATA["QA_Automation_Prod_Svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0w1f2do">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-4">
+        <description>TRN</description>
+        <inputEntry id="UnaryTests_0xguhpl">        <text><![CDATA["crmauth_trn_svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_19w8xy3">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-6">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_1ypvqs3">        <text><![CDATA["crmservice_user_CST@bodybugg.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0nhlvks">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-7">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_0gwafnn">        <text><![CDATA["crmservice_user_EST@bodybugg.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1s5sogo">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-8">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_1wl1cw9">        <text><![CDATA["crmservice_user_HST@bodybugg.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1f1yxxi">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-9">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_1xptnih">        <text><![CDATA["crmservice_user_MST@bodybugg.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0crl5cw">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-10">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_138c42x">        <text><![CDATA["crmservice_user_PST@bodybugg.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0r6jtp7">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-11">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_1ir78e8">        <text><![CDATA["crmservice_user_PST@bodybugg.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0k6hfeo">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-13">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_0t3ly46">        <text><![CDATA["O365CRM_Service_Admin@bodybugg.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0otgr83">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-19">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_0pieyph">        <text><![CDATA["canceldev@24hourfitness.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1a2thsp">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-20">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_1tzp4x7">        <text><![CDATA["cancelqa@24hourfitness.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_03xe8v2">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-21">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_1wukfcw">        <text><![CDATA["crmint_dev_svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1vkqhn9">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-22">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_10kavqm">        <text><![CDATA["crmint_qa_svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0i1elwl">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-23">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_14dex6w">        <text><![CDATA["CRMScribe_dev_svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1qvc9cl">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-24">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_0xe9uvc">        <text><![CDATA["CRMScribe_qa_svc@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1d6f1ci">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-25">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_0yeg38c">        <text><![CDATA["crmauth_dev_svc@bodybugg.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ymvflb">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-26">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_1j09th4">        <text><![CDATA["customerservice_dev@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0i0dfw0">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-27">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_1cp5fhc">        <text><![CDATA["customerservice_club_dev@24hourfit.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0bjsto8">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-562682810-28">
+        <description>Non-PRD</description>
+        <inputEntry id="UnaryTests_0qki0e1">        <text><![CDATA["crmauth_dev_svc@apexfitness.com"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_11uz7ha">        <text><![CDATA["System Administrator"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

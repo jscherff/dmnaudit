@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="dgr-age-rules" name="DGR AGE RULES">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Age  Group">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>ageGroup</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Categorie" name="ageConversion" typeRef="integer" />
+      <rule id="row-835791915-12">
+        <inputEntry id="UnaryTests_1arlzy4">        <text><![CDATA[<25]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0fx7j0a">        <text>1</text>
+</outputEntry>
+      </rule>
+      <rule id="row-835791915-13">
+        <inputEntry id="UnaryTests_19wt9kf">        <text>[25..34]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1klv8mj">        <text>2</text>
+</outputEntry>
+      </rule>
+      <rule id="row-835791915-14">
+        <inputEntry id="UnaryTests_1uj9uo4">        <text>[35..44]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0sbepb6">        <text>3</text>
+</outputEntry>
+      </rule>
+      <rule id="row-835791915-15">
+        <inputEntry id="UnaryTests_0gq7qwf">        <text>[45..54]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0zvxd8q">        <text>4</text>
+</outputEntry>
+      </rule>
+      <rule id="row-835791915-16">
+        <inputEntry id="UnaryTests_0uah474">        <text>[55..64]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0rp7bkk">        <text>5</text>
+</outputEntry>
+      </rule>
+      <rule id="row-835791915-17">
+        <inputEntry id="UnaryTests_0asxp6o">        <text><![CDATA[>=65]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_085q9s4">        <text>6</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

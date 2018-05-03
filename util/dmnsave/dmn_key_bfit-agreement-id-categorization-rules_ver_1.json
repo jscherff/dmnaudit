@@ -1,0 +1,173 @@
+{
+    "xmlName": {
+        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+        "Local": "definitions"
+    },
+    "xmlns": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+    "id": "definitions",
+    "name": "definitions",
+    "namespace": "http://camunda.org/schema/1.0/dmn",
+    "decision": {
+        "xmlName": {
+            "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+            "Local": "decision"
+        },
+        "id": "bfit-agreement-id-categorization-rules",
+        "name": "bfit-agreement-id-categorization-rules",
+        "decisionTable": {
+            "xmlName": {
+                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                "Local": "decisionTable"
+            },
+            "id": "decisionTable",
+            "hitPolicy": "",
+            "input": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "input"
+                    },
+                    "id": "input1",
+                    "label": "Category",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "inputExpression1",
+                            "typeRef": "string",
+                            "text": "category"
+                        }
+                    ]
+                }
+            ],
+            "output": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "output1",
+                    "label": "AgreementIDs",
+                    "name": "agreementIDs",
+                    "typeRef": "string"
+                }
+            ],
+            "rule": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-52722599-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_05cp5xc",
+                            "text": "\"Monthly Memberships\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_10taxj6",
+                            "description": "",
+                            "text": "\"1, 2, 5, 6, 12, 13\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-52722599-3",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1efcgas",
+                            "text": "\"Prepaid\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1quc455",
+                            "description": "",
+                            "text": "\"8, 11, 22, 26, 29\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-469318651-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0bsalf0",
+                            "text": "\"Prepaid 1 Day Pass\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0qflsde",
+                            "description": "",
+                            "text": "\"3, 18\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-52722599-4",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0oz9jll",
+                            "text": "\"Monthly Privileges\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1p2vwyc",
+                            "description": "",
+                            "text": "\"23,  24\""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="mi9-retail-transaction-determine-payment-type-rules" name="mi9-retail-transaction-determine-payment-type-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Journal Type Code">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>journalTypeCode</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Formatted Payment Type for M2" name="paymentType" typeRef="string" />
+      <rule id="row-686068031-8">
+        <description>Consumer paid with cash</description>
+        <inputEntry id="UnaryTests_0t2q6yc">        <text><![CDATA["CASHREC"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0eycqh2">        <text><![CDATA["CASH"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-686068031-9">
+        <description>Consumer paid with credit card</description>
+        <inputEntry id="UnaryTests_09qg3wv">        <text><![CDATA["CRECPAYMENT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_17u64ki">        <text><![CDATA["CHARGE"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-923222232-1">
+        <description>Consumer paid with check</description>
+        <inputEntry id="UnaryTests_0buofip">        <text><![CDATA["CHECKREC"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1383ujh">        <text><![CDATA["CHECK"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-224261489-1">
+        <description>Consumer paid with debit card</description>
+        <inputEntry id="UnaryTests_05n0ut4">        <text><![CDATA["BKPAYMENT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0zqadn1">        <text><![CDATA["CHARGE"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-485619689-1">
+        <description>Consumer paid with gift card</description>
+        <inputEntry id="UnaryTests_150qqbh">        <text><![CDATA["GCREDEEM"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_11uf5un">        <text><![CDATA["GIFT CARD"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

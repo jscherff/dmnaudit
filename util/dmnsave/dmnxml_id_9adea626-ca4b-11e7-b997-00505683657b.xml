@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="bfit-agreement-id-categorization-rules" name="bfit-agreement-id-categorization-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Category">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>category</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="AgreementIDs" name="agreementIDs" typeRef="string" />
+      <rule id="row-52722599-1">
+        <description>1: Fit Pass Solo Online, 2: Fit Pass + Online, 5: Fit Pass + , 6: Fit Pss Solo, 12:Fit Pass EdgE Online, 13:Fit Pass EdgE</description>
+        <inputEntry id="UnaryTests_05cp5xc">        <text><![CDATA["Monthly Memberships"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_10taxj6">        <text><![CDATA["1, 2, 5, 6, 12, 13"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-52722599-3">
+        <description><![CDATA[8: Fit  Pass +- 1 Year PIF, 11:Fit Pass +- 3 Month PIF, 11: Fit Pass+-3 Month PIF, 26: Fit Pass EdgE  - 3 Month PIF & 29: Fit Pass EdgE - 3 Month PIF]]></description>
+        <inputEntry id="UnaryTests_1efcgas">        <text><![CDATA["Prepaid"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1quc455">        <text><![CDATA["8, 11, 22, 26, 29"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-469318651-1">
+        <description><![CDATA[Separate scenario because these are expired, whereas other prepaids are not expired.
+3: Fit Pass Single Workout, 18: 1 Day BFit/Edge Paid Access]]></description>
+        <inputEntry id="UnaryTests_0bsalf0">        <text><![CDATA["Prepaid 1 Day Pass"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0qflsde">        <text><![CDATA["3, 18"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-52722599-4">
+        <description>23: Regeneration Station - Hydro Massage, 24: Harmonic Chamber</description>
+        <inputEntry id="UnaryTests_0oz9jll">        <text><![CDATA["Monthly Privileges"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1p2vwyc">        <text><![CDATA["23,  24"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

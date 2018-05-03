@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="callcenter-manual-escalation-employees-rules" name="callcenter-manual-escalation-employees-rules">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
+      <input id="input1" label="EscalatorJobCode" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>escalatorJobCode</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="ExcludedEmployeeId" name="excludedEmployeeId" typeRef="string" />
+      <rule id="row-95941296-2">
+        <description>Cases should not be escalated to these employees</description>
+        <inputEntry id="UnaryTests_08fb0go">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16micgc">        <text><![CDATA["21508"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-1">
+        <description></description>
+        <inputEntry id="UnaryTests_0ihda4u">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_166vche">        <text><![CDATA["23352"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-2">
+        <inputEntry id="UnaryTests_1is5myb">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1yx78nw">        <text><![CDATA["2395U"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-3">
+        <inputEntry id="UnaryTests_0wccc15">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1hyurt6">        <text><![CDATA["13332"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-12">
+        <inputEntry id="UnaryTests_1vhe1yg">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1rc6prq">        <text><![CDATA["21508"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-13">
+        <inputEntry id="UnaryTests_19pwn9q">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_146g676">        <text><![CDATA["23352"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-14">
+        <inputEntry id="UnaryTests_16zkslk">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0fsv8kg">        <text><![CDATA["2395U"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-15">
+        <inputEntry id="UnaryTests_03kx9y8">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1wutxox">        <text><![CDATA["13332"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-16">
+        <inputEntry id="UnaryTests_0ck0bb6">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_13fwyxq">        <text><![CDATA["21508"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-17">
+        <inputEntry id="UnaryTests_08eidcg">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1qycqrq">        <text><![CDATA["23352"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-18">
+        <inputEntry id="UnaryTests_08yn91w">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0rc3xtu">        <text><![CDATA["2395U"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-61604954-19">
+        <inputEntry id="UnaryTests_08ln582">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0vbagh2">        <text><![CDATA["13332"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

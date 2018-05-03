@@ -5,6 +5,8 @@
 %define		summary	Decision Model and Notation to Comma-Separated Values
 %define		author	John Scherff <jscherff@24hourfit.com>
 %define		gopath	%{_builddir}/go
+%define		package github.com/jscherff/dmnsdk
+%define		utildir utils/%{name}
 # =============================================================================
 
 Name:		%{name}
@@ -30,8 +32,11 @@ Notation (DMN) format to comma-separated value (CSV) format.
 
 %build
 
-  go get
-  go build -ldflags='-X main.version=%{version}-%{release}' -o %{name}
+  export GOPATH=%{gopath}
+  export GIT_DIR=%{gopath}/src/%{package}/.git
+
+  go get %{package}
+  go build -ldflags='-X main.version=%{version}-%{release}' %{package}/%{utildir}/%{name}
 
 %install
 

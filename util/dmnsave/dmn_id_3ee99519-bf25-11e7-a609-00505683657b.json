@@ -1,0 +1,552 @@
+{
+    "xmlName": {
+        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+        "Local": "definitions"
+    },
+    "xmlns": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+    "id": "definitions",
+    "name": "definitions",
+    "namespace": "http://camunda.org/schema/1.0/dmn",
+    "decision": {
+        "xmlName": {
+            "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+            "Local": "decision"
+        },
+        "id": "crm-timezone-equivalence-rule",
+        "name": "crm-timezone-equivalence-rule",
+        "decisionTable": {
+            "xmlName": {
+                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                "Local": "decisionTable"
+            },
+            "id": "decisionTable",
+            "hitPolicy": "",
+            "input": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "input"
+                    },
+                    "id": "input1",
+                    "label": "",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "inputExpression1",
+                            "typeRef": "string",
+                            "text": "timezoneAlias"
+                        }
+                    ]
+                }
+            ],
+            "output": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "output1",
+                    "label": "Timezone Code",
+                    "name": "timezoneCode",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_1n8fy51",
+                    "label": "Timezone Description",
+                    "name": "timezoneDescription",
+                    "typeRef": "string"
+                }
+            ],
+            "rule": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-5",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_12cxfo6",
+                            "text": "\"SST\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1eekimq",
+                            "description": "",
+                            "text": "\"1\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0np6lpo",
+                            "description": "",
+                            "text": "\"Samoa Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-4",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1691fiy",
+                            "text": "\"HST\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0uiapod",
+                            "description": "",
+                            "text": "\"2\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1eto0p5",
+                            "description": "",
+                            "text": "\"Hawaiian Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-11",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0ehv9b3",
+                            "text": "\"HADT\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0akqypo",
+                            "description": "",
+                            "text": "\"2\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0jcm29y",
+                            "description": "",
+                            "text": "\"Hawaiian Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-6",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0a146fb",
+                            "text": "\"AST\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1gh800j",
+                            "description": "",
+                            "text": "\"3\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0hbhi67",
+                            "description": "",
+                            "text": "\"Alaska Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-13",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0vmodwn",
+                            "text": "\"AKDT\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0espzl5",
+                            "description": "",
+                            "text": "\"3\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0diykv6",
+                            "description": "",
+                            "text": "\"Alaska Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_06ujfvw",
+                            "text": "\"PDT\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1e2175m",
+                            "description": "",
+                            "text": "\"4\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_05kus7l",
+                            "description": "",
+                            "text": "\"Pacific Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-9",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0nmncqg",
+                            "text": "\"PST\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0vzkw4s",
+                            "description": "",
+                            "text": "\"4\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_14m8xcj",
+                            "description": "",
+                            "text": "\"Pacific Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-7",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1vcv3si",
+                            "text": "\"MST\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0ri5mcx",
+                            "description": "",
+                            "text": "\"10\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0kmqmqh",
+                            "description": "",
+                            "text": "\"Mountain Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-10",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_184s2bv",
+                            "text": "\"MDT\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1nr9z1l",
+                            "description": "",
+                            "text": "\"10\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0rfal94",
+                            "description": "",
+                            "text": "\"Mountain Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-2",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_18oi35l",
+                            "text": "\"CDT\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_01erw19",
+                            "description": "",
+                            "text": "\"20\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0yq3u5q",
+                            "description": "",
+                            "text": "\"Central Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-12",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0xtntxz",
+                            "text": "\"CST\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_17z43mh",
+                            "description": "",
+                            "text": "\"20\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1e0ah1q",
+                            "description": "",
+                            "text": "\"Central Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-3",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1ilqtib",
+                            "text": "\"EST\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0ou1n7c",
+                            "description": "",
+                            "text": "\"35\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1x1lk6h",
+                            "description": "",
+                            "text": "\"Eastern Standard Time\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-742795890-8",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0a1ptze",
+                            "text": "\"EDT\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_07k43zz",
+                            "description": "",
+                            "text": "\"35\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1ngerjs",
+                            "description": "",
+                            "text": "\"Estearn Standard Time\""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

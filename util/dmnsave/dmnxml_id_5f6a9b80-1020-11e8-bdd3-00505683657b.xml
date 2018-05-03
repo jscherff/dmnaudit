@@ -1,0 +1,1384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="myaccount-user-management-error-messages" name="myaccount-user-management-error-messages">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="inputErrorCode" label="inputErrorCode">
+        <inputExpression id="InputExpression1886731812" typeRef="string">        <text>inputErrorCode</text>
+</inputExpression>
+      </input>
+      <output id="outputErrorCode" label="outputErrorCode" name="outputErrorCode" typeRef="string" />
+      <output id="outputMessage" label="outputErrorMessage" name="outputErrorMessage" typeRef="string" />
+      <rule id="excelRow2">
+        <inputEntry id="A2">        <text><![CDATA["ARC00A0001"]]></text>
+</inputEntry>
+        <outputEntry id="B2">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C2">        <text><![CDATA["An unexpected error was encountered and your process cannot be completed.  Please try again later."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow3">
+        <inputEntry id="A3">        <text><![CDATA["NOTDOC0001"]]></text>
+</inputEntry>
+        <outputEntry id="B3">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C3">        <text><![CDATA["The PIN numbers you entered do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow4">
+        <inputEntry id="A4">        <text><![CDATA["NOTDOC0002"]]></text>
+</inputEntry>
+        <outputEntry id="B4">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C4">        <text><![CDATA["The PIN numbers must be four digits.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow5">
+        <inputEntry id="A5">        <text><![CDATA["MSOTMP0001"]]></text>
+</inputEntry>
+        <outputEntry id="B5">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C5">        <text><![CDATA["The password was not changed.  Please try again.  If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow6">
+        <inputEntry id="A6">        <text><![CDATA["MSOTMP0002"]]></text>
+</inputEntry>
+        <outputEntry id="B6">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C6">        <text><![CDATA["The security info was not changed.  Please try again.  If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow7">
+        <inputEntry id="A7">        <text><![CDATA["MSOTMP0003"]]></text>
+</inputEntry>
+        <outputEntry id="B7">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C7">        <text><![CDATA["Your changes have been submitted successfully.  At this time we are not able to send you a confirmation email.  Please print this page as your receipt of the change you made."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow8">
+        <inputEntry id="A8">        <text><![CDATA["MSOTMP0004"]]></text>
+</inputEntry>
+        <outputEntry id="B8">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C8">        <text><![CDATA["Information provided does not verify.   Please try again.  If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow9">
+        <inputEntry id="A9">        <text><![CDATA["MAMCIC0005"]]></text>
+</inputEntry>
+        <outputEntry id="B9">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C9">        <text><![CDATA["The check-in code entered does not match what is on file.  Please confirm and try again.  If you do not know your check-in code, please contact your club for assistance.  Thank you."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow10">
+        <inputEntry id="A10">        <text><![CDATA["MAMCIC0001"]]></text>
+</inputEntry>
+        <outputEntry id="B10">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C10">        <text><![CDATA["The check-in code selected is already in use.  Please enter a new one."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow11">
+        <inputEntry id="A11">        <text><![CDATA["MSOCIC0099"]]></text>
+</inputEntry>
+        <outputEntry id="B11">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C11">        <text><![CDATA["Our records indicate that you’re not currently enrolled in the cardless check-in program.  If you wish to enroll, please visit your club for assistance. "]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow12">
+        <inputEntry id="A12">        <text><![CDATA["MSOCIC0100"]]></text>
+</inputEntry>
+        <outputEntry id="B12">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C12">        <text><![CDATA["We are unable to complete your request to change your check-in code.  Please try again later or visit your club.  Thank you."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow13">
+        <inputEntry id="A13">        <text><![CDATA["MSOCIC0101"]]></text>
+</inputEntry>
+        <outputEntry id="B13">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C13">        <text><![CDATA["The check-in code fields entered do not match.  Please verify and try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow14">
+        <inputEntry id="A14">        <text><![CDATA["MSOCIC0102"]]></text>
+</inputEntry>
+        <outputEntry id="B14">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C14">        <text><![CDATA["The new check-in code you entered is the same as your existing check-in code.  Please verify and try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow15">
+        <inputEntry id="A15">        <text><![CDATA["MSOCIC0103"]]></text>
+</inputEntry>
+        <outputEntry id="B15">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C15">        <text><![CDATA["The new check-in code can only use the digits 0-9.  Please verify and try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow16">
+        <inputEntry id="A16">        <text><![CDATA["MSOCIC0104"]]></text>
+</inputEntry>
+        <outputEntry id="B16">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C16">        <text><![CDATA["The new check-in code you enter must be 10 digits long.  Please verify and try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow17">
+        <inputEntry id="A17">        <text><![CDATA["EPOSER0001"]]></text>
+</inputEntry>
+        <outputEntry id="B17">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C17">        <text><![CDATA["Failed to get the member details for the given member number.  Please try again.  If problem persists please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow18">
+        <inputEntry id="A18">        <text><![CDATA["EPOSER0002"]]></text>
+</inputEntry>
+        <outputEntry id="B18">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C18">        <text><![CDATA["Invalid payment information provided.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow19">
+        <inputEntry id="A19">        <text><![CDATA["EPOSER0003"]]></text>
+</inputEntry>
+        <outputEntry id="B19">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C19">        <text><![CDATA["Invalid PIN.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow20">
+        <inputEntry id="A20">        <text><![CDATA["EPOSER0004"]]></text>
+</inputEntry>
+        <outputEntry id="B20">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C20">        <text><![CDATA["Database error occurred retrieving enrollment information."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow21">
+        <inputEntry id="A21">        <text><![CDATA["EPOSER0005"]]></text>
+</inputEntry>
+        <outputEntry id="B21">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C21">        <text><![CDATA["Database error occurred updating enrollment information.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow22">
+        <inputEntry id="A22">        <text><![CDATA["EPOSER0008"]]></text>
+</inputEntry>
+        <outputEntry id="B22">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C22">        <text><![CDATA["Database error occurred updating payment information.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow23">
+        <inputEntry id="A23">        <text><![CDATA["EPOSER0009"]]></text>
+</inputEntry>
+        <outputEntry id="B23">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C23">        <text><![CDATA["Database error occurred enrolling member.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow24">
+        <inputEntry id="A24">        <text><![CDATA["EPOSER0010"]]></text>
+</inputEntry>
+        <outputEntry id="B24">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C24">        <text><![CDATA["The member is already enrolled."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow25">
+        <inputEntry id="A25">        <text><![CDATA["EPOSER0011"]]></text>
+</inputEntry>
+        <outputEntry id="B25">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C25">        <text><![CDATA["The member is not enrolled to EasyPay."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow26">
+        <inputEntry id="A26">        <text><![CDATA["EPOSER0012"]]></text>
+</inputEntry>
+        <outputEntry id="B26">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C26">        <text><![CDATA["Invalid pin format.  Please try again.  PIN must be 4 digits."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow27">
+        <inputEntry id="A27">        <text><![CDATA["EPOSER0013"]]></text>
+</inputEntry>
+        <outputEntry id="B27">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C27">        <text><![CDATA["Member cannot be enrolled due to invalid contract status."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow28">
+        <inputEntry id="A28">        <text><![CDATA["UMIREG0106"]]></text>
+</inputEntry>
+        <outputEntry id="B28">        <text><![CDATA["401"]]></text>
+</outputEntry>
+        <outputEntry id="C28">        <text><![CDATA["The username/password entered is not valid.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow29">
+        <inputEntry id="A29">        <text><![CDATA["UMIREG0104"]]></text>
+</inputEntry>
+        <outputEntry id="B29">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C29">        <text><![CDATA["An error was encountered while verifying your personal information. Please verify the information entered and try again.   If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow30">
+        <inputEntry id="A30">        <text><![CDATA["UMIREG0105"]]></text>
+</inputEntry>
+        <outputEntry id="B30">        <text><![CDATA["401"]]></text>
+</outputEntry>
+        <outputEntry id="C30">        <text><![CDATA["The username/password entered is not valid.  Please try again.]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow31">
+        <inputEntry id="A31">        <text><![CDATA["UMSUB0001"]]></text>
+</inputEntry>
+        <outputEntry id="B31">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C31">        <text><![CDATA["The date range you have entered is not available online.  For assistance with this request, please visit your club, <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow32">
+        <inputEntry id="A32">        <text><![CDATA["UMILOG106"]]></text>
+</inputEntry>
+        <outputEntry id="B32">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C32">        <text><![CDATA["An error was encountered while verifying your personal information. Please verify the information entered and try again.   If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow33">
+        <inputEntry id="A33">        <text><![CDATA["UMIREG0102"]]></text>
+</inputEntry>
+        <outputEntry id="B33">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C33">        <text><![CDATA["An error was encountered while verifying your personal information. Please verify the information entered and try again.   If you are having trouble with this process please  <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow34">
+        <inputEntry id="A34">        <text><![CDATA["UMIREG0111"]]></text>
+</inputEntry>
+        <outputEntry id="B34">        <text><![CDATA["401"]]></text>
+</outputEntry>
+        <outputEntry id="C34">        <text><![CDATA["The username you entered already exists.  Either create a new username or if this is your username from previously registering, then please login first."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow35">
+        <inputEntry id="A35">        <text><![CDATA["OASACC0002"]]></text>
+</inputEntry>
+        <outputEntry id="B35">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C35">        <text><![CDATA["The username you entered already exists.  Either create a new username or if this is your username from previously registering, then please login first."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow36">
+        <inputEntry id="A36">        <text><![CDATA["OASRGS0001"]]></text>
+</inputEntry>
+        <outputEntry id="B36">        <text><![CDATA["401"]]></text>
+</outputEntry>
+        <outputEntry id="C36">        <text><![CDATA["The username you entered already exists.  Either create a new username or if this is your username from previously registering, then please login first."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow37">
+        <inputEntry id="A37">        <text><![CDATA["UMIREG0113"]]></text>
+</inputEntry>
+        <outputEntry id="B37">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C37">        <text><![CDATA["The information entered could not be verified.  Please verify the information entered and try again.   If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow38">
+        <inputEntry id="A38">        <text><![CDATA["UMIREG0115"]]></text>
+</inputEntry>
+        <outputEntry id="B38">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C38">        <text><![CDATA["The information entered could not be verified.  Please verify the information entered and try again.   If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow39">
+        <inputEntry id="A39">        <text><![CDATA["UMIPAY0102"]]></text>
+</inputEntry>
+        <outputEntry id="B39">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C39">        <text><![CDATA["Credit card authorization failed.  Please enter another credit card."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow40">
+        <inputEntry id="A40">        <text><![CDATA["UMIPAY0104"]]></text>
+</inputEntry>
+        <outputEntry id="B40">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C40">        <text><![CDATA["The routing numbers entered do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow41">
+        <inputEntry id="A41">        <text><![CDATA["UMIPAY0111"]]></text>
+</inputEntry>
+        <outputEntry id="B41">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C41">        <text><![CDATA["The security code number entered is not valid. Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow42">
+        <inputEntry id="A42">        <text><![CDATA["PMUREG00007"]]></text>
+</inputEntry>
+        <outputEntry id="B42">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C42">        <text><![CDATA["The member number entered is already registered with the 24 Hour Fitness website.  Verify the member number you entered and try again.  If the member number you entered is valid, then click 'cancel' and log into your account.  If you are having trouble with this process please call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow43">
+        <inputEntry id="A43">        <text><![CDATA["UMIREG0103"]]></text>
+</inputEntry>
+        <outputEntry id="B43">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C43">        <text><![CDATA["The member number entered is already registered with the 24 Hour Fitness website.  Verify the member number you entered and try again.  If the member number you entered is valid, then click ‘cancel’ and log into your account.  If you are having trouble with this process please call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow44">
+        <inputEntry id="A44">        <text><![CDATA["MAMSUB0016"]]></text>
+</inputEntry>
+        <outputEntry id="B44">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C44">        <text><![CDATA["The phone number entered is an invalid format.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow45">
+        <inputEntry id="A45">        <text><![CDATA["MAMSUB0017"]]></text>
+</inputEntry>
+        <outputEntry id="B45">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C45">        <text><![CDATA["The phone number entered is an invalid format.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow46">
+        <inputEntry id="A46">        <text><![CDATA["MAMSUB0018"]]></text>
+</inputEntry>
+        <outputEntry id="B46">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C46">        <text><![CDATA["The phone number entered is an invalid format.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow47">
+        <inputEntry id="A47">        <text><![CDATA["MAMSUB0019"]]></text>
+</inputEntry>
+        <outputEntry id="B47">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C47">        <text><![CDATA["The city, state or zip code entered is not valid.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow48">
+        <inputEntry id="A48">        <text><![CDATA["MAMSUB0101"]]></text>
+</inputEntry>
+        <outputEntry id="B48">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C48">        <text><![CDATA["We are unable to process your request at this time.  Please try again later or visit your club to request your agreement copy."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow49">
+        <inputEntry id="A49">        <text><![CDATA["MAMSUB0102"]]></text>
+</inputEntry>
+        <outputEntry id="B49">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C49">        <text><![CDATA["We are unable to process your request at this time.  Please try again later or visit your club to request your agreement copy."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow50">
+        <inputEntry id="A50">        <text><![CDATA["MAMSUB0305"]]></text>
+</inputEntry>
+        <outputEntry id="B50">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C50">        <text><![CDATA["Credit card authorization failed.  Please enter another credit card."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow51">
+        <inputEntry id="A51">        <text><![CDATA["UMIAGT0117"]]></text>
+</inputEntry>
+        <outputEntry id="B51">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C51">        <text><![CDATA["We are unable to process your request at this time.  Please try again later, or for immediate service please visit your club, <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow52">
+        <inputEntry id="A52">        <text><![CDATA["MAMSUB0107"]]></text>
+</inputEntry>
+        <outputEntry id="B52">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C52">        <text><![CDATA["We are unable to process your request at this time.  Please try again later, or for immediate service please visit your club, <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow53">
+        <inputEntry id="A53">        <text><![CDATA["UMIREG0112"]]></text>
+</inputEntry>
+        <outputEntry id="B53">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C53">        <text><![CDATA["We are unable to process your request.  The membership selected is not active.  For more information please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow54">
+        <inputEntry id="A54">        <text><![CDATA["PMUREG00010"]]></text>
+</inputEntry>
+        <outputEntry id="B54">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C54">        <text><![CDATA["We are unable to process your request.  The membership selected is for a minor.  For more information please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow55">
+        <inputEntry id="A55">        <text><![CDATA["UMIREG0101"]]></text>
+</inputEntry>
+        <outputEntry id="B55">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C55">        <text><![CDATA["An error was encountered while verifying your personal information. Please verify the information entered and try again.   If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow56">
+        <inputEntry id="A56">        <text><![CDATA["UMILOG105"]]></text>
+</inputEntry>
+        <outputEntry id="B56">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C56">        <text><![CDATA["An error was encountered while verifying your personal information. Please verify the information entered and try again.   If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow57">
+        <inputEntry id="A57">        <text><![CDATA["MSOTKO0028"]]></text>
+</inputEntry>
+        <outputEntry id="B57">        <text><![CDATA["401"]]></text>
+</outputEntry>
+        <outputEntry id="C57">        <text><![CDATA["Your session has timed out.  You will be required to log back in to access your member account."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow58">
+        <inputEntry id="A58">        <text><![CDATA["ARCERR0001"]]></text>
+</inputEntry>
+        <outputEntry id="B58">        <text><![CDATA["401"]]></text>
+</outputEntry>
+        <outputEntry id="C58">        <text><![CDATA["Your session has timed out.  You must login again to proceed."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow59">
+        <inputEntry id="A59">        <text><![CDATA["ARCSEC0032"]]></text>
+</inputEntry>
+        <outputEntry id="B59">        <text><![CDATA["401"]]></text>
+</outputEntry>
+        <outputEntry id="C59">        <text><![CDATA["Your session has timed out.  You must login again to proceed."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow60">
+        <inputEntry id="A60">        <text><![CDATA["ARCSEC0062"]]></text>
+</inputEntry>
+        <outputEntry id="B60">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C60">        <text><![CDATA["The security answer provided does not match our records.  Please try again or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow61">
+        <inputEntry id="A61">        <text><![CDATA["UMISEC0100"]]></text>
+</inputEntry>
+        <outputEntry id="B61">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C61">        <text><![CDATA["Information provided does not verify.  Please try again or call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow62">
+        <inputEntry id="A62">        <text><![CDATA["OASACC0001"]]></text>
+</inputEntry>
+        <outputEntry id="B62">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C62">        <text><![CDATA["Information provided does not verify.  Please try again or call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow63">
+        <inputEntry id="A63">        <text><![CDATA["UMISEC0101"]]></text>
+</inputEntry>
+        <outputEntry id="B63">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C63">        <text><![CDATA["The security answer provided does not match our records.  Please try again or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow64">
+        <inputEntry id="A64">        <text><![CDATA["OASACC0003"]]></text>
+</inputEntry>
+        <outputEntry id="B64">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C64">        <text><![CDATA["The security answer provided does not match our records.  Please try again or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow65">
+        <inputEntry id="A65">        <text><![CDATA["MSOSVC0029"]]></text>
+</inputEntry>
+        <outputEntry id="B65">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C65">        <text><![CDATA["The Member Services Online application is temporarily unavailable.  Please try your request at a later time.  We apologize for any inconvenience this may cause.   For immediate service, please visit your club or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow66">
+        <inputEntry id="A66">        <text><![CDATA["MSOSVC0030"]]></text>
+</inputEntry>
+        <outputEntry id="B66">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C66">        <text><![CDATA["We are unable to process your request at this time.  Please try again later.  We apologize for any inconvenience this may cause.   For immediate service, please visit your club, <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow67">
+        <inputEntry id="A67">        <text><![CDATA["MSOLRF0009"]]></text>
+</inputEntry>
+        <outputEntry id="B67">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C67">        <text><![CDATA["The password fields entered do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow68">
+        <inputEntry id="A68">        <text><![CDATA["MSOLRF0010"]]></text>
+</inputEntry>
+        <outputEntry id="B68">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C68">        <text><![CDATA["The password fields entered are not in a valid format.  Passwords must be between 8-20 characters long and are case sensitive.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow69">
+        <inputEntry id="A69">        <text><![CDATA["MSOLRF0011"]]></text>
+</inputEntry>
+        <outputEntry id="B69">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C69">        <text><![CDATA["Username/Password entered does not match what is on file.  Please try again or  <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow70">
+        <inputEntry id="A70">        <text><![CDATA["MSOLRF0013"]]></text>
+</inputEntry>
+        <outputEntry id="B70">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C70">        <text><![CDATA["We have recently updated our web site to better serve you.  Please re-register your current membership through our new secure registration process. We appreciate your patience."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow71">
+        <inputEntry id="A71">        <text><![CDATA["MSOLRF0014"]]></text>
+</inputEntry>
+        <outputEntry id="B71">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C71">        <text><![CDATA["You have not selected your security question to answer.  Please select a security question from the list and provide an answer to the question."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow72">
+        <inputEntry id="A72">        <text><![CDATA["MSOLRF0015"]]></text>
+</inputEntry>
+        <outputEntry id="B72">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C72">        <text><![CDATA["Please check the 'I Agree' checkbox indicating you accept the terms of use of this website."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow73">
+        <inputEntry id="A73">        <text><![CDATA["MSOLRF0016"]]></text>
+</inputEntry>
+        <outputEntry id="B73">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C73">        <text><![CDATA["We have recently updated our web site to better serve you.  Please re-register through our new secure registration process. We appreciate your patience."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow74">
+        <inputEntry id="A74">        <text><![CDATA["MSOLRF0017"]]></text>
+</inputEntry>
+        <outputEntry id="B74">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C74">        <text><![CDATA["An issue is found with the information entered. Please verify and try again. If you are still unable to register successfully, please see your Manager."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow75">
+        <inputEntry id="A75">        <text><![CDATA["MSOLRF0023"]]></text>
+</inputEntry>
+        <outputEntry id="B75">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C75">        <text><![CDATA["The zip code entered is invalid. Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow76">
+        <inputEntry id="A76">        <text><![CDATA["MSOLRF0031"]]></text>
+</inputEntry>
+        <outputEntry id="B76">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C76">        <text><![CDATA["The username you entered contains special characters and is invalid. Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow77">
+        <inputEntry id="A77">        <text><![CDATA["MSOLRF0069"]]></text>
+</inputEntry>
+        <outputEntry id="B77">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C77">        <text><![CDATA["We are unable to process your request.  You must be an adult to register with the 24 Hour Fitness website."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow78">
+        <inputEntry id="A78">        <text><![CDATA["MSOLRF0075"]]></text>
+</inputEntry>
+        <outputEntry id="B78">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C78">        <text><![CDATA["The email addresses you entered do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow79">
+        <inputEntry id="A79">        <text><![CDATA["MSOLRF0078"]]></text>
+</inputEntry>
+        <outputEntry id="B79">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C79">        <text><![CDATA["The new usernames entered do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow80">
+        <inputEntry id="A80">        <text><![CDATA["MSOLRF0100"]]></text>
+</inputEntry>
+        <outputEntry id="B80">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C80">        <text><![CDATA["A required field (phone number) has not been provided.  Please provide the missing information."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow81">
+        <inputEntry id="A81">        <text><![CDATA["MSOMAP0064"]]></text>
+</inputEntry>
+        <outputEntry id="B81">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C81">        <text><![CDATA["Sorry, we cannot process.  The payment amount is less than the minimum payment due."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow82">
+        <inputEntry id="A82">        <text><![CDATA["MSOMAP0061"]]></text>
+</inputEntry>
+        <outputEntry id="B82">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C82">        <text><![CDATA["Please select at least one payment invoice in order to process this request."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow83">
+        <inputEntry id="A83">        <text><![CDATA["MSOMAP0063"]]></text>
+</inputEntry>
+        <outputEntry id="B83">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C83">        <text><![CDATA["Your membership does not currently have any open invoices. Thank you."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow84">
+        <inputEntry id="A84">        <text><![CDATA["MSOMAP0066"]]></text>
+</inputEntry>
+        <outputEntry id="B84">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C84">        <text><![CDATA["Your membership does not currently have any past due invoices. Thank you."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow85">
+        <inputEntry id="A85">        <text><![CDATA["MSOMAP0080"]]></text>
+</inputEntry>
+        <outputEntry id="B85">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C85">        <text><![CDATA["You cannot pay more than is owed."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow86">
+        <inputEntry id="A86">        <text><![CDATA["MSOVAA0033"]]></text>
+</inputEntry>
+        <outputEntry id="B86">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C86">        <text><![CDATA["There is no account activity for the date range provided."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow87">
+        <inputEntry id="A87">        <text><![CDATA["MSOVAA0034"]]></text>
+</inputEntry>
+        <outputEntry id="B87">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C87">        <text><![CDATA["The maximum date range that can be viewed at one time is 6 months.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow88">
+        <inputEntry id="A88">        <text><![CDATA["CLBFIN0003"]]></text>
+</inputEntry>
+        <outputEntry id="B88">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C88">        <text><![CDATA["There are no clubs in the area you have searched.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow89">
+        <inputEntry id="A89">        <text><![CDATA["CLBFIN0004"]]></text>
+</inputEntry>
+        <outputEntry id="B89">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C89">        <text><![CDATA["There are no clubs in the area you have searched.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow90">
+        <inputEntry id="A90">        <text><![CDATA["PXSLCS0003"]]></text>
+</inputEntry>
+        <outputEntry id="B90">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C90">        <text><![CDATA["The city and state field combination entered are not valid.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow91">
+        <inputEntry id="A91">        <text><![CDATA["MSOUMM0001"]]></text>
+</inputEntry>
+        <outputEntry id="B91">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C91">        <text><![CDATA["An error was encountered while verifying your personal information. For assistance with this request, please visit your local club or call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow92">
+        <inputEntry id="A92">        <text><![CDATA["MSOCOM0018"]]></text>
+</inputEntry>
+        <outputEntry id="B92">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C92">        <text><![CDATA["No changes have been recognized.  At least one personal information field must be changed in order to process this request.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow93">
+        <inputEntry id="A93">        <text><![CDATA["MSOCOM0019"]]></text>
+</inputEntry>
+        <outputEntry id="B93">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C93">        <text><![CDATA["The email format entered is invalid.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow94">
+        <inputEntry id="A94">        <text><![CDATA["MSOCOM0022"]]></text>
+</inputEntry>
+        <outputEntry id="B94">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C94">        <text><![CDATA["A required field {0} has not been provided.  Please provide the missing information."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow95">
+        <inputEntry id="A95">        <text><![CDATA["MSOCOM0024"]]></text>
+</inputEntry>
+        <outputEntry id="B95">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C95">        <text><![CDATA["The username you enter must be at least 6 characters long.  Please re-enter your username again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow96">
+        <inputEntry id="A96">        <text><![CDATA["MSOCOM0025"]]></text>
+</inputEntry>
+        <outputEntry id="B96">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C96">        <text><![CDATA["A required field is blank.  Please provide the required information to complete this process."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow97">
+        <inputEntry id="A97">        <text><![CDATA["MSOCOM0026"]]></text>
+</inputEntry>
+        <outputEntry id="B97">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C97">        <text><![CDATA["The email addresses you entered do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow98">
+        <inputEntry id="A98">        <text><![CDATA["MSOCOM0027"]]></text>
+</inputEntry>
+        <outputEntry id="B98">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C98">        <text><![CDATA["The email addresses you entered are not in a valid format.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow99">
+        <inputEntry id="A99">        <text><![CDATA["MSOCOM0028"]]></text>
+</inputEntry>
+        <outputEntry id="B99">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C99">        <text><![CDATA["The email address entered appears to be blocked. Please update the email address entered."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow100">
+        <inputEntry id="A100">        <text><![CDATA["MSOCOM0039"]]></text>
+</inputEntry>
+        <outputEntry id="B100">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C100">        <text><![CDATA["Your membership currently does not have any agreements that qualify to process this request.  For assistance with this request, please visit your local club or call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow101">
+        <inputEntry id="A101">        <text><![CDATA["MSOCOM0040"]]></text>
+</inputEntry>
+        <outputEntry id="B101">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C101">        <text><![CDATA["We are unable to process your request at this time.  Your membership does not have an electronic billing method on file.  For assistance with this request, please visit your local club, <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow102">
+        <inputEntry id="A102">        <text><![CDATA["MSOCOM0041"]]></text>
+</inputEntry>
+        <outputEntry id="B102">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C102">        <text><![CDATA["Your membership is an add-on to another member’s account and you cannot change the method of payment on your membership. For assistance with this request, please visit your local club, <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow103">
+        <inputEntry id="A103">        <text><![CDATA["MSOCOM0042"]]></text>
+</inputEntry>
+        <outputEntry id="B103">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C103">        <text><![CDATA["Please select at least one agreement in order to process this request."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow104">
+        <inputEntry id="A104">        <text><![CDATA["MSOCOM0043"]]></text>
+</inputEntry>
+        <outputEntry id="B104">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C104">        <text><![CDATA["Please select a method of payment in order to process this request."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow105">
+        <inputEntry id="A105">        <text><![CDATA["MSOCOM0044"]]></text>
+</inputEntry>
+        <outputEntry id="B105">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C105">        <text><![CDATA["Method of payment and payment type do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow106">
+        <inputEntry id="A106">        <text><![CDATA["MSOCOM0045"]]></text>
+</inputEntry>
+        <outputEntry id="B106">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C106">        <text><![CDATA["Please enter a valid credit card number."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow107">
+        <inputEntry id="A107">        <text><![CDATA["MSOCOM0047"]]></text>
+</inputEntry>
+        <outputEntry id="B107">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C107">        <text><![CDATA["The credit card expiration date entered is expired.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow108">
+        <inputEntry id="A108">        <text><![CDATA["MSOCOM0050"]]></text>
+</inputEntry>
+        <outputEntry id="B108">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C108">        <text><![CDATA["The routing numbers entered do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow109">
+        <inputEntry id="A109">        <text><![CDATA["MSOCOM0051"]]></text>
+</inputEntry>
+        <outputEntry id="B109">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C109">        <text><![CDATA["The routing numbers must be 9 numbers.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow110">
+        <inputEntry id="A110">        <text><![CDATA["MSOCOM0052"]]></text>
+</inputEntry>
+        <outputEntry id="B110">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C110">        <text><![CDATA["The account numbers entered do not match.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow111">
+        <inputEntry id="A111">        <text><![CDATA["MSOCOM0053"]]></text>
+</inputEntry>
+        <outputEntry id="B111">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C111">        <text><![CDATA["The account numbers entered are invalid.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow112">
+        <inputEntry id="A112">        <text><![CDATA["MSOCOM0055"]]></text>
+</inputEntry>
+        <outputEntry id="B112">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C112">        <text><![CDATA["We are unable to process your transaction at this time due to an internal error at 24 Hour Fitness.  Please try again later, or for immediate service please visit your club, <span><font color="#005DFF"><u><a href='event:emailMemberServices'>click here</a></u></font></span> to email Member Services or call us at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow113">
+        <inputEntry id="A113">        <text><![CDATA["MSOCOM0056"]]></text>
+</inputEntry>
+        <outputEntry id="B113">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C113">        <text><![CDATA["In order to continue, please check the 'I understand' checkbox."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow114">
+        <inputEntry id="A114">        <text><![CDATA["MSOCOM0057"]]></text>
+</inputEntry>
+        <outputEntry id="B114">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C114">        <text><![CDATA["To pay the selected invoices please provide a method of payment."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow115">
+        <inputEntry id="A115">        <text><![CDATA["MSOCOM0065"]]></text>
+</inputEntry>
+        <outputEntry id="B115">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C115">        <text><![CDATA["Please read, and scroll through the terms and conditions to the end AND check the 'I agree' checkbox in order to continue."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow116">
+        <inputEntry id="A116">        <text><![CDATA["MSOCOM0072"]]></text>
+</inputEntry>
+        <outputEntry id="B116">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C116">        <text><![CDATA["You must select a subject in order to submit your email"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow117">
+        <inputEntry id="A117">        <text><![CDATA["MSOCOM0079"]]></text>
+</inputEntry>
+        <outputEntry id="B117">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C117">        <text><![CDATA["You are required to update to a newer version of Adobe.  <span><font color="#005DFF"><u><a href='event:updatePlayer'>Click here to download.</a></u></font></span>"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow118">
+        <inputEntry id="A118">        <text><![CDATA["MSOCOM0080"]]></text>
+</inputEntry>
+        <outputEntry id="B118">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C118">        <text><![CDATA["We are unable to process your request.  Your birthdate is not above the minimum adult age requirement."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow119">
+        <inputEntry id="A119">        <text><![CDATA["MSOCOM0081"]]></text>
+</inputEntry>
+        <outputEntry id="B119">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C119">        <text><![CDATA["First name is a required field."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow120">
+        <inputEntry id="A120">        <text><![CDATA["MSOCOM0082"]]></text>
+</inputEntry>
+        <outputEntry id="B120">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C120">        <text><![CDATA["Last name is a required field."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow121">
+        <inputEntry id="A121">        <text><![CDATA["MSOCOM0083"]]></text>
+</inputEntry>
+        <outputEntry id="B121">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C121">        <text><![CDATA["Date of birth entered is not valid.  Please enter a valid date of birth.  If the birth date entered is correct, then please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow122">
+        <inputEntry id="A122">        <text><![CDATA["MSOCOM0093"]]></text>
+</inputEntry>
+        <outputEntry id="B122">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C122">        <text><![CDATA["The security code number entered is not valid.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow123">
+        <inputEntry id="A123">        <text><![CDATA["MSOCOM0094"]]></text>
+</inputEntry>
+        <outputEntry id="B123">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C123">        <text><![CDATA["The security code number entered does not match.  Please re-enter."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow124">
+        <inputEntry id="A124">        <text><![CDATA["MSODRC0034"]]></text>
+</inputEntry>
+        <outputEntry id="B124">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C124">        <text><![CDATA["The date range you entered is greater than the maximum allowed of {0}."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow125">
+        <inputEntry id="A125">        <text><![CDATA["MSODRC0035"]]></text>
+</inputEntry>
+        <outputEntry id="B125">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C125">        <text><![CDATA["The 'from' date you entered is before 01-01-04 and is not available online.  For assistance with this request, please contact your club."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow126">
+        <inputEntry id="A126">        <text><![CDATA["MSODRC0089"]]></text>
+</inputEntry>
+        <outputEntry id="B126">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C126">        <text><![CDATA["The 'from' date you entered is prior to your enrollment date of {0}. Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow127">
+        <inputEntry id="A127">        <text><![CDATA["MSODRC0961"]]></text>
+</inputEntry>
+        <outputEntry id="B127">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C127">        <text><![CDATA["The date range entered is invalid. Please try again. The 'from' date you entered is after today's date of {0}."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow128">
+        <inputEntry id="A128">        <text><![CDATA["MSODRC0962"]]></text>
+</inputEntry>
+        <outputEntry id="B128">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C128">        <text><![CDATA["The date range entered is invalid. Please try again. The 'to' date you entered is after today's date of {0}."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow129">
+        <inputEntry id="A129">        <text><![CDATA["MSODRC0963"]]></text>
+</inputEntry>
+        <outputEntry id="B129">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C129">        <text><![CDATA["The date range entered is invalid. Please try again. The 'from' date you entered is after the 'to' date you entered."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow130">
+        <inputEntry id="A130">        <text><![CDATA["MSODRC0964"]]></text>
+</inputEntry>
+        <outputEntry id="B130">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C130">        <text><![CDATA["The date range entered is invalid. Please try again. The 'from' date is not correct."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow131">
+        <inputEntry id="A131">        <text><![CDATA["MSODRC0965"]]></text>
+</inputEntry>
+        <outputEntry id="B131">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C131">        <text><![CDATA["The date range entered is invalid. Please try again. The 'to' date is not correct."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow132">
+        <inputEntry id="A132">        <text><![CDATA["UMILOG110"]]></text>
+</inputEntry>
+        <outputEntry id="B132">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C132">        <text><![CDATA["To proceed, your date of birth must be entered.Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow133">
+        <inputEntry id="A133">        <text><![CDATA["MSOCHP001"]]></text>
+</inputEntry>
+        <outputEntry id="B133">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C133">        <text><![CDATA["The passwords entered do not match."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow134">
+        <inputEntry id="A134">        <text><![CDATA["MSOLRF0002"]]></text>
+</inputEntry>
+        <outputEntry id="B134">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C134">        <text><![CDATA["Member number is required.  Please enter a member number and try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow135">
+        <inputEntry id="A135">        <text><![CDATA["MSOLRF0036"]]></text>
+</inputEntry>
+        <outputEntry id="B135">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C135">        <text><![CDATA["The name fields are required.  Please provide the missing information."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow136">
+        <inputEntry id="A136">        <text><![CDATA["MSOCOM0046"]]></text>
+</inputEntry>
+        <outputEntry id="B136">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C136">        <text><![CDATA["The credit card expiration month field is required.  Please try again"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow137">
+        <inputEntry id="A137">        <text><![CDATA["MSOCOM0048"]]></text>
+</inputEntry>
+        <outputEntry id="B137">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C137">        <text><![CDATA["The name on card field is required.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow138">
+        <inputEntry id="A138">        <text><![CDATA["MSOCOM0049"]]></text>
+</inputEntry>
+        <outputEntry id="B138">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C138">        <text><![CDATA["The Bank Name field is required.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow139">
+        <inputEntry id="A139">        <text><![CDATA["MSOCOM0059"]]></text>
+</inputEntry>
+        <outputEntry id="B139">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C139">        <text><![CDATA["In order to continue, please enter the credit card expiration date."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow140">
+        <inputEntry id="A140">        <text><![CDATA["MSOCOM0060"]]></text>
+</inputEntry>
+        <outputEntry id="B140">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C140">        <text><![CDATA["The name on account field is required.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow141">
+        <inputEntry id="A141">        <text><![CDATA["MSOMAP0062"]]></text>
+</inputEntry>
+        <outputEntry id="B141">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C141">        <text><![CDATA["Please provide a form of payment to process this request."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow142">
+        <inputEntry id="A142">        <text><![CDATA["MSOCOM0073"]]></text>
+</inputEntry>
+        <outputEntry id="B142">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C142">        <text><![CDATA["You must enter a comment in order to submit your email"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow143">
+        <inputEntry id="A143">        <text><![CDATA["MSOLRF0074"]]></text>
+</inputEntry>
+        <outputEntry id="B143">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C143">        <text><![CDATA["You must provide your security question answer in order to continue."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow144">
+        <inputEntry id="A144">        <text><![CDATA["MSOCOM0076"]]></text>
+</inputEntry>
+        <outputEntry id="B144">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C144">        <text><![CDATA["You must provide at least one phone number."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow145">
+        <inputEntry id="A145">        <text><![CDATA["MSOLRF0077"]]></text>
+</inputEntry>
+        <outputEntry id="B145">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C145">        <text><![CDATA["You must provide your current password in order to change your password.  Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow146">
+        <inputEntry id="A146">        <text><![CDATA["MSOLRF0003"]]></text>
+</inputEntry>
+        <outputEntry id="B146">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C146">        <text><![CDATA["To proceed, your birth date must be entered. Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow147">
+        <inputEntry id="A147">        <text><![CDATA["MSOLRF0004"]]></text>
+</inputEntry>
+        <outputEntry id="B147">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C147">        <text><![CDATA["To proceed, your date of birth must be entered. Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow148">
+        <inputEntry id="A148">        <text><![CDATA["MSOLRF0005"]]></text>
+</inputEntry>
+        <outputEntry id="B148">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C148">        <text><![CDATA["To proceed, your birth year must be entered. Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow149">
+        <inputEntry id="A149">        <text><![CDATA["MSOCAN0070"]]></text>
+</inputEntry>
+        <outputEntry id="B149">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C149">        <text><![CDATA["Please read and agree to the terms of cancelling your membership before processing your request."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="excelRow150">
+        <inputEntry id="A150">        <text><![CDATA["MSOCAN0071"]]></text>
+</inputEntry>
+        <outputEntry id="B150">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="C150">        <text><![CDATA["Please select a reason why you want to cancel your membership."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-226582518-1">
+        <description>OAS change password error - Invalid token</description>
+        <inputEntry id="UnaryTests_1ekjo83">        <text><![CDATA["OASAUT0003"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_12n2vef">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0usojqj">        <text><![CDATA["Failed to refresh token, Exception Message: Unrecognized authentication token"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-226582518-2">
+        <description><![CDATA[OAS change password error - username doesn't comply with rules]]></description>
+        <inputEntry id="UnaryTests_0czo38c">        <text><![CDATA["SECLDP0006"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0mu56yg">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0qj5kfq">        <text><![CDATA["The username entered is not valid.  Please try again"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-555103924-1">
+        <inputEntry id="UnaryTests_0w5407b">        <text><![CDATA["MAMAGT0002"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1rzdt4h">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_07jzajh">        <text><![CDATA["Unable to retrieve agreements for the given member"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-537896105-1">
+        <inputEntry id="UnaryTests_08d3s5o">        <text><![CDATA["UMILOG129"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0t9npfw">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1xtcktj">        <text><![CDATA["Agreements list cannot be null or empty."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-537896105-2">
+        <inputEntry id="UnaryTests_1dxxc27">        <text><![CDATA["UMILOG125"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0ir7weu">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0q5tnvj">        <text><![CDATA["Member cannot be null or empty."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-537896105-3">
+        <inputEntry id="UnaryTests_0zp0a0f">        <text><![CDATA["UMILOG126"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1y0djqy">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0zh4lt2">        <text><![CDATA["Start date cannot be null or empty."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-537896105-4">
+        <inputEntry id="UnaryTests_1gv9mbk">        <text><![CDATA["UMILOG127"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_14ylyxs">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_09jln60">        <text><![CDATA["End date cannot be null or empty."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-537896105-5">
+        <inputEntry id="UnaryTests_140a70h">        <text><![CDATA["UMILOG128"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0kdcoh7">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1vl736g">        <text><![CDATA["Club Visits list cannot be null or empty."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-537896105-6">
+        <inputEntry id="UnaryTests_12pxfjb">        <text><![CDATA["UMILOG130"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0xqavzz">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0zfyhit">        <text><![CDATA["Request submitted cannot be null or empty."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-537896105-7">
+        <inputEntry id="UnaryTests_0u80f22">        <text><![CDATA["UMILOG131"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1925yxv">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1td2cig">        <text><![CDATA["Incorrect date format"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-870685940-1">
+        <inputEntry id="UnaryTests_1mdti1n">        <text><![CDATA["UMILOG122"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0w2k4sh">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_08rx7sb">        <text><![CDATA["Email address provided does not match the records."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-870685940-2">
+        <inputEntry id="UnaryTests_0l9fkbm">        <text><![CDATA["UMIREG0120"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1t1kwxv">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ipmeaj">        <text><![CDATA["The information entered could not be verified. Please verify the information entered and try again. If you are having trouble with this process please call Member Services at 1-800-432-6348"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-543180477-1">
+        <inputEntry id="UnaryTests_03pt973">        <text><![CDATA["MARP-UN001"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1n02tn6">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1t0bma8">        <text><![CDATA["The username you entered already exists.  Either create a new username or if this is your username from previously registering, then please login first."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-543180477-2">
+        <inputEntry id="UnaryTests_0uenxrs">        <text><![CDATA["MARP-PW001"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1wlhmat">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_024e05r">        <text><![CDATA["Invalid password format."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-543180477-3">
+        <inputEntry id="UnaryTests_0pa57ui">        <text><![CDATA["MARP-EM001"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_03mj5o0">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0fmalu5">        <text><![CDATA["The email format entered is invalid. Please try again."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-543180477-4">
+        <inputEntry id="UnaryTests_0wbk0sh">        <text><![CDATA["MARP-MS001"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_08fqxef">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_02t5qjd">        <text><![CDATA["The information entered could not be verified. Please verify the information entered and try again. If you are having trouble with this process please call Member Services at 1-800-432-6348"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-543180477-5">
+        <inputEntry id="UnaryTests_0jk3cwt">        <text><![CDATA["MARP-DB001"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1onhi9s">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_09me920">        <text><![CDATA["The information entered could not be verified. Please verify the information entered and try again. If you are having trouble with this process please call Member Services at 1-800-432-6348"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-144910392-4">
+        <inputEntry id="UnaryTests_1ibsalj">        <text><![CDATA["VMURPE404"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1j6y83h">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0trkatd">        <text><![CDATA["We are unable to process your request. The membership selected is for a minor.  For more information please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-144910392-5">
+        <inputEntry id="UnaryTests_17nexux">        <text><![CDATA["VMURPE401"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1n101vb">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1rh4vfi">        <text><![CDATA["The information entered could not be verified.  Please verify the information entered and try again.   If you are having trouble with this process please call Member Services at 1-800-432-6348."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-564476796-2">
+        <inputEntry id="UnaryTests_1bz6aty">        <text><![CDATA["UMIREG0119"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0r312aa">        <text><![CDATA["400"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1bbquta">        <text><![CDATA["No user found registered."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-105398242-1">
+        <inputEntry id="UnaryTests_1hderp9">        <text><![CDATA["MARP-EXC"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1vryyhc">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1yqj25q">        <text><![CDATA["The information entered could not be verified. Please verify the information entered and try again. If you are having trouble with this process please call Member Services at 1-800-432-6348"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-979259562-2">
+        <description>Default response</description>
+        <inputEntry id="UnaryTests_0dcyzo6">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0lw1m4q">        <text><![CDATA["500"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1qfmkpw">        <text><![CDATA["An unexpected error was encountered and your process cannot be completed.  Please try again later."]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

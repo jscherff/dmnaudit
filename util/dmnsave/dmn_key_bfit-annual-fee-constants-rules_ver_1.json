@@ -1,0 +1,201 @@
+{
+    "xmlName": {
+        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+        "Local": "definitions"
+    },
+    "xmlns": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+    "id": "definitions",
+    "name": "definitions",
+    "namespace": "http://camunda.org/schema/1.0/dmn",
+    "decision": {
+        "xmlName": {
+            "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+            "Local": "decision"
+        },
+        "id": "bfit-annual-fee-constants-rules",
+        "name": "bfit-annual-fee-constants-rules",
+        "decisionTable": {
+            "xmlName": {
+                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                "Local": "decisionTable"
+            },
+            "id": "decisionTable",
+            "hitPolicy": "",
+            "input": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "input"
+                    },
+                    "id": "input1",
+                    "label": "Calculated Payment Due Date",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "inputExpression1",
+                            "typeRef": "date",
+                            "text": "calculatedPaymentDueDate"
+                        }
+                    ]
+                }
+            ],
+            "output": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_1smjkkr",
+                    "label": "Transaction Action",
+                    "name": "trxAction",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_1hqjbma",
+                    "label": "Line Number",
+                    "name": "lineNumber",
+                    "typeRef": "integer"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "OutputClause_0di0loq",
+                    "label": "Line Description",
+                    "name": "lineDescription",
+                    "typeRef": "string"
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "output"
+                    },
+                    "id": "output1",
+                    "label": "Category 1",
+                    "name": "lineCategory1",
+                    "typeRef": "string"
+                }
+            ],
+            "rule": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-101140200-3",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1uemhjk",
+                            "text": "\u003e= date and time(paymentDueDate)"
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_15801nb",
+                            "description": "",
+                            "text": "\"UPDATE LINES\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1cci42d",
+                            "description": "",
+                            "text": "3"
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1jgdwiq",
+                            "description": "",
+                            "text": "\"ANNUAL FEE INIT\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0til8lh",
+                            "description": "",
+                            "text": "\"ANNUAL FEE INIT\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-101140200-4",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1nur895",
+                            "text": "\u003c date and time(paymentDueDate)"
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0d0gy9c",
+                            "description": "",
+                            "text": "\"NEW\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_191qx6q",
+                            "description": "",
+                            "text": "4"
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1vkhxbp",
+                            "description": "",
+                            "text": "\"ANNUAL FEE SUBSQ\""
+                        },
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn11.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_04oqbzn",
+                            "description": "",
+                            "text": "\"ANNUAL FEE SUBSQ\""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

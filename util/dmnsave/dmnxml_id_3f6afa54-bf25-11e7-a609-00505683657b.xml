@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="callcenter-manual-escalation-club-rules" name="callcenter-manual-escalation-club-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="EscalatorJobCode" camunda:inputVariable="escalatorJobCode">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>escalatorJobCode</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="CanEscalateToClub" name="canEscalateToClub" typeRef="boolean" />
+      <rule id="row-95941296-2">
+        <description>VP, Member Support Services</description>
+        <inputEntry id="UnaryTests_08fb0go">        <text><![CDATA["1003"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16micgc">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-1">
+        <description>Business Systems Analyst</description>
+        <inputEntry id="UnaryTests_1ytgmal">        <text><![CDATA["1702"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1g6fz8z">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-2">
+        <description>Sr Business System Analyst</description>
+        <inputEntry id="UnaryTests_0z1cxyy">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_170o620">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-3">
+        <description>Business Analyst</description>
+        <inputEntry id="UnaryTests_0uuzy6z">        <text><![CDATA["311"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_06ovph4">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-4">
+        <description>Project Manager</description>
+        <inputEntry id="UnaryTests_0knk3bt">        <text><![CDATA["331"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1sorl6g">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-5">
+        <description>General Manager</description>
+        <inputEntry id="UnaryTests_007lxmn">        <text><![CDATA["349"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1oct56o">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-6">
+        <description>District Manager</description>
+        <inputEntry id="UnaryTests_1nbf5ym">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1wiwxcp">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-7">
+        <description>Regional Vice President</description>
+        <inputEntry id="UnaryTests_1edpn1g">        <text><![CDATA["351"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0z9fkzs">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-8">
+        <description>Operations Manager</description>
+        <inputEntry id="UnaryTests_05b5jog">        <text><![CDATA["4563"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_06dt3hs">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-9">
+        <description>General Manager Trainee</description>
+        <inputEntry id="UnaryTests_0d08aw9">        <text><![CDATA["5010"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0s08s2k">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-10">
+        <description>Area Director</description>
+        <inputEntry id="UnaryTests_0s9xvk3">        <text><![CDATA["5062"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ona65n">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-11">
+        <description></description>
+        <inputEntry id="UnaryTests_1aloqex">        <text><![CDATA["5103"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ebu67t">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-12">
+        <description>Mgr - Contact Center Ops</description>
+        <inputEntry id="UnaryTests_0dyrn6g">        <text><![CDATA["5307"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1so6jsn">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-13">
+        <description>Supervisor, Member Care</description>
+        <inputEntry id="UnaryTests_1imhnle">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0rkuanj">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-14">
+        <description>Non-Employee Vendor Call Center Supervisor</description>
+        <inputEntry id="UnaryTests_06mqxzk">        <text><![CDATA["7090"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1s3fde3">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-15">
+        <description>Non-Employee Vendor Call Center  Manager</description>
+        <inputEntry id="UnaryTests_1gshzc6">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1tpj42o">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-16">
+        <description>Non-Employee Vendor Call Center  C Agent</description>
+        <inputEntry id="UnaryTests_0cfnu1m">        <text><![CDATA["7092"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_160wrvy">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="table-806003032-2">
+        <description>Non-Employee Vendor Call Center  E Agent</description>
+        <inputEntry id="UnaryTests_0ecxblr">        <text><![CDATA["7093"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1f9qt5n">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-140947353-1">
+        <description>Club Manager, Fit Lite</description>
+        <inputEntry id="UnaryTests_1qfa2n9">        <text><![CDATA["8799"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1lb2erc">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-140947353-2">
+        <description>Member Care Specialist</description>
+        <inputEntry id="UnaryTests_0h2lybs">        <text><![CDATA["9946"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_00jxtn7">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-750241027-5">
+        <description>This is a default value and needs to be in the last row.</description>
+        <inputEntry id="UnaryTests_1b7vo3i">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1beugbn">        <text>false</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="bfit-monthly-membership-new-line-number-rules" name="bfit-monthly-membership-new-line-number-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Sale Item ID">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>saleItemId</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Line Number" name="lineNumber" typeRef="integer" />
+      <output id="OutputClause_04apq0w" label="RevStream: Line Description" name="lineDescription" typeRef="string" />
+      <output id="OutputClause_1xn3ej4" label="RevStream: Category1" name="lineCategory1" typeRef="string" />
+      <rule id="row-36402418-1">
+        <inputEntry id="UnaryTests_0sfbg3n">        <text>4</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_08ewt0t">        <text>1</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_193vylp">        <text><![CDATA["INITIATION"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0w3n6s4">        <text><![CDATA["INITIATION"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-36402418-2">
+        <inputEntry id="UnaryTests_1qa0206">        <text>1</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1c5tc4c">        <text>2</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1xdt6d8">        <text><![CDATA["PRORATED DUES"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_08nmzzt">        <text><![CDATA["PRORATED DUES"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-36402418-4">
+        <description>For first 2 years from Annual Fee Tap Date. There is no saleitem for anual fee.</description>
+        <inputEntry id="UnaryTests_1qxt7ij">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_06sni7h">        <text>3</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1u9vvwa">        <text><![CDATA["ANNUAL FEE INIT"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_03y89xs">        <text><![CDATA["ANNUAL FEE INIT"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

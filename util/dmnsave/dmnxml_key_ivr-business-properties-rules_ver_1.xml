@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="ivr-business-properties-rules" name="ivr-business-properties-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Property Name">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>key</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Value" name="value" typeRef="string" />
+      <rule id="row-111728467-1">
+        <description>Number of past days for valid annual fee receipts</description>
+        <inputEntry id="UnaryTests_0c8wlfv">        <text><![CDATA["numberOfPastDays"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1yqwwft">        <text><![CDATA["14"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="mobile-event-handler-rules" name="mobile-event-handler-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Event Name" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>eventName</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_1m9zjtb" label="Partner Name">
+        <inputExpression id="LiteralExpression_1ocpat5" typeRef="string">        <text>partnerName</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Crowdtwist Activity Id" name="crowdtwistActivityId" typeRef="string" />
+      <rule id="row-95941296-2">
+        <description>Activity id for first login on mobile app</description>
+        <inputEntry id="UnaryTests_08fb0go">        <text><![CDATA["EXTERNAL_ACCOUNT_LINKED"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0ywc3kk">        <text><![CDATA["24hourfitness-partner"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16micgc">        <text><![CDATA["410049920"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-667515566-1">
+        <description>Activity id for FitBit connect</description>
+        <inputEntry id="UnaryTests_03clhb8">        <text><![CDATA["EXTERNAL_ACCOUNT_LINKED"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_02f7x37">        <text><![CDATA["FitBit"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1h6qf75">        <text><![CDATA["410049922"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-912259229-3">
+        <description>Activity id for member check in</description>
+        <inputEntry id="UnaryTests_1eng6vq">        <text><![CDATA["CLUB_VISIT"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0d0ic4q">        <text><![CDATA[""]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0k7elxq">        <text><![CDATA["410048715"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-667515566-3">
+        <description>Crowdtwist event for register to 24GO mobile app</description>
+        <inputEntry id="UnaryTests_01jr5s3">        <text><![CDATA["24GO_REGISTER_APP"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1stc4ts">        <text><![CDATA["24GO"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1fs8jfq">        <text><![CDATA["410057468"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880600058-1">
+        <description>Crowdtwist event for log in to 24GO mobile app</description>
+        <inputEntry id="UnaryTests_171ccbu">        <text><![CDATA["24GO_LOGIN_APP"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_00vowbm">        <text><![CDATA["24GO"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0t4t7gk">        <text><![CDATA["410057470"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880600058-2">
+        <description>Crowdtwist event for completing a plan in 24GO mobile app</description>
+        <inputEntry id="UnaryTests_0n3u3qo">        <text><![CDATA["24GO_COMPLETE_PLAN"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_00f3dff">        <text><![CDATA["24GO"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0x5zs3y">        <text><![CDATA["410057471"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880600058-3">
+        <description>Crowdtwist event for completing a workout plan in 24GO mobile app</description>
+        <inputEntry id="UnaryTests_0q8j0ug">        <text><![CDATA["24GO_COMPLETE_WORKOUT"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0mgsyyb">        <text><![CDATA["24GO"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0xa6i0z">        <text><![CDATA["410057472"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880600058-4">
+        <description>Crowdtwist event for reading a 24life article in 24GO mobile app</description>
+        <inputEntry id="UnaryTests_0ll4pzg">        <text><![CDATA["24GO_READ_ARTICLE"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_15lam4m">        <text><![CDATA["24GO"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0dqe6b8">        <text><![CDATA["410057473"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880600058-5">
+        <description>Crowdtwist event for connecting Apple Health in 24GO mobile app</description>
+        <inputEntry id="UnaryTests_0kq8wix">        <text><![CDATA["24GO_APPLE_HEALTH_CONNECT"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1t06rk2">        <text><![CDATA["24GO"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0s28yf8">        <text><![CDATA["410057479"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880600058-6">
+        <description>Crowdtwist event for connecting Google Fit in 24GO mobile app</description>
+        <inputEntry id="UnaryTests_1n083wc">        <text><![CDATA["24GO_GOOGLE_FIT_CONNECT"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_142b67l">        <text><![CDATA["24GO"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_06hsx2n">        <text><![CDATA["410057480"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880600058-7">
+        <description>Crowdtwist event for connecting Fitbit in 24GO mobile app</description>
+        <inputEntry id="UnaryTests_0mpx4zd">        <text><![CDATA["24GO_FITBIT_CONNECT"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0ndcqaj">        <text><![CDATA["24GO"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1s9jgjw">        <text><![CDATA["410057481"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880600058-8">
+        <description>Send empty string to avoid send this to Crowdtwist API</description>
+        <inputEntry id="UnaryTests_15tv5q2">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_06v9cii">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_19fv6o9">        <text><![CDATA[""]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

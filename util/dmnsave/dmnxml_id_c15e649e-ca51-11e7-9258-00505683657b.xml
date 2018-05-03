@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="bfit-pif-agreement-to-revstream-constant-rules" name="bfit-pif-agreement-to-revstream-constant-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Agreement ID">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>agreementId</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Revstream: EXT_TRX_LINE_NUMBER" name="lineNumber" typeRef="string" />
+      <output id="OutputClause_04apq0w" label="RevStream&#10;:Line Description" name="lineDescription" typeRef="string" />
+      <output id="OutputClause_1xn3ej4" label="RevStream: Category1" name="lineCategory1" typeRef="string" />
+      <output id="OutputClause_16m2pfs" label="RevStream: Line Line Type" name="lineType" typeRef="string" />
+      <output id="OutputClause_1tz4uqn" label="RevStream:3D Cancel Line Type" name="lineType3DCancel" typeRef="string" />
+      <output id="OutputClause_0wla1o7" label="RevStream: Trx Type" name="trxType" typeRef="string" />
+      <output id="OutputClause_0nf5rge" label="RevStream: Trx Description" name="trxDescription" typeRef="string" />
+      <rule id="row-880310902-1">
+        <description>Fit Pass +  -     3 Month PIF, Fit Pass EdgE - 3 Month PIF</description>
+        <inputEntry id="UnaryTests_0s56vfl">        <text>26, 29</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_11p797f">        <text>16</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1fbiygp">        <text><![CDATA["LTD INTERNAL EDGE"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1euw7c1">        <text><![CDATA["LTD INTERNAL EDGE"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1u72wm1">        <text><![CDATA["SHARE"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0b5a6pe">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_18r3thn">        <text></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1nne6g1">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="row-880310902-2">
+        <description>1 Day BFit/EdgE Paid Access</description>
+        <inputEntry id="UnaryTests_19ht59t">        <text>18</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1xugmol">        <text>17</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0gtrc2a">        <text><![CDATA["LTD INTERNAL 1D"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0tsmkeb">        <text><![CDATA["LTD INTERNAL 1D"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1h4rlg4">        <text><![CDATA["SHARE"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0y72283">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1txkam2">        <text></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ox0cac">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="row-327782286-1">
+        <inputEntry id="UnaryTests_1qrrlok">        <text>22</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1bpw8so">        <text>11</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0q7oynd">        <text><![CDATA["LTD INTERNAL"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ee2xpn">        <text><![CDATA["LTD INTERNAL"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1bj3z7b">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0tkf4az">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1rsepho">        <text><![CDATA["24HF Solo - 1 Year PIF"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ssu20r">        <text><![CDATA["24HF Solo - 1 Year PIF"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-51205977-5">
+        <description>Fit Pass +  -     1 Year PIF, Fit Pass Single Workout</description>
+        <inputEntry id="UnaryTests_0d8w02x">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1b9gd5a">        <text>11</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_01o9qy6">        <text><![CDATA["LTD INTERNAL"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_031kzr7">        <text><![CDATA["LTD INTERNAL"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1txs9dv">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_15snq69">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1gmglct">        <text></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1yggkou">        <text></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

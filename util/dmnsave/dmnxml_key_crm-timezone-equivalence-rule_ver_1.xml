@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="crm-timezone-equivalence-rule" name="crm-timezone-equivalence-rule">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>timezoneAlias</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Timezone Code" name="timezoneCode" typeRef="string" />
+      <output id="OutputClause_1n8fy51" label="Timezone Description" name="timezoneDescription" typeRef="string" />
+      <rule id="row-742795890-5">
+        <inputEntry id="UnaryTests_12cxfo6">        <text><![CDATA["SST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1eekimq">        <text><![CDATA["1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0np6lpo">        <text><![CDATA["Samoa Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-4">
+        <inputEntry id="UnaryTests_1691fiy">        <text><![CDATA["HST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0uiapod">        <text><![CDATA["2"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1eto0p5">        <text><![CDATA["Hawaiian Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-11">
+        <inputEntry id="UnaryTests_0ehv9b3">        <text><![CDATA["HADT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0akqypo">        <text><![CDATA["2"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0jcm29y">        <text><![CDATA["Hawaiian Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-6">
+        <inputEntry id="UnaryTests_0a146fb">        <text><![CDATA["AST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1gh800j">        <text><![CDATA["3"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0hbhi67">        <text><![CDATA["Alaska Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-13">
+        <inputEntry id="UnaryTests_0vmodwn">        <text><![CDATA["AKDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0espzl5">        <text><![CDATA["3"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0diykv6">        <text><![CDATA["Alaska Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-1">
+        <inputEntry id="UnaryTests_06ujfvw">        <text><![CDATA["PDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1e2175m">        <text><![CDATA["4"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_05kus7l">        <text><![CDATA["Pacific Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-9">
+        <inputEntry id="UnaryTests_0nmncqg">        <text><![CDATA["PST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0vzkw4s">        <text><![CDATA["4"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_14m8xcj">        <text><![CDATA["Pacific Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-7">
+        <inputEntry id="UnaryTests_1vcv3si">        <text><![CDATA["MST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0ri5mcx">        <text><![CDATA["10"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0kmqmqh">        <text><![CDATA["Mountain Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-10">
+        <inputEntry id="UnaryTests_184s2bv">        <text><![CDATA["MDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1nr9z1l">        <text><![CDATA["10"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0rfal94">        <text><![CDATA["Mountain Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-2">
+        <inputEntry id="UnaryTests_18oi35l">        <text><![CDATA["CDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_01erw19">        <text><![CDATA["20"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0yq3u5q">        <text><![CDATA["Central Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-12">
+        <inputEntry id="UnaryTests_0xtntxz">        <text><![CDATA["CST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_17z43mh">        <text><![CDATA["20"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1e0ah1q">        <text><![CDATA["Central Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-3">
+        <inputEntry id="UnaryTests_1ilqtib">        <text><![CDATA["EST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0ou1n7c">        <text><![CDATA["35"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1x1lk6h">        <text><![CDATA["Eastern Standard Time"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-742795890-8">
+        <inputEntry id="UnaryTests_0a1ptze">        <text><![CDATA["EDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_07k43zz">        <text><![CDATA["35"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ngerjs">        <text><![CDATA["Estearn Standard Time"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="mi9-user-provisioning-determine-position-code-rules" name="mi9-user-provisioning-determine-position-code-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Input" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>storeRole</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Output" name="positionCode" typeRef="string" />
+      <rule id="row-44596705-5">
+        <inputEntry id="UnaryTests_1pkvu3c">        <text><![CDATA["CASHIER"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1wg31yl">        <text><![CDATA["CASH"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-44596705-6">
+        <inputEntry id="UnaryTests_09v0mey">        <text><![CDATA["MANAGER"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0i3n2fn">        <text><![CDATA["MGR"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-44596705-7">
+        <inputEntry id="UnaryTests_197v3pg">        <text><![CDATA["CLUBMANAGER"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0v1jfbn">        <text><![CDATA["CLUB"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-44596705-8">
+        <inputEntry id="UnaryTests_17d0zxf">        <text><![CDATA["ADMIN"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1qy5jn3">        <text><![CDATA["ADM"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

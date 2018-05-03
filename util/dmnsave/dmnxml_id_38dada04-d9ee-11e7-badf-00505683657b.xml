@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions_0ntzbx9" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="mi9-retail-transaction-determine-status-rules" name="mi9-retail-transaction-determine-status-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Journal Type Code">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>journalTypeCode</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Formatted Status for M2" name="status" typeRef="string" />
+      <rule id="row-686068031-13">
+        <description>Retail transaction is a new sale</description>
+        <inputEntry id="UnaryTests_0xezapo">        <text><![CDATA["SALES", "OTHSALES", "GCSOLD", "RETURNS"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_05t0b2z">        <text><![CDATA["NEW-SALE"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="bfit-etf-agreement-to-revstream-constant-rules" name="bfit-etf-agreement-to-revstream-constant-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Agreement ID">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>agreementId</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Revstream: EXT_TRX_LINE_NUMBER" name="lineNumber" typeRef="string" />
+      <output id="OutputClause_04apq0w" label="RevStream&#10;:Line Description" name="lineDescription" typeRef="string" />
+      <output id="OutputClause_1xn3ej4" label="RevStream: Category1" name="lineCategory1" typeRef="string" />
+      <output id="OutputClause_16m2pfs" label="RevStream: Line Line Type" name="lineType" typeRef="string" />
+      <rule id="row-51205977-5">
+        <description>Fit Pass +  -     1 Year PIF, Fit Pass Single Workout, Fit Pass +  -     3 Month PIF, Fit Pass EdgE - 3 Month PIF, 1 Day BFit/EdgE Paid Access</description>
+        <inputEntry id="UnaryTests_0d8w02x">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1b9gd5a">        <text>14</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_01o9qy6">        <text><![CDATA["EARLY TERMINATION"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_031kzr7">        <text><![CDATA["EARLY TERMINATION"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1txs9dv">        <text><![CDATA["STANDARD"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

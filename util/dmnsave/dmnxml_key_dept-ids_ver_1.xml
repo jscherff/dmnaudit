@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="dept-ids" name="Dept ids">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
+      <input id="input1" label="deptIdLimits">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>deptIdLimits</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="deptIdList" name="deptId" typeRef="string" />
+      <rule id="row-857343703-1">
+        <inputEntry id="UnaryTests_0dbxk2c">        <text><![CDATA["deptid"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_10zqlel">        <text><![CDATA["00024"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-857343703-2">
+        <inputEntry id="UnaryTests_1hdu4u1">        <text><![CDATA["deptid"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1i90dfi">        <text><![CDATA["00999"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

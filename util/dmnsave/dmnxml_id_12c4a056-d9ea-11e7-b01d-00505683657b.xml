@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="definitions_1qpg4bp" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="mi9-retail-transaction-determine-item-type-rules" name="mi9-retail-transaction-determine-item-type-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Journal Type Code" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>journalTypeCode</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_0kiypf1" label="Non Merchant Code" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_0a9q8tp" typeRef="string">        <text>nonMerchCode</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Item Type to Persist to M2" name="itemType" typeRef="string" />
+      <rule id="row-887074014-1">
+        <description>Initiation payment on membership/PT/Privileges</description>
+        <inputEntry id="UnaryTests_14jk9v4">        <text><![CDATA["OTHSALES"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1afew71">        <text><![CDATA["9157", "9140", "93309", "9133"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0ezbzc6">        <text><![CDATA["INITIAL_FEES"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-63325475-1">
+        <description>Membership Dues</description>
+        <inputEntry id="UnaryTests_1eklslo">        <text><![CDATA["OTHSALES"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_103jnj0">        <text><![CDATA["9225"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0emswwy">        <text><![CDATA["DUES"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-887074014-2">
+        <description>Non Sufficient Fee (NSF)</description>
+        <inputEntry id="UnaryTests_18prpes">        <text><![CDATA["OTHSALES"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1yp2adm">        <text><![CDATA["9610"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0rvsqd7">        <text><![CDATA["ADMIN_FEE"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-686068031-1">
+        <description>Item was bought</description>
+        <inputEntry id="UnaryTests_0274pty">        <text><![CDATA["SALES", "SALESTAX", "OTHSALESTAX", "GCSOLD", "RETURNS", "RETURNTAX", "OTHSALES", "ROUNDINGDIFF"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_04uwm7n">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_17m7q8d">        <text><![CDATA["RETAIL"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

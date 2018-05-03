@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="dgr-coverage-rules" name="DGR-Coverage-Rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Segment">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>segmentationCategory</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_0i93wlm" label="Ready To Join">
+        <inputExpression id="LiteralExpression_0xzlbu3" typeRef="integer">        <text>readyToJoin</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_10hn5vt" label="Tour">
+        <inputExpression id="LiteralExpression_138cjwk" typeRef="integer">        <text>tour</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Coverage" name="coverage" typeRef="integer" />
+      <rule id="row-727574596-1">
+        <description><![CDATA[Segment
+ 6=Older female class loyalists(CF)
+Ready To Join
+1 =I'm ready to join!
+Tour
+1,2=n/a
+Coverage
+12=Coverage1]]></description>
+        <inputEntry id="UnaryTests_0tidufg">        <text>6,5,4</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_129c3rv">        <text>1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1uri3ga">        <text>1,2</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0a8x14v">        <text>12</text>
+</outputEntry>
+      </rule>
+      <rule id="row-462631653-1">
+        <description><![CDATA[Segment
+ 6=Older female class loyalists(CF)
+Ready To Join
+2 =I'd like to know more about membership options
+Tour
+1,2,3=None,Self,Guided
+Coverage
+13=Coverage2]]></description>
+        <inputEntry id="UnaryTests_042v7cv">        <text>6,5,4</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_05kytj9">        <text>2</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0w8pm3x">        <text>1,2,3</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0ucptyt">        <text>13</text>
+</outputEntry>
+      </rule>
+      <rule id="table-705722384-16">
+        <description><![CDATA[Segment
+4=Young dads, busy gym switchers(ES)
+Ready To Join
+1 =I'm ready to join!
+Tour
+3=I'd like someone to show me around the club today
+Coverage
+13=Coverage2]]></description>
+        <inputEntry id="UnaryTests_1dh9gff">        <text>6,5,4</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1sskiiz">        <text>1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0t1kfcz">        <text>3</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1v5329t">        <text>13</text>
+</outputEntry>
+      </rule>
+      <rule id="row-462631653-8">
+        <description><![CDATA[Segment
+2=Health-oriented, old gym loyalists (HL)
+Ready To Join
+1 =I'm ready to join!
+Tour
+1,2=n/a
+Coverage
+14=Coverage3]]></description>
+        <inputEntry id="UnaryTests_0yzyhd5">        <text>3,2,1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_09ejlty">        <text>1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1gcgkib">        <text>1,2</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0fzyh4m">        <text>14</text>
+</outputEntry>
+      </rule>
+      <rule id="row-462631653-9">
+        <description><![CDATA[Segment
+2=Health-oriented, old gym loyalists (HL)
+Ready To Join 
+2=I'd like to know more about membership options
+Tour
+1,2,3=None,Self,Guided
+Coverage
+15=Coverage4]]></description>
+        <inputEntry id="UnaryTests_02tkh22">        <text>3,2,1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1omj0j3">        <text>2</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_15dbj2i">        <text>1,2,3</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_10mktu1">        <text>15</text>
+</outputEntry>
+      </rule>
+      <rule id="table-705722384-18">
+        <description><![CDATA[Segment
+1=Weight conscious, reluctant gym goers (WCR)
+Ready To Join
+1 =I'm ready to join!
+Tour
+3=I'd like someone to show me around the club today
+Coverage
+15=Coverage4]]></description>
+        <inputEntry id="UnaryTests_0jqunw3">        <text>3,2,1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_05fvcg3">        <text>1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0blwhz7">        <text>3</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1132bin">        <text>15</text>
+</outputEntry>
+      </rule>
+      <rule id="row-462631653-16">
+        <description><![CDATA[Segment
+Abandons DGR
+Ready To Join
+blank
+Tour
+blank
+Coverage 2]]></description>
+        <inputEntry id="UnaryTests_0y3vsp3">        <text>0</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_17tp9bq">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_02uhjve">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1t9vxwz">        <text>13</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

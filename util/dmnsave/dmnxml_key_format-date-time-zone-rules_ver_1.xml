@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="format-date-time-zone-rules" name="format-date-time-zone-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Timezone In" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>gmsTimezone</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Timezone Out" name="timezone" typeRef="string" />
+      <rule id="row-95941296-2">
+        <inputEntry id="UnaryTests_08fb0go">        <text><![CDATA["PST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16micgc">        <text><![CDATA["US/Pacific"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-1">
+        <inputEntry id="UnaryTests_0145jwn">        <text><![CDATA["PDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_163xrva">        <text><![CDATA["US/Pacific"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-2">
+        <inputEntry id="UnaryTests_0wx0id7">        <text><![CDATA["EST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1opos2j">        <text><![CDATA["US/Eastern"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-3">
+        <inputEntry id="UnaryTests_0p50wt3">        <text><![CDATA["EDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1y5hj28">        <text><![CDATA["US/Eastern"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-4">
+        <inputEntry id="UnaryTests_0b7zg48">        <text><![CDATA["CST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0m0jv3t">        <text><![CDATA["US/Central"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-5">
+        <inputEntry id="UnaryTests_1uhe2nv">        <text><![CDATA["CDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1mvr47i">        <text><![CDATA["US/Central"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-6">
+        <inputEntry id="UnaryTests_14hs960">        <text><![CDATA["HST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_141p405">        <text><![CDATA["US/Hawaii"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-7">
+        <inputEntry id="UnaryTests_1nelimt">        <text><![CDATA["HDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_06li3ru">        <text><![CDATA["US/Hawaii"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-8">
+        <inputEntry id="UnaryTests_0iqg7ev">        <text><![CDATA["MST"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0pe2wfy">        <text><![CDATA["US/Mountain"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-9">
+        <inputEntry id="UnaryTests_0siljdq">        <text><![CDATA["MDT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1k67wis">        <text><![CDATA["US/Mountain"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-858942629-10">
+        <inputEntry id="UnaryTests_0hyj6jb">        <text><![CDATA["MSTAZ"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1qrts5h">        <text><![CDATA["US/Arizona"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

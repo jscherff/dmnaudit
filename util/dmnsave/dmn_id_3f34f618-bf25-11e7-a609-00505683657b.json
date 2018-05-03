@@ -1,0 +1,2693 @@
+{
+    "xmlName": {
+        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+        "Local": "definitions"
+    },
+    "xmlns": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+    "id": "definitions",
+    "name": "definitions",
+    "namespace": "http://camunda.org/schema/1.0/dmn",
+    "decision": {
+        "xmlName": {
+            "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+            "Local": "decision"
+        },
+        "id": "callcenter-manual-escalation-jobcodes-rules",
+        "name": "callcenter-manual-escalation-jobcodes-rules",
+        "decisionTable": {
+            "xmlName": {
+                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                "Local": "decisionTable"
+            },
+            "id": "decisionTable",
+            "hitPolicy": "COLLECT",
+            "input": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "input"
+                    },
+                    "id": "input1",
+                    "label": "EscalatorJobCode",
+                    "inputExpression": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputExpression"
+                            },
+                            "id": "inputExpression1",
+                            "typeRef": "string",
+                            "text": "escalatorJobCode"
+                        }
+                    ]
+                }
+            ],
+            "output": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "output"
+                    },
+                    "id": "output1",
+                    "label": "JobCode",
+                    "name": "jobCode",
+                    "typeRef": "string"
+                }
+            ],
+            "rule": [
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-95941296-2",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_08fb0go",
+                            "text": "\"1003\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_16micgc",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-17",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0k6h0m8",
+                            "text": "\"1003\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_09k49nb",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-18",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0mcttme",
+                            "text": "\"1003\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_12sglt3",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-19",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0hj6dbg",
+                            "text": "\"1003\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0dhm75k",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-20",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1273das",
+                            "text": "\"1003\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0g19nk5",
+                            "description": "",
+                            "text": "\"5310\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-21",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0lc7hxq",
+                            "text": "\"1003\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1fegfit",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-22",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1w71x80",
+                            "text": "\"1702\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0396rda",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-23",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0pzes3v",
+                            "text": "\"1702\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1clw3mz",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-24",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1yksrcv",
+                            "text": "\"1702\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1xkgde1",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-25",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0ylzxwq",
+                            "text": "\"1702\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0vnooeq",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-26",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0vd65fs",
+                            "text": "\"1702\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_08i6flp",
+                            "description": "",
+                            "text": "\"5310\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-27",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1kk8ogw",
+                            "text": "\"1702\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1ph295j",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-28",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_15jlinc",
+                            "text": "\"1745\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1t7ito5",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-29",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0p0e7ei",
+                            "text": "\"1745\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0hvzey4",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-30",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0ze51dg",
+                            "text": "\"1745\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0bhuw0q",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-31",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_15n0lph",
+                            "text": "\"1745\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0ijo0qq",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-32",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0vblini",
+                            "text": "\"1745\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1bdqniq",
+                            "description": "",
+                            "text": "\"5310\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-33",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0j2nx7m",
+                            "text": "\"1745\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1utv496",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-34",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0zndd9n",
+                            "text": "\"311\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_143rhgu",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-35",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_054yug3",
+                            "text": "\"311\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_18xle48",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-36",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1yzu56d",
+                            "text": "\"311\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1ajx74e",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-37",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_07k7wp6",
+                            "text": "\"311\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1pn0m8v",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-38",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0242tgo",
+                            "text": "\"311\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_04v8p0z",
+                            "description": "",
+                            "text": "\"5310\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-39",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1wc0efk",
+                            "text": "\"311\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1jtuaf9",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-40",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0xf6bio",
+                            "text": "\"331\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_03yxwbk",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-41",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0baiphu",
+                            "text": "\"331\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1hneruq",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-42",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0urflof",
+                            "text": "\"331\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0gw5r5b",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-43",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_13h8fmc",
+                            "text": "\"331\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1vngmqq",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "table-806003032-3",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_10ook23",
+                            "text": "\"331\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0t1jal0",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-44",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1png4ch",
+                            "text": "\"349\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0e9m699",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-45",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_12ujbb7",
+                            "text": "\"349\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0owo08r",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-46",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0dv9ml0",
+                            "text": "\"350\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1mvmms2",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-47",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1a63xkg",
+                            "text": "\"350\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0baf5fk",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-48",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_17e1zh5",
+                            "text": "\"350\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_09yt4z5",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-49",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_05txgpi",
+                            "text": "\"350\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_01pxtip",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-50",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0qvrymt",
+                            "text": "\"350\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_08xt0vh",
+                            "description": "",
+                            "text": "\"349\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-51",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1tmpzz2",
+                            "text": "\"350\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1y68lb2",
+                            "description": "",
+                            "text": "\"4563\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-52",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0jsvbpo",
+                            "text": "\"350\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1v0jfwn",
+                            "description": "",
+                            "text": "\"8799\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-53",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1ne0etw",
+                            "text": "\"350\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0kk5sah",
+                            "description": "",
+                            "text": "\"5010\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-54",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1elo45g",
+                            "text": "\"351\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_02u1lv5",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-55",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0kb5ykz",
+                            "text": "\"351\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0bghzd1",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-56",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0jf31xr",
+                            "text": "\"351\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0fb6z6e",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-57",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1nq5efz",
+                            "text": "\"4563\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0kf9nnq",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-58",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0fm9qr5",
+                            "text": "\"4563\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1miq2xw",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-59",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0b5mxh2",
+                            "text": "\"5010\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1d67dwg",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-60",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0e67pnj",
+                            "text": "\"5010\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0amsrtu",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-61",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0us8s07",
+                            "text": "\"5062\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0u8vikd",
+                            "description": "",
+                            "text": "\"349\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-62",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_05qulnm",
+                            "text": "\"5062\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_17kn00b",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-63",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1x92sv5",
+                            "text": "\"5062\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1xvftw7",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-64",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_01udvmk",
+                            "text": "\"5062\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1gnz9rt",
+                            "description": "",
+                            "text": "\"4563\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-65",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0m3z2fp",
+                            "text": "\"5062\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_08jd16p",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-66",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1gd0f6m",
+                            "text": "\"5062\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1qtay6g",
+                            "description": "",
+                            "text": "\"8799\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-67",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_01owf62",
+                            "text": "\"5062\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0n18fmv",
+                            "description": "",
+                            "text": "\"5010\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-68",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0p9itgy",
+                            "text": "\"5103\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0260rmw",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-69",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0itlxkr",
+                            "text": "\"5103\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1tt44gl",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-70",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1yqplj1",
+                            "text": "\"5103\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_110e5vg",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-71",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0l7vb1t",
+                            "text": "\"5103\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1g3dvm0",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-72",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0g6aijq",
+                            "text": "\"5103\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0xk3gx4",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-73",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1cw7pdd",
+                            "text": "\"5307\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0voq7sb",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-74",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_04w5z6n",
+                            "text": "\"5307\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1f49gl6",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-75",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0puh819",
+                            "text": "\"5307\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_172wj4d",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-76",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_049ix2r",
+                            "text": "\"5307\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1j36lwo",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-77",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0hetsz3",
+                            "text": "\"5307\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1wnirxp",
+                            "description": "",
+                            "text": "\"5310\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-78",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0bvnzjw",
+                            "text": "\"5307\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1uxjrb0",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-79",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0a0wrev",
+                            "text": "\"5310\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0v33ueh",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-80",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1l87pqu",
+                            "text": "\"5310\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1my6wh8",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-81",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_01l79q8",
+                            "text": "\"5310\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0xxbvxu",
+                            "description": "",
+                            "text": "\"351\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-82",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_041ncmu",
+                            "text": "\"5310\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0j4hr3o",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-83",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0wcs759",
+                            "text": "\"5310\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_13vuwcb",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-84",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0usk1hx",
+                            "text": "\"7090\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_146yogk",
+                            "description": "",
+                            "text": "\"7090\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-85",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_00g44nw",
+                            "text": "\"7090\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0qpwtxb",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-86",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_11cea3e",
+                            "text": "\"7090\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1i5lnf4",
+                            "description": "",
+                            "text": "\"7092\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-87",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1uh0vq2",
+                            "text": "\"7090\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1bke5t9",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-88",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_06fbl8r",
+                            "text": "\"7090\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0dr3j8n",
+                            "description": "",
+                            "text": "\"7093\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-776424364-89",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0g6y4nt",
+                            "text": "\"7090\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1myfomb",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-1",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0dod3fm",
+                            "text": "\"7091\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0c2p2aw",
+                            "description": "",
+                            "text": "\"7090\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-2",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_118uh8r",
+                            "text": "\"7091\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1nmrz52",
+                            "description": "",
+                            "text": "\"9946\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-3",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_02d23ib",
+                            "text": "\"7091\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_150xh7j",
+                            "description": "",
+                            "text": "\"5310\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-4",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_017c1bs",
+                            "text": "\"7091\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_079ivti",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-5",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1cw561i",
+                            "text": "\"7091\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_08ruhdr",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-6",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0rdokpi",
+                            "text": "\"7092\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1ql285w",
+                            "description": "",
+                            "text": "\"7090\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-7",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1jzhkmf",
+                            "text": "\"7092\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1ol6jan",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-8",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_16enehs",
+                            "text": "\"7092\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0l4nn4l",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-9",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_15v0ugi",
+                            "text": "\"7093\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0gicijm",
+                            "description": "",
+                            "text": "\"7090\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-10",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1g565pk",
+                            "text": "\"7093\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0l22a23",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-11",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0mqsg3d",
+                            "text": "\"7093\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_11ld5cj",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-12",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1ekutwk",
+                            "text": "\"8799\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0qa42uw",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-13",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0inl1nc",
+                            "text": "\"8799\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_07mhswc",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-14",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0ii0hs4",
+                            "text": "\"9946\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_111qppo",
+                            "description": "",
+                            "text": "\"350\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-15",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0ztq9ee",
+                            "text": "\"9946\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0v4mb2a",
+                            "description": "",
+                            "text": "\"5310\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-16",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_06n9bmx",
+                            "text": "\"9946\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_15ppkbx",
+                            "description": "",
+                            "text": "\"7090\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-17",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_1xpfdhk",
+                            "text": "\"9946\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_0gx1tbi",
+                            "description": "",
+                            "text": "\"7091\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-18",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0kw8fm0",
+                            "text": "\"9946\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_1fvvrxv",
+                            "description": "",
+                            "text": "\"5310\""
+                        }
+                    ]
+                },
+                {
+                    "xmlName": {
+                        "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                        "Local": "rule"
+                    },
+                    "id": "row-918561521-19",
+                    "inputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "inputEntry"
+                            },
+                            "id": "UnaryTests_0wi8sp4",
+                            "text": "\"9946\""
+                        }
+                    ],
+                    "outputEntry": [
+                        {
+                            "xmlName": {
+                                "Space": "http://www.omg.org/spec/DMN/20151101/dmn.xsd",
+                                "Local": "outputEntry"
+                            },
+                            "id": "LiteralExpression_15z7toj",
+                            "description": "",
+                            "text": "\"5062\""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

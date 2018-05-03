@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="web-contactus-email-rules" name="web-contactus-email-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Email" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>email</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1tvnqpj" label="Environment" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_0mj9jhh" typeRef="string">
+          <text>environment</text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="Output" name="envEmail" typeRef="string" />
+      <rule id="row-554002474-24">
+        <inputEntry id="UnaryTests_0tl8a64">
+          <text><![CDATA["CUSTOMER_SERVICE_CLUB"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jgrtiy">
+          <text><![CDATA["dev"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05kdj3r">
+          <text><![CDATA["customerservice_club_dev@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-25">
+        <inputEntry id="UnaryTests_0tl8a6s4">
+          <text><![CDATA["CUSTOMER_SERVICE_CLUB"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jgrtsiy">
+          <text><![CDATA["qa"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05kdsj3r">
+          <text><![CDATA["customerservice_club_dev@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-26">
+        <inputEntry id="UnaryTests_1fjqchy">
+          <text><![CDATA["CUSTOMER_SERVICE_CLUB"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fyjoka">
+          <text><![CDATA["trn"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03phhtw">
+          <text><![CDATA["customerservice_club_dev@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-27">
+        <inputEntry id="UnaryTests_0m3j4ph">
+          <text><![CDATA["CUSTOMER_SERVICE_CLUB"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ubk4b">
+          <text><![CDATA["prd"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08jmexs">
+          <text><![CDATA["customerservice_club@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-28">
+        <inputEntry id="UnaryTests_1mcw7oh">
+          <text><![CDATA["CANCEL"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09muhs7">
+          <text><![CDATA["dev"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rw41fm">
+          <text><![CDATA["canceldev@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-29">
+        <inputEntry id="UnaryTests_01uu9ue">
+          <text><![CDATA["CANCEL"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07hm6uu">
+          <text><![CDATA["qa"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ix1h6c">
+          <text><![CDATA["cancelqa@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-30">
+        <inputEntry id="UnaryTests_1im1vp4">
+          <text><![CDATA["CANCEL"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10sttyg">
+          <text><![CDATA["trn"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03f55cc">
+          <text><![CDATA["cancelqa@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-31">
+        <inputEntry id="UnaryTests_0v5tbz5">
+          <text><![CDATA["CANCEL"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ckob5e">
+          <text><![CDATA["prd"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ben6dr">
+          <text><![CDATA["cancel@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-32">
+        <inputEntry id="UnaryTests_0k9rk8s">
+          <text><![CDATA["CUSTOMER_SERVICE"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1utqrg6">
+          <text><![CDATA["dev"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yjfzmq">
+          <text><![CDATA["customerservice_dev@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-33">
+        <inputEntry id="UnaryTests_1r39bev">
+          <text><![CDATA["CUSTOMER_SERVICE"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r9fvvn">
+          <text><![CDATA["qa"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15ehnlf">
+          <text><![CDATA["customerservice_dev@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-34">
+        <inputEntry id="UnaryTests_1ts4d9y">
+          <text><![CDATA["CUSTOMER_SERVICE"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xmo926">
+          <text><![CDATA["trn"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11u3f7h">
+          <text><![CDATA["customerservice_dev@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-35">
+        <inputEntry id="UnaryTests_0i05knk">
+          <text><![CDATA["CUSTOMER_SERVICE"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10dn9p4">
+          <text><![CDATA["prd"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y9jq1z">
+          <text><![CDATA["customerservice@24hourfitness.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-40">
+        <inputEntry id="UnaryTests_0h3x3qo">
+          <text><![CDATA["CORP_FIT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_128sjd5">
+          <text><![CDATA["dev"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fm4mbb">
+          <text><![CDATA["corpfit_dev@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-41">
+        <inputEntry id="UnaryTests_0jziy9r">
+          <text><![CDATA["CORP_FIT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zuy9ae">
+          <text><![CDATA["qa"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i9y62k">
+          <text><![CDATA["corpfit_qa@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-42">
+        <inputEntry id="UnaryTests_1h3wr6q">
+          <text><![CDATA["CORP_FIT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03kahj2">
+          <text><![CDATA["trn"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ys03fh">
+          <text><![CDATA["corpfit_trn@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-43">
+        <inputEntry id="UnaryTests_0yldk6d">
+          <text><![CDATA["CORP_FIT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bfb718">
+          <text><![CDATA["prd"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rhgha2">
+          <text><![CDATA["corpfit@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-44">
+        <inputEntry id="UnaryTests_1rss84a">
+          <text><![CDATA["CUSTOMER_SERVICE_WT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_011w6vz">
+          <text><![CDATA["dev"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vftqwe">
+          <text><![CDATA["customerservicewt_dev@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-45">
+        <inputEntry id="UnaryTests_0phhlvv">
+          <text><![CDATA["CUSTOMER_SERVICE_WT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09yf2qv">
+          <text><![CDATA["qa"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fjd3a7">
+          <text><![CDATA["customerservicewt_qa@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-46">
+        <inputEntry id="UnaryTests_0xv9753">
+          <text><![CDATA["CUSTOMER_SERVICE_WT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iykg8z">
+          <text><![CDATA["trn"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17h6qr1">
+          <text><![CDATA["customerservicewt_trn@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-47">
+        <inputEntry id="UnaryTests_02xn4wk">
+          <text><![CDATA["CUSTOMER_SERVICE_WT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d97f1c">
+          <text><![CDATA["prd"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wdeqcm">
+          <text><![CDATA["customerservicewt@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-48">
+        <inputEntry id="UnaryTests_1ecswk6">
+          <text><![CDATA["PARTNERSHIPS"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03igle9">
+          <text><![CDATA["dev"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l6vt4o">
+          <text><![CDATA["partnerships_dev@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-49">
+        <inputEntry id="UnaryTests_0yza3qp">
+          <text><![CDATA["PARTNERSHIPS"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hckuye">
+          <text><![CDATA["qa"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14626sz">
+          <text><![CDATA["partnerships_qa@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-50">
+        <inputEntry id="UnaryTests_1gepm6r">
+          <text><![CDATA["PARTNERSHIPS"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gmzcr1">
+          <text><![CDATA["trn"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_098ha1p">
+          <text><![CDATA["partnerships_trn@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-554002474-51">
+        <inputEntry id="UnaryTests_0556lvo">
+          <text><![CDATA["PARTNERSHIPS"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ahbzw0">
+          <text><![CDATA["prd"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03nk4ie">
+          <text><![CDATA["partnerships@24hourfit.com"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="dgr-constants-rules" name="DgrConstantsDmn">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Question Nunber" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>question</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Weight&#10;  conscious, reluctant gym goers" name="1" typeRef="double" />
+      <output id="OutputClause_1l5bgh6" label="Health-oriented, old gym loyalists" name="2" typeRef="double" />
+      <output id="OutputClause_147y0w5" label="Unmotivated, affluent empty nesters" name="3" typeRef="double" />
+      <output id="OutputClause_1r164y7" label="Young dads, busy gym switchers" name="4" typeRef="double" />
+      <output id="OutputClause_19zvao1" label="Confident, savvy fitness enthusiasts" name="5" typeRef="double" />
+      <output id="OutputClause_1rkwrpy" label="Older female class loyalists" name="6" typeRef="double" />
+      <rule id="row-95941296-2">
+        <description>Exercising is a very pleasurable thing</description>
+        <inputEntry id="UnaryTests_08fb0go">        <text>1</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16micgc">        <text>3.06017018670761</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1d7jefn">        <text>3.80445862989372</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_05tahip">        <text>2.24981979079361</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_146ca1o">        <text>2.77623822662379</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_150z6c7">        <text>3.84923978130064</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0unulfv">        <text>3.01194540983049</text>
+</outputEntry>
+      </rule>
+      <rule id="row-213212339-1">
+        <description>I prefer exercising at home to exercising in a fitness center</description>
+        <inputEntry id="UnaryTests_1v6z6ug">        <text>2</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_14trb2g">        <text>1.40374512122474</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_00rg57o">        <text>0.402399119421736</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1h2903y">        <text>1.36338819938096</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0lmch9f">        <text>1.55233374831372</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1a9lyu1">        <text>0.120148233603791</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ghk3py">        <text>0.503039598685437</text>
+</outputEntry>
+      </rule>
+      <rule id="row-213212339-2">
+        <description>I never have enough time; I wish the pace of life was a little slower</description>
+        <inputEntry id="UnaryTests_1j4luga">        <text>3</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0bvj06a">        <text>2.38436934442121</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0hhyqot">        <text>2.04774336830752</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1idv5sz">        <text>2.42140130489502</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1f06ref">        <text>2.2116689481132</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0sdzdpt">        <text>1.00951334720656</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1tgwndv">        <text>2.0300771064299</text>
+</outputEntry>
+      </rule>
+      <rule id="row-213212339-3">
+        <description>I use a variety of strategies to achieve my fitness goals</description>
+        <inputEntry id="UnaryTests_1h1t141">        <text>4</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0kvcoa8">        <text>3.40249655250899</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1g4nr54">        <text>4.21311763695133</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0vg822e">        <text>2.84107964780343</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_10kdtsc">        <text>3.15506790789715</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0mu09ur">        <text>4.34507497411236</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0lk8e1a">        <text>3.43781725321418</text>
+</outputEntry>
+      </rule>
+      <rule id="row-213212339-4">
+        <description>I prefer to follow the instructions of a teacher or a trainer when exercising</description>
+        <inputEntry id="UnaryTests_1er48a3">        <text>5</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ncr4jw">        <text>2.12740030749577</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_04yybs6">        <text>0.780196924364417</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0trkdot">        <text>1.9193085873452</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_19pboui">        <text>2.30639845885841</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0zawvql">        <text>2.61775595747822</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0suoadq">        <text>2.49929097338534</text>
+</outputEntry>
+      </rule>
+      <rule id="row-213212339-5">
+        <description>How likely you are to purchase personal training</description>
+        <inputEntry id="UnaryTests_05qfw98">        <text>6</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0agpjme">        <text>10.2596748962708</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_15xbaao">        <text>9.93959838267524</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_03s9dpo">        <text>10.0040283099672</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_10hn2fe">        <text>8.30631039131998</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_16tw2bg">        <text>8.9714680976413</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1vhng4l">        <text>9.8967513536195</text>
+</outputEntry>
+      </rule>
+      <rule id="row-213212339-6">
+        <description>AgeGroups</description>
+        <inputEntry id="UnaryTests_1tqiczk">        <text>8</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0urgkvl">        <text>2.74935063552723</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0boomxy">        <text>3.24050057876188</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1nrqkp8">        <text>3.21752957278342</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_02ed4wd">        <text>2.60750809632083</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1mwmdy4">        <text>2.76982688326854</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1m7euej">        <text>3.09027534774905</text>
+</outputEntry>
+      </rule>
+      <rule id="row-213212339-7">
+        <description>Constant</description>
+        <inputEntry id="UnaryTests_0azlkg5">        <text>99</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0e2cbls">        <text>-40.2152204906503</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0c3jlm0">        <text>-40.3261499898135</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_05v9f5b">        <text>-35.065195775563</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ycta4f">        <text>-35.7001467503012</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1qcntoq">        <text>-41.3101100949512</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1tifs1k">        <text>-38.1813639877571</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

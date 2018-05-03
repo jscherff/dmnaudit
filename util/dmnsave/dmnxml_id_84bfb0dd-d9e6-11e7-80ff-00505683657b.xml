@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="mi9-retail-transaction-determine-credit-card-type-rules" name="mi9-retail-transaction-determine-credit-card-type-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Credit Card Information from Mi9" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>paymentCode</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_0u8ns6y" label="Journal Type Code" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1e50nhl" typeRef="string">        <text>journalTypeCode</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Formatted Credit Card Type for M2" name="creditCardType" typeRef="string" />
+      <rule id="row-779845981-2">
+        <description>Consumer charged with Debit Visa</description>
+        <inputEntry id="UnaryTests_1g2nrxy">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_025t16x">        <text><![CDATA["BKPAYMENT"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_02skorz">        <text><![CDATA["VISA"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-686068031-10">
+        <description>Consumer charged with Master Card</description>
+        <inputEntry id="UnaryTests_1fdpqfk">        <text><![CDATA["MC", "M", "MasterCard", "MASTERCARD", "MASTER CARD", "mastercard", "master card", "mc", "m"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0mipl0i">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1yr5lmh">        <text><![CDATA["MASTER CARD"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-686068031-11">
+        <description>Consumer charged with Visa</description>
+        <inputEntry id="UnaryTests_1pi24r7">        <text><![CDATA["V", "Visa", "VISA", "v", "visa"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0ujpep8">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0htxfqx">        <text><![CDATA["VISA"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-686068031-12">
+        <description>Consumer charged with American Express</description>
+        <inputEntry id="UnaryTests_0az2kf5">        <text><![CDATA["A", "Amex", "AMEX", "AMERICAN EXPRESS", "american express", "American Express", "a", "amex"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_05suqwc">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0cn6nlt">        <text><![CDATA["AMERICAN EXPRESS"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-207435599-1">
+        <description>Consumer charged with Discover Card</description>
+        <inputEntry id="UnaryTests_1eala1o">        <text><![CDATA["DiscoverCard", "Disc", "DISC", "DISCOVER CARD", "discover card", "discovercard", "disc"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1svcrt6">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1v6952p">        <text><![CDATA["DISCOVER CARD"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

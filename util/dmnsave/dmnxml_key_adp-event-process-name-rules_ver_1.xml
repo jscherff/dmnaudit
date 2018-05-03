@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="adp-event-process-name-rules" name="adp-event-process-name-rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="ADP event code">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>adpEventCode</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Camunda Event Handler Process" name="adpProcessName" typeRef="string" />
+      <output id="OutputClause_1f3tt3f" label="Camunda Process" name="camundaProcess" typeRef="string" />
+      <rule id="row-980509601-1">
+        <description>New Hire</description>
+        <inputEntry id="UnaryTests_1cbru7p">        <text><![CDATA["worker.hire"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1cjvnod">        <text><![CDATA["employeeNewHireSubProcess"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0oqyxok">        <text><![CDATA["adp-new-hire-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-850396859-3">
+        <description>Rehire</description>
+        <inputEntry id="UnaryTests_1srnmqm">        <text><![CDATA["worker.rehire"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0gu0h28">        <text><![CDATA["employeeNewHireSubProcess"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_07gb5lm">        <text><![CDATA["adp-new-hire-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-980509601-2">
+        <description>Termination</description>
+        <inputEntry id="UnaryTests_0allo9t">        <text><![CDATA["worker.terminate"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_095f0q7">        <text><![CDATA["employeeTerminationSubProcess"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0xsm36r">        <text><![CDATA["adp-termination-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-989378699-1">
+        <description>Transfer</description>
+        <inputEntry id="UnaryTests_0rjycj9">        <text><![CDATA["worker.transfer"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1rvep1s">        <text><![CDATA["employeeNewHireSubProcess"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1sv72st">        <text><![CDATA["adp-new-hire-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-473415197-2">
+        <description>Report to Modify</description>
+        <inputEntry id="UnaryTests_1t6c6cz">        <text><![CDATA["worker.reportsTo.modify"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ejv67e">        <text><![CDATA["reportsToModify"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_15phr3g">        <text><![CDATA["adp-new-hire-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-980509601-3">
+        <description>Add Email</description>
+        <inputEntry id="UnaryTests_1u2tmd5">        <text><![CDATA["worker.businessCommunication.email.add"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0vy75yk">        <text><![CDATA["employeeAddEmail"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_12lbs08">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-980509601-4">
+        <description>Change Email</description>
+        <inputEntry id="UnaryTests_0tea4oo">        <text><![CDATA["worker.businessCommunication.email.change"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_096e2n7">        <text><![CDATA["employeeChangeEmail"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ia6sr0">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-980509601-5">
+        <description>Remove Email</description>
+        <inputEntry id="UnaryTests_0kj8w8f">        <text><![CDATA["worker.businessCommunication.email.remove"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1283ze7">        <text><![CDATA["employeeRemoveEmail"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1c9f1yj">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-960431147-2">
+        <description>Add Personal Email</description>
+        <inputEntry id="UnaryTests_038q4vm">        <text><![CDATA["worker.personalCommunication.email.add"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1nd49bt">        <text><![CDATA["personalEmailAdd"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0w1w284">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-960431147-3">
+        <description>Change Personal Email</description>
+        <inputEntry id="UnaryTests_19js2p1">        <text><![CDATA["worker.personalCommunication.email.change"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1nfhvzn">        <text><![CDATA["personalEmailChange"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0yrvp38">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-341839101-3">
+        <description>Remove Personal Email</description>
+        <inputEntry id="UnaryTests_0fsjs34">        <text><![CDATA["worker.personalCommunication.email.remove"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0d2oppc">        <text><![CDATA["personalEmailRemove"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1qly5vn">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-960431147-5">
+        <description>Mobile Add</description>
+        <inputEntry id="UnaryTests_1y032wd">        <text><![CDATA["worker.personalCommunication.mobile.add"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16psrrk">        <text><![CDATA["mobileAdd"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0tdan30">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-341839101-1">
+        <description>Mobile Change</description>
+        <inputEntry id="UnaryTests_1oall70">        <text><![CDATA["worker.personalCommunication.mobile.change"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1j8sqc7">        <text><![CDATA["mobileChange"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_04d1li7">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-341839101-2">
+        <description>Mobile Remove</description>
+        <inputEntry id="UnaryTests_1g8asn0">        <text><![CDATA["worker.personalCommunication.mobile.remove"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1k0fdm5">        <text><![CDATA["mobileRemove"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1wxnis4">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-684183835-2">
+        <description>Add LandLine Phone</description>
+        <inputEntry id="UnaryTests_1fh7bn6">        <text><![CDATA["worker.personalCommunication.landline.add"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1vnz9k4">        <text><![CDATA["employeeAddLandLine"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_01yl42p">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-684183835-4">
+        <description>Change LandLine Phone</description>
+        <inputEntry id="UnaryTests_1fpekk9">        <text><![CDATA["worker.personalCommunication.landline.change"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1x4iel4">        <text><![CDATA["employeChangeLandLine"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_04a2019">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-684183835-5">
+        <description>Remove LandLine Phone</description>
+        <inputEntry id="UnaryTests_1onxftm">        <text><![CDATA["worker.personalCommunication.landline.remove"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0ml7w7v">        <text><![CDATA["employeRemoveLandLine"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0juah2z">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-194055357-2">
+        <inputEntry id="UnaryTests_0l3tc8f">        <text><![CDATA["worker.legalName.change"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_13r5u1d">        <text><![CDATA["workerLegalNameChange"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1gvcddf">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-194055357-1">
+        <inputEntry id="UnaryTests_1tjc8mx">        <text><![CDATA["worker.preferredName.change"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0b5jp8d">        <text><![CDATA["workerPreferredNameChange"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ewmn8b">        <text><![CDATA["adp-update-employee-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-329302510-3">
+        <inputEntry id="UnaryTests_101408e">        <text><![CDATA["worker.promote"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0dr0z5u">        <text><![CDATA["workerPromote"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0v7gcsh">        <text><![CDATA["adp-new-hire-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-329302510-4">
+        <inputEntry id="UnaryTests_05pnw07">        <text><![CDATA["worker.demote"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0r4sui6">        <text><![CDATA["workerDemote"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0npoupj">        <text><![CDATA["adp-new-hire-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-980509601-6">
+        <description><![CDATA[""]]></description>
+        <inputEntry id="UnaryTests_0lqi8ce">        <text><![CDATA[""]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0247xu0">        <text><![CDATA["unKnownEmployeeEventSubProcess"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ojfsmq">        <text><![CDATA["adp-unknown-event-process"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-644905027-3">
+        <description>Miss match rule</description>
+        <inputEntry id="UnaryTests_0405hc7">        <text><![CDATA[not("")]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ks79l5">        <text><![CDATA["unKnownEmployeeEventSubProcess"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0fj2pvg">        <text><![CDATA["adp-unknown-event-process"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

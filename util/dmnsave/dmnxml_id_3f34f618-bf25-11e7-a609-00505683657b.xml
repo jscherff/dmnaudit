@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="callcenter-manual-escalation-jobcodes-rules" name="callcenter-manual-escalation-jobcodes-rules">
+    <extensionElements>
+      <biodi:bounds x="200" y="200" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
+      <input id="input1" label="EscalatorJobCode" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>escalatorJobCode</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="JobCode" name="jobCode" typeRef="string" />
+      <rule id="row-95941296-2">
+        <inputEntry id="UnaryTests_08fb0go">        <text><![CDATA["1003"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16micgc">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-17">
+        <inputEntry id="UnaryTests_0k6h0m8">        <text><![CDATA["1003"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_09k49nb">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-18">
+        <inputEntry id="UnaryTests_0mcttme">        <text><![CDATA["1003"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_12sglt3">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-19">
+        <inputEntry id="UnaryTests_0hj6dbg">        <text><![CDATA["1003"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0dhm75k">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-20">
+        <inputEntry id="UnaryTests_1273das">        <text><![CDATA["1003"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0g19nk5">        <text><![CDATA["5310"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-21">
+        <inputEntry id="UnaryTests_0lc7hxq">        <text><![CDATA["1003"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1fegfit">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-22">
+        <inputEntry id="UnaryTests_1w71x80">        <text><![CDATA["1702"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0396rda">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-23">
+        <inputEntry id="UnaryTests_0pzes3v">        <text><![CDATA["1702"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1clw3mz">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-24">
+        <inputEntry id="UnaryTests_1yksrcv">        <text><![CDATA["1702"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1xkgde1">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-25">
+        <inputEntry id="UnaryTests_0ylzxwq">        <text><![CDATA["1702"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0vnooeq">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-26">
+        <inputEntry id="UnaryTests_0vd65fs">        <text><![CDATA["1702"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_08i6flp">        <text><![CDATA["5310"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-27">
+        <inputEntry id="UnaryTests_1kk8ogw">        <text><![CDATA["1702"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ph295j">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-28">
+        <inputEntry id="UnaryTests_15jlinc">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1t7ito5">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-29">
+        <inputEntry id="UnaryTests_0p0e7ei">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0hvzey4">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-30">
+        <inputEntry id="UnaryTests_0ze51dg">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0bhuw0q">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-31">
+        <inputEntry id="UnaryTests_15n0lph">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0ijo0qq">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-32">
+        <inputEntry id="UnaryTests_0vblini">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1bdqniq">        <text><![CDATA["5310"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-33">
+        <inputEntry id="UnaryTests_0j2nx7m">        <text><![CDATA["1745"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1utv496">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-34">
+        <inputEntry id="UnaryTests_0zndd9n">        <text><![CDATA["311"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_143rhgu">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-35">
+        <inputEntry id="UnaryTests_054yug3">        <text><![CDATA["311"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_18xle48">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-36">
+        <inputEntry id="UnaryTests_1yzu56d">        <text><![CDATA["311"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ajx74e">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-37">
+        <inputEntry id="UnaryTests_07k7wp6">        <text><![CDATA["311"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1pn0m8v">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-38">
+        <inputEntry id="UnaryTests_0242tgo">        <text><![CDATA["311"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_04v8p0z">        <text><![CDATA["5310"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-39">
+        <inputEntry id="UnaryTests_1wc0efk">        <text><![CDATA["311"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1jtuaf9">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-40">
+        <inputEntry id="UnaryTests_0xf6bio">        <text><![CDATA["331"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_03yxwbk">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-41">
+        <inputEntry id="UnaryTests_0baiphu">        <text><![CDATA["331"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1hneruq">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-42">
+        <inputEntry id="UnaryTests_0urflof">        <text><![CDATA["331"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0gw5r5b">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-43">
+        <inputEntry id="UnaryTests_13h8fmc">        <text><![CDATA["331"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1vngmqq">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="table-806003032-3">
+        <inputEntry id="UnaryTests_10ook23">        <text><![CDATA["331"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0t1jal0">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-44">
+        <inputEntry id="UnaryTests_1png4ch">        <text><![CDATA["349"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0e9m699">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-45">
+        <inputEntry id="UnaryTests_12ujbb7">        <text><![CDATA["349"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0owo08r">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-46">
+        <inputEntry id="UnaryTests_0dv9ml0">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1mvmms2">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-47">
+        <inputEntry id="UnaryTests_1a63xkg">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0baf5fk">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-48">
+        <inputEntry id="UnaryTests_17e1zh5">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_09yt4z5">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-49">
+        <inputEntry id="UnaryTests_05txgpi">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_01pxtip">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-50">
+        <inputEntry id="UnaryTests_0qvrymt">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_08xt0vh">        <text><![CDATA["349"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-51">
+        <inputEntry id="UnaryTests_1tmpzz2">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1y68lb2">        <text><![CDATA["4563"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-52">
+        <inputEntry id="UnaryTests_0jsvbpo">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1v0jfwn">        <text><![CDATA["8799"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-53">
+        <inputEntry id="UnaryTests_1ne0etw">        <text><![CDATA["350"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0kk5sah">        <text><![CDATA["5010"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-54">
+        <inputEntry id="UnaryTests_1elo45g">        <text><![CDATA["351"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_02u1lv5">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-55">
+        <inputEntry id="UnaryTests_0kb5ykz">        <text><![CDATA["351"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0bghzd1">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-56">
+        <inputEntry id="UnaryTests_0jf31xr">        <text><![CDATA["351"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0fb6z6e">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-57">
+        <inputEntry id="UnaryTests_1nq5efz">        <text><![CDATA["4563"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0kf9nnq">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-58">
+        <inputEntry id="UnaryTests_0fm9qr5">        <text><![CDATA["4563"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1miq2xw">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-59">
+        <inputEntry id="UnaryTests_0b5mxh2">        <text><![CDATA["5010"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1d67dwg">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-60">
+        <inputEntry id="UnaryTests_0e67pnj">        <text><![CDATA["5010"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0amsrtu">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-61">
+        <inputEntry id="UnaryTests_0us8s07">        <text><![CDATA["5062"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0u8vikd">        <text><![CDATA["349"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-62">
+        <inputEntry id="UnaryTests_05qulnm">        <text><![CDATA["5062"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_17kn00b">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-63">
+        <inputEntry id="UnaryTests_1x92sv5">        <text><![CDATA["5062"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1xvftw7">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-64">
+        <inputEntry id="UnaryTests_01udvmk">        <text><![CDATA["5062"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1gnz9rt">        <text><![CDATA["4563"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-65">
+        <inputEntry id="UnaryTests_0m3z2fp">        <text><![CDATA["5062"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_08jd16p">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-66">
+        <inputEntry id="UnaryTests_1gd0f6m">        <text><![CDATA["5062"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1qtay6g">        <text><![CDATA["8799"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-67">
+        <inputEntry id="UnaryTests_01owf62">        <text><![CDATA["5062"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0n18fmv">        <text><![CDATA["5010"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-68">
+        <inputEntry id="UnaryTests_0p9itgy">        <text><![CDATA["5103"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0260rmw">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-69">
+        <inputEntry id="UnaryTests_0itlxkr">        <text><![CDATA["5103"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1tt44gl">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-70">
+        <inputEntry id="UnaryTests_1yqplj1">        <text><![CDATA["5103"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_110e5vg">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-71">
+        <inputEntry id="UnaryTests_0l7vb1t">        <text><![CDATA["5103"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1g3dvm0">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-72">
+        <inputEntry id="UnaryTests_0g6aijq">        <text><![CDATA["5103"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0xk3gx4">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-73">
+        <inputEntry id="UnaryTests_1cw7pdd">        <text><![CDATA["5307"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0voq7sb">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-74">
+        <inputEntry id="UnaryTests_04w5z6n">        <text><![CDATA["5307"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1f49gl6">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-75">
+        <inputEntry id="UnaryTests_0puh819">        <text><![CDATA["5307"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_172wj4d">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-76">
+        <inputEntry id="UnaryTests_049ix2r">        <text><![CDATA["5307"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1j36lwo">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-77">
+        <inputEntry id="UnaryTests_0hetsz3">        <text><![CDATA["5307"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1wnirxp">        <text><![CDATA["5310"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-78">
+        <inputEntry id="UnaryTests_0bvnzjw">        <text><![CDATA["5307"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1uxjrb0">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-79">
+        <inputEntry id="UnaryTests_0a0wrev">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0v33ueh">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-80">
+        <inputEntry id="UnaryTests_1l87pqu">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1my6wh8">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-81">
+        <inputEntry id="UnaryTests_01l79q8">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0xxbvxu">        <text><![CDATA["351"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-82">
+        <inputEntry id="UnaryTests_041ncmu">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0j4hr3o">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-83">
+        <inputEntry id="UnaryTests_0wcs759">        <text><![CDATA["5310"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_13vuwcb">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-84">
+        <inputEntry id="UnaryTests_0usk1hx">        <text><![CDATA["7090"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_146yogk">        <text><![CDATA["7090"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-85">
+        <inputEntry id="UnaryTests_00g44nw">        <text><![CDATA["7090"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0qpwtxb">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-86">
+        <inputEntry id="UnaryTests_11cea3e">        <text><![CDATA["7090"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1i5lnf4">        <text><![CDATA["7092"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-87">
+        <inputEntry id="UnaryTests_1uh0vq2">        <text><![CDATA["7090"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1bke5t9">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-88">
+        <inputEntry id="UnaryTests_06fbl8r">        <text><![CDATA["7090"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0dr3j8n">        <text><![CDATA["7093"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-776424364-89">
+        <inputEntry id="UnaryTests_0g6y4nt">        <text><![CDATA["7090"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1myfomb">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-1">
+        <inputEntry id="UnaryTests_0dod3fm">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0c2p2aw">        <text><![CDATA["7090"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-2">
+        <inputEntry id="UnaryTests_118uh8r">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1nmrz52">        <text><![CDATA["9946"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-3">
+        <inputEntry id="UnaryTests_02d23ib">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_150xh7j">        <text><![CDATA["5310"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-4">
+        <inputEntry id="UnaryTests_017c1bs">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_079ivti">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-5">
+        <inputEntry id="UnaryTests_1cw561i">        <text><![CDATA["7091"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_08ruhdr">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-6">
+        <inputEntry id="UnaryTests_0rdokpi">        <text><![CDATA["7092"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ql285w">        <text><![CDATA["7090"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-7">
+        <inputEntry id="UnaryTests_1jzhkmf">        <text><![CDATA["7092"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1ol6jan">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-8">
+        <inputEntry id="UnaryTests_16enehs">        <text><![CDATA["7092"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0l4nn4l">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-9">
+        <inputEntry id="UnaryTests_15v0ugi">        <text><![CDATA["7093"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0gicijm">        <text><![CDATA["7090"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-10">
+        <inputEntry id="UnaryTests_1g565pk">        <text><![CDATA["7093"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0l22a23">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-11">
+        <inputEntry id="UnaryTests_0mqsg3d">        <text><![CDATA["7093"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_11ld5cj">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-12">
+        <inputEntry id="UnaryTests_1ekutwk">        <text><![CDATA["8799"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0qa42uw">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-13">
+        <inputEntry id="UnaryTests_0inl1nc">        <text><![CDATA["8799"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_07mhswc">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-14">
+        <inputEntry id="UnaryTests_0ii0hs4">        <text><![CDATA["9946"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_111qppo">        <text><![CDATA["350"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-15">
+        <inputEntry id="UnaryTests_0ztq9ee">        <text><![CDATA["9946"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0v4mb2a">        <text><![CDATA["5310"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-16">
+        <inputEntry id="UnaryTests_06n9bmx">        <text><![CDATA["9946"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_15ppkbx">        <text><![CDATA["7090"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-17">
+        <inputEntry id="UnaryTests_1xpfdhk">        <text><![CDATA["9946"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0gx1tbi">        <text><![CDATA["7091"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-18">
+        <inputEntry id="UnaryTests_0kw8fm0">        <text><![CDATA["9946"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1fvvrxv">        <text><![CDATA["5310"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-918561521-19">
+        <inputEntry id="UnaryTests_0wi8sp4">        <text><![CDATA["9946"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_15z7toj">        <text><![CDATA["5062"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

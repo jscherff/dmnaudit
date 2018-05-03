@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="mi9-user-provisioning-rules-location" name="mi9 user provisioning rules location">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
+      <input id="input1" label="location">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>location</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="transformedLocation" name="transformedLocation" typeRef="string" />
+      <output id="output2" label="accessAllLocations" name="accessAllLocations" typeRef="boolean" />
+      <rule id="row-317741930-1">
+        <inputEntry id="UnaryTests_05j6ia8">        <text><![CDATA["0500"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1n235ga">        <text><![CDATA[""]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0h67uzk">        <text>true</text>
+</outputEntry>
+      </rule>
+      <rule id="row-619391509-1">
+        <inputEntry id="UnaryTests_1qfks31">        <text><![CDATA["0300"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_16iebcw">        <text><![CDATA[""]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_14didsm">        <text>true</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

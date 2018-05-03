@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="staples-employee-export-rules" name="staples-employee-export-rules">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="EmpType">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>emplType</text>
+</inputExpression>
+      </input>
+      <output id="OutputClause_0hcpzlo" label="JobCode" name="jobCode" typeRef="string" />
+      <rule id="row-939456945-3">
+        <description>Jobcode Empty Value</description>
+        <inputEntry id="UnaryTests_1h4pebn">        <text><![CDATA["employee"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1a6t6nc">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="row-939456945-4">
+        <description>Jobcode List</description>
+        <inputEntry id="UnaryTests_1nfvw60">        <text><![CDATA["manager"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1f6ztjn">        <text><![CDATA["3221;331;349;350;355;397;1271;4563;5010;5043;5126;5174;5177;5253;5266;8616;8799"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-357487362-1">
+        <description>Return jobCodes</description>
+        <inputEntry id="UnaryTests_0sygw13">        <text><![CDATA["both"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0l7yi1p">        <text><![CDATA["3221;331;349;350;355;397;1271;4563;5010;5043;5126;5174;5177;5253;5266;8616;8799"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
