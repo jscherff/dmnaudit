@@ -22,7 +22,7 @@ Packager: 	%{packager}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Distribution:	el
 
-BuildRequires:    golang >= 1.10.0, git >= 1.8.0
+BuildRequires:    golang >= 1.9.0, git >= 1.7.0
 
 %description
 The %{name} utility Retrieve list of Decision Model and Notation objects
