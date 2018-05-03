@@ -18,11 +18,8 @@ import (
 	`flag`
 	`fmt`
 	`log`
-	`io`
 	`os`
-	`reflect`
 	`github.com/jscherff/dmnsdk/api`
-	`github.com/jscherff/dmnsdk/model`
 )
 
 func init() {
@@ -64,16 +61,13 @@ func main() {
 			save(fmt.Sprintf(`dmn_id_%s.json`, id), b)
 		}
 	}
-		warning.Print(out)
-	}
 }
 
-func save(fn, []byte) {
-	if fh, err := os.Create(fn); err != nil {
+func save(f string, b []byte) {
+	if fh, err := os.Create(f); err != nil {
 		log.Println(err)
 	} else {
 		defer fh.Close()
-		fmt.Fprintln(fh, dmn.Json())
+		fh.Write(b)
 	}
 }
-
